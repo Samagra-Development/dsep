@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/dsep/src",
+  "monorepo": true,
+  "root": "apps/dsep",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/dsep/tsconfig.app.json"
+  },
+  "projects": {
+    "dsep": {
+      "type": "application",
+      "root": "apps/dsep",
+      "entryFile": "main",
+      "sourceRoot": "apps/dsep/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/dsep/tsconfig.app.json"
+      }
+    },
+    "beckn-bg": {
+      "type": "application",
+      "root": "apps/beckn-bg",
+      "entryFile": "main",
+      "sourceRoot": "apps/beckn-bg/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/beckn-bg/tsconfig.app.json"
+      }
+    },
+    "beckn-bap": {
+      "type": "application",
+      "root": "apps/beckn-bap",
+      "entryFile": "main",
+      "sourceRoot": "apps/beckn-bap/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/beckn-bap/tsconfig.app.json"
+      }
+    },
+    "beckn-bpp": {
+      "type": "application",
+      "root": "apps/beckn-bpp",
+      "entryFile": "main",
+      "sourceRoot": "apps/beckn-bpp/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/beckn-bpp/tsconfig.app.json"
+      }
+    }
+  }
+}
