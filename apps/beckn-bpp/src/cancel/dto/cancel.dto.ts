@@ -1,5 +1,5 @@
-import ContextInterface from 'src/schemas/Context.interface';
-import DescriptorInterface from 'src/schemas/Descriptor.interface';
+import ContextInterface from 'dsep-beckn-schema/schemas/Context.interface';
+import DescriptorInterface from 'dsep-beckn-schema/schemas/Descriptor.interface';
 
 export class CancelDTO {
   context: ContextInterface;

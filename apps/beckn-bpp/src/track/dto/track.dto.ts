@@ -1,4 +1,4 @@
-import ContextInterface from 'src/schemas/Context.interface';
+import ContextInterface from 'dsep-beckn-schema/schemas/Context.interface';
 
 export class TrackDTO {
   context: ContextInterface;

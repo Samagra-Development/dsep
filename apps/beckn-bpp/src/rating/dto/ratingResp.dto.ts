@@ -1,5 +1,5 @@
-import AckInterface from 'src/schemas/Ack.interface';
-import ErrorInterface from 'src/schemas/Error.interface';
+import AckInterface from 'dsep-beckn-schema/schemas/Ack.interface';
+import ErrorInterface from 'dsep-beckn-schema/schemas/Error.interface';
 
 export class RatingRespDTO {
   message: {

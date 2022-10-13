@@ -1,5 +1,5 @@
-import ContextInterface from 'src/schemas/Context.interface';
-import RatingInterface from 'src/schemas/Rating.interface';
+import ContextInterface from 'dsep-beckn-schema/schemas/Context.interface';
+import RatingInterface from 'dsep-beckn-schema/schemas/Rating.interface';
 
 export class RatingDTO {
   context: ContextInterface;

@@ -1,4 +1,4 @@
-import AckInterface from 'src/schemas/Ack.interface';
+import AckInterface from 'dsep-beckn-schema/schemas/Ack.interface';
 
 export class SearchRespDTO {
   message: {
