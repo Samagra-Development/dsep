@@ -1,29 +1,38 @@
-import { Injectable } from '@nestjs/common';
+import { HttpService } from '@nestjs/axios';
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
+import { lastValueFrom, map } from 'rxjs';
 import { SearchDTO } from './dto/search.dto';
 
 @Injectable()
 export class SearchService {
-  handleSearch(searchDto: SearchDTO) {
-    const { context, message } = searchDto;
+  constructor(private readonly httpService: HttpService) { }
 
-    // calls to consumers are added here
+  async handleSearch(searchDto: SearchDTO) {
+    // const { context, message } = searchDto;
 
-    return 'This action adds a new search';
+    const requestOptions = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: searchDto,
+      redirect: 'follow',
+    };
+
+    try {
+      const responseData = await lastValueFrom(
+        this.httpService
+          .post('http://localhost:5003/get-courses', searchDto, requestOptions)
+          .pipe(
+            map((response) => {
+              return response.data;
+            }),
+          ),
+      );
+
+      return responseData;
+    } catch (e) {
+      console.log('error: ', e);
+      throw new InternalServerErrorException();
+    }
   }
-
-  /*findAll() {
-    return `This action returns all search`;
-  }
-
-  findOne(id: number) {
-    return `This action returns a #${id} search`;
-  }
-
-  update(id: number, updateSearchDto: UpdateSearchDto) {
-    return `This action updates a #${id} search`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} search`;
-  }*/
 }

@@ -12,9 +12,22 @@ import { ConfirmModule } from './confirm/confirm.module';
 import { InitModule } from './init/init.module';
 import { SelectModule } from './select/select.module';
 import { CancelModule } from './cancel/cancel.module';
+import { HttpModule } from '@nestjs/axios';
 
 @Module({
-  imports: [SearchModule, SelectModule, InitModule, ConfirmModule, StatusModule, TrackModule, CancelModule, UpdateModule, RatingModule, SupportModule],
+  imports: [
+    HttpModule,
+    SearchModule,
+    SelectModule,
+    InitModule,
+    ConfirmModule,
+    StatusModule,
+    TrackModule,
+    CancelModule,
+    UpdateModule,
+    RatingModule,
+    SupportModule,
+  ],
   controllers: [AppController],
   providers: [AppService, SearchService],
 })

@@ -1,26 +1,39 @@
-import { Injectable } from '@nestjs/common';
+import { HttpService } from '@nestjs/axios';
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
+import { lastValueFrom, map } from 'rxjs';
+import { OnSearchRespDTO } from '../Resp.dto';
 import { OnSearchDTO } from './dto/on_search.dto';
 
 @Injectable()
 export class OnSearchService {
-  create(onSearchDto: OnSearchDTO) {
-    const { context, message } = onSearchDto;
-    return 'This action adds a new onSearch';
-  }
+  constructor(private readonly httpService: HttpService) { }
+  async create(onSearchDto: OnSearchDTO) {
+    // const { context, message } = onSearchDto;
 
-  /*findAll() {
-    return `This action returns all onSearch`;
-  }
+    const requestOptions = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: onSearchDto,
+      redirect: 'follow',
+    };
 
-  findOne(id: number) {
-    return `This action returns a #${id} onSearch`;
-  }
+    try {
+      // calling the BG
+      const responseData = await lastValueFrom(
+        this.httpService
+          .post('http://localhost:5001/on-search', onSearchDto, requestOptions)
+          .pipe(
+            map((response) => {
+              return response.data;
+            }),
+          ),
+      );
 
-  update(id: number, updateOnSearchDto: UpdateOnSearchDto) {
-    return `This action updates a #${id} onSearch`;
+      return responseData;
+    } catch (e) {
+      console.log('error: ', e);
+      throw new InternalServerErrorException();
+    }
   }
-
-  remove(id: number) {
-    return `This action removes a #${id} onSearch`;
-  }*/
 }
