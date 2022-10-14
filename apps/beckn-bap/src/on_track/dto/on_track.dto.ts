@@ -1,6 +1,6 @@
-import ContextInterface from 'src/schemas/Context.interface';
-import ErrorInterface from 'src/schemas/Error.interface';
-import TrackingInterface from 'src/schemas/Tracking.interface';
+import ContextInterface from 'dsep-beckn-schema/schemas/Context.interface';
+import ErrorInterface from 'dsep-beckn-schema/schemas/Error.interface';
+import TrackingInterface from 'dsep-beckn-schema/schemas/Tracking.interface';
 
 export class OnTrackDTO {
   context: ContextInterface;

@@ -1,5 +1,5 @@
-import ContextInterface from 'src/schemas/Context.interface';
-import IntentInterface from 'src/schemas/Intent.interface';
+import ContextInterface from 'dsep-beckn-schema/schemas/Context.interface';
+import IntentInterface from 'dsep-beckn-schema/schemas/Intent.interface';
 
 export class SearchDTO {
   context: ContextInterface;

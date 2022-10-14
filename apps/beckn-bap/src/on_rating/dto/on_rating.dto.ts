@@ -1,6 +1,6 @@
-import ContextInterface from 'src/schemas/Context.interface';
-import ErrorInterface from 'src/schemas/Error.interface';
-import RatingAckInterface from 'src/schemas/RatingAck.interface';
+import ContextInterface from 'dsep-beckn-schema/schemas/Context.interface';
+import ErrorInterface from 'dsep-beckn-schema/schemas/Error.interface';
+import RatingAckInterface from 'dsep-beckn-schema/schemas/RatingAck.interface';
 
 export class OnRatingDTO {
   context: ContextInterface;

@@ -1,5 +1,5 @@
-import ContextInterface from 'src/schemas/Context.interface';
-import ErrorInterface from 'src/schemas/Error.interface';
+import ContextInterface from 'dsep-beckn-schema/schemas/Context.interface';
+import ErrorInterface from 'dsep-beckn-schema/schemas/Error.interface';
 
 export class OnSupportDTO {
   context: ContextInterface;

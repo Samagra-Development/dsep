@@ -1,10 +1,10 @@
-import BillingInterface from 'src/schemas/Billing.interface';
-import ContextInterface from 'src/schemas/Context.interface';
-import ErrorInterface from 'src/schemas/Error.interface';
-import FulfillmentInterface from 'src/schemas/Fulfillment.interface';
-import PaymentInterface from 'src/schemas/Payment.interface';
-import ProviderInterface from 'src/schemas/Provider.interface';
-import QuotationInterface from 'src/schemas/Quotation.interface';
+import BillingInterface from 'dsep-beckn-schema/schemas/Billing.interface';
+import ContextInterface from 'dsep-beckn-schema/schemas/Context.interface';
+import ErrorInterface from 'dsep-beckn-schema/schemas/Error.interface';
+import FulfillmentInterface from 'dsep-beckn-schema/schemas/Fulfillment.interface';
+import PaymentInterface from 'dsep-beckn-schema/schemas/Payment.interface';
+import ProviderInterface from 'dsep-beckn-schema/schemas/Provider.interface';
+import QuotationInterface from 'dsep-beckn-schema/schemas/Quotation.interface';
 
 export class OnInitDTO {
   context: ContextInterface;

@@ -1,11 +1,11 @@
-import AddOnInterface from 'src/schemas/AddOn.interface';
-import ContextInterface from 'src/schemas/Context.interface';
-import ItemInterface from 'src/schemas/Item.interface';
-import ItemQuantityInterface from 'src/schemas/ItemQuantity.interface';
-import LocationInterface from 'src/schemas/Location.interface';
-import OfferInterface from 'src/schemas/Offer.interface';
-import ProviderInterface from 'src/schemas/Provider.interface';
-import QuotationInterface from 'src/schemas/Quotation.interface';
+import AddOnInterface from 'dsep-beckn-schema/schemas/AddOn.interface';
+import ContextInterface from 'dsep-beckn-schema/schemas/Context.interface';
+import ItemInterface from 'dsep-beckn-schema/schemas/Item.interface';
+import ItemQuantityInterface from 'dsep-beckn-schema/schemas/ItemQuantity.interface';
+import LocationInterface from 'dsep-beckn-schema/schemas/Location.interface';
+import OfferInterface from 'dsep-beckn-schema/schemas/Offer.interface';
+import ProviderInterface from 'dsep-beckn-schema/schemas/Provider.interface';
+import QuotationInterface from 'dsep-beckn-schema/schemas/Quotation.interface';
 
 export class OnSelectDTO {
   context: ContextInterface;
