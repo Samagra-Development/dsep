@@ -1,26 +1,36 @@
-import { Injectable } from '@nestjs/common';
+import { HttpService } from '@nestjs/axios';
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
+import { lastValueFrom, map } from 'rxjs';
 import { CancelDTO } from './dto/cancel.dto';
 
 @Injectable()
 export class CancelService {
-  handleCancel(cancelDto: CancelDTO) {
-    const { context, message } = cancelDto;
-    return 'This action adds a new cancel';
-  }
+  constructor(private readonly httpService: HttpService) { }
+  async handleCancel(cancelDto: CancelDTO) {
+    // const { context, message } = cancelDto;
+    try {
+      const requestOptions = {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: cancelDto,
+        redirect: 'follow',
+      };
 
-  /*findAll() {
-    return `This action returns all cancel`;
-  }
+      const responseData = await lastValueFrom(
+        this.httpService
+          .post('http://localhost:5003/', cancelDto, requestOptions)
+          .pipe(
+            map((response) => {
+              return response.data;
+            }),
+          ),
+      );
 
-  findOne(id: number) {
-    return `This action returns a #${id} cancel`;
+      return responseData;
+    } catch (err) {
+      console.log(err);
+      throw new InternalServerErrorException();
+    }
   }
-
-  update(id: number, updateCancelDto: UpdateCancelDto) {
-    return `This action updates a #${id} cancel`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} cancel`;
-  }*/
 }

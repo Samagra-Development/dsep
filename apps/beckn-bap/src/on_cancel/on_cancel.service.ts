@@ -1,9 +1,34 @@
-import { Injectable } from '@nestjs/common';
+import { HttpService } from '@nestjs/axios';
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
+import { lastValueFrom, map } from 'rxjs';
 import { OnCancelDTO } from './dto/on_cancel.dto';
 
 @Injectable()
 export class OnCancelService {
-  create(onCancelDto: OnCancelDTO) {
-    return 'This action adds a new onCancel';
+  constructor(private readonly httpService: HttpService) { }
+  async create(onCancelDto: OnCancelDTO) {
+    try {
+      const requestOptions = {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: onCancelDto,
+        redirect: 'follow',
+      };
+      const responseData = await lastValueFrom(
+        this.httpService
+          .post('http://localhost:5003/', onCancelDto, requestOptions)
+          .pipe(
+            map((response) => {
+              return response.data;
+            }),
+          ),
+      );
+
+      return responseData;
+    } catch (err) {
+      console.log(err);
+      throw new InternalServerErrorException();
+    }
   }
 }
