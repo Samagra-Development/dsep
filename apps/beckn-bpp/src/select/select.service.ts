@@ -1,25 +1,38 @@
-import { Injectable } from '@nestjs/common';
+import { HttpService } from '@nestjs/axios';
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
+import { lastValueFrom, map } from 'rxjs';
 import { SelectDTO } from './dto/select.dto';
 // import { CreateSelectDto } from './dto/create-select.dto';
 // import { UpdateSelectDto } from './dto/update-select.dto';
 
 @Injectable()
 export class SelectService {
-  handleSelect(selectDto: SelectDTO) {
-    const { context, message } = selectDto;
-    // logic for the select post call here!
-    return 'This action adds a new select';
-  }
+  constructor(private readonly httpService: HttpService) { }
 
-  /*findAll() {
-    return `This action returns all select`;
-  }
+  async handleSelect(selectDto: SelectDTO) {
+    // const { context, message } = selectDto;
+    const requestOptions = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: selectDto,
+      redirect: 'follow',
+    };
+    try {
+      const responseData = await lastValueFrom(
+        this.httpService
+          .post('http://localhost:5003/,', selectDto, requestOptions)
+          .pipe(
+            map((response) => {
+              return response.data;
+            }),
+          ),
+      );
 
-  findOne(id: number) {
-    return `This action returns a #${id} select`;
+      return responseData;
+    } catch (e) {
+      console.log(e);
+      throw new InternalServerErrorException();
+    }
   }
-
-  remove(id: number) {
-    return `This action removes a #${id} select`;
-  }*/
 }

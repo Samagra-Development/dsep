@@ -10,7 +10,7 @@ export class OnInitDTO {
   context: ContextInterface;
   message: {
     order: {
-      provider: string;
+      provider: ProviderInterface;
       provider_location: string;
       items: ReadonlyArray<{ id: string; quantity: number }>;
       add_ons: ReadonlyArray<{ id: string }>;
