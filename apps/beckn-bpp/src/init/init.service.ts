@@ -1,26 +1,35 @@
-import { Injectable } from '@nestjs/common';
+import { HttpService } from '@nestjs/axios';
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
+import { lastValueFrom, map } from 'rxjs';
 import { InitDTO } from './dto/init.dto';
 
 @Injectable()
 export class InitService {
-  handleInit(initDto: InitDTO) {
-    const { context, message } = initDto;
-    return 'This action adds a new init';
-  }
+  constructor(private readonly httpService: HttpService) { }
+  async handleInit(initDto: InitDTO) {
+    try {
+      const requestOptions = {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: initDto,
+        redirect: 'follow',
+      };
 
-  /*findAll() {
-    return `This action returns all init`;
-  }
+      const responseData = await lastValueFrom(
+        this.httpService
+          .post('http://localhost:5003/', initDto, requestOptions)
+          .pipe(
+            map((response) => {
+              return response.data;
+            }),
+          ),
+      );
 
-  findOne(id: number) {
-    return `This action returns a #${id} init`;
+      return responseData;
+    } catch (err) {
+      console.log(err);
+      throw new InternalServerErrorException();
+    }
   }
-
-  update(id: number, updateInitDto: UpdateInitDto) {
-    return `This action updates a #${id} init`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} init`;
-  }*/
 }
