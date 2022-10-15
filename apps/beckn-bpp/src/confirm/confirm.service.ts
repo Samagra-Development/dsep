@@ -1,26 +1,34 @@
-import { Injectable } from '@nestjs/common';
+import { HttpService } from '@nestjs/axios';
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
+import { lastValueFrom, map } from 'rxjs';
 import { ConfirmDTO } from './dto/confirm.dto';
 
 @Injectable()
 export class ConfirmService {
-  create(confirmDto: ConfirmDTO) {
-    const { context, message } = confirmDto;
-    return 'This action adds a new confirm';
-  }
+  constructor(private readonly httpSerive: HttpService) { }
+  async create(confirmDto: ConfirmDTO) {
+    try {
+      const requestOptions = {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: confirmDto,
+        redirect: 'follow',
+      };
 
-  /*findAll() {
-    return `This action returns all confirm`;
+      const responseData = await lastValueFrom(
+        this.httpSerive
+          .post('http://locahost:5003/', confirmDto, requestOptions)
+          .pipe(
+            map((response) => {
+              return response.data;
+            }),
+          ),
+      );
+      return responseData;
+    } catch (err) {
+      console.log(err);
+      throw new InternalServerErrorException();
+    }
   }
-
-  findOne(id: number) {
-    return `This action returns a #${id} confirm`;
-  }
-
-  update(id: number, updateConfirmDto: UpdateConfirmDto) {
-    return `This action updates a #${id} confirm`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} confirm`;
-  }*/
 }

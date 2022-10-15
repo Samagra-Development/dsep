@@ -11,10 +11,22 @@ import { OnUpdateModule } from './on_update/on_update.module';
 import { OnStatusModule } from './on_status/on_status.module';
 import { OnRatingModule } from './on_rating/on_rating.module';
 import { OnSupportModule } from './on_support/on_support.module';
+import { HttpModule } from '@nestjs/axios';
 
 @Module({
-  imports: [OnSearchModule, OnSelectModule, OnInitModule, OnConfirmModule, OnTrackModule, OnCancelModule, OnUpdateModule, OnStatusModule, OnRatingModule, OnSupportModule],
+  imports: [
+    OnSearchModule,
+    OnSelectModule,
+    OnInitModule,
+    OnConfirmModule,
+    OnTrackModule,
+    OnCancelModule,
+    OnUpdateModule,
+    OnStatusModule,
+    OnRatingModule,
+    OnSupportModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }
