@@ -1,26 +1,37 @@
-import { Injectable } from '@nestjs/common';
+import { HttpService } from '@nestjs/axios';
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
+import { lastValueFrom, map } from 'rxjs';
 import { RatingDTO } from './dto/rating.dto';
 
 @Injectable()
 export class RatingService {
-  create(ratingDto: RatingDTO) {
-    const { context, message } = ratingDto;
-    return 'This action adds a new rating';
-  }
+  constructor(private readonly httpService: HttpService) { }
 
-  /*findAll() {
-    return `This action returns all rating`;
-  }
+  async create(ratingDto: RatingDTO) {
+    // const { context, message } = ratingDto;
+    try {
+      const requestOptions = {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: ratingDto,
+        redirect: 'follow',
+      };
 
-  findOne(id: number) {
-    return `This action returns a #${id} rating`;
-  }
+      const responseData = await lastValueFrom(
+        this.httpService
+          .post('http://localhost:5003/', ratingDto, requestOptions)
+          .pipe(
+            map((response) => {
+              return response.data;
+            }),
+          ),
+      );
 
-  update(id: number, updateRatingDto: UpdateRatingDto) {
-    return `This action updates a #${id} rating`;
+      return responseData;
+    } catch (err) {
+      console.log(err);
+      throw new InternalServerErrorException();
+    }
   }
-
-  remove(id: number) {
-    return `This action removes a #${id} rating`;
-  }*/
 }
