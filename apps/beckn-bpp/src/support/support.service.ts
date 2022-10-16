@@ -1,26 +1,36 @@
-import { Injectable } from '@nestjs/common';
+import { HttpService } from '@nestjs/axios';
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
+import { lastValueFrom, map } from 'rxjs';
 import { SupportDTO } from './dto/support.dto';
 
 @Injectable()
 export class SupportService {
-  create(supportDto: SupportDTO) {
-    const { context, message } = supportDto;
-    return 'This action adds a new support';
-  }
+  constructor(private readonly httpService: HttpService) { }
+  async create(supportDto: SupportDTO) {
+    // cons0t { context, message } = supportDto;
+    try {
+      const requestOptions = {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: supportDto,
+        redirect: 'follow',
+      };
 
-  /*findAll() {
-    return `This action returns all support`;
-  }
+      const responseData = await lastValueFrom(
+        this.httpService
+          .post('http://localhost:5003', supportDto, requestOptions)
+          .pipe(
+            map((response) => {
+              return response.data;
+            }),
+          ),
+      );
 
-  findOne(id: number) {
-    return `This action returns a #${id} support`;
+      return responseData;
+    } catch (err) {
+      console.log(err);
+      throw new InternalServerErrorException();
+    }
   }
-
-  update(id: number, updateSupportDto: UpdateSupportDto) {
-    return `This action updates a #${id} support`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} support`;
-  }*/
 }

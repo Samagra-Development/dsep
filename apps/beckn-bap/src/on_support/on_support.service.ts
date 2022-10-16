@@ -1,26 +1,35 @@
-import { Injectable } from '@nestjs/common';
-import { CreateOnSupportDto } from './dto/create-on_support.dto';
-import { UpdateOnSupportDto } from './dto/update-on_support.dto';
+import { HttpService } from '@nestjs/axios';
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
+import { lastValueFrom, map } from 'rxjs';
+import { OnSupportDTO } from './dto/on_support.dto';
 
 @Injectable()
 export class OnSupportService {
-  create(createOnSupportDto: CreateOnSupportDto) {
-    return 'This action adds a new onSupport';
-  }
+  constructor(private readonly httpService: HttpService) { }
+  async create(onSupportDto: OnSupportDTO) {
+    try {
+      const requestOptions = {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: onSupportDto,
+        redirect: 'follow',
+      };
 
-  findAll() {
-    return `This action returns all onSupport`;
-  }
+      const responseData = await lastValueFrom(
+        this.httpService
+          .post(onSupportDto.context.bpp_uri, onSupportDto, requestOptions)
+          .pipe(
+            map((response) => {
+              return response.data;
+            }),
+          ),
+      );
 
-  findOne(id: number) {
-    return `This action returns a #${id} onSupport`;
-  }
-
-  update(id: number, updateOnSupportDto: UpdateOnSupportDto) {
-    return `This action updates a #${id} onSupport`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} onSupport`;
+      return responseData;
+    } catch (err) {
+      console.log(err);
+      throw new InternalServerErrorException();
+    }
   }
 }
