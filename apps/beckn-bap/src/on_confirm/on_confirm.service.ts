@@ -18,7 +18,7 @@ export class OnConfirmService {
 
       const responseData = await lastValueFrom(
         this.httpService
-          .post('http://localhost:5003/', onConfirmDto, requestOptions)
+          .post(onConfirmDto.context.bpp_uri, onConfirmDto, requestOptions)
           .pipe(
             map((response) => {
               return response.data;

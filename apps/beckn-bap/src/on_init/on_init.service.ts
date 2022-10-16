@@ -18,7 +18,7 @@ export class OnInitService {
 
       const responseData = await lastValueFrom(
         this.httpService
-          .post('http://localhost:5003/', onInitDto, requestOptions)
+          .post(onInitDto.context.bpp_uri, onInitDto, requestOptions)
           .pipe(
             map((response) => {
               return response.data;

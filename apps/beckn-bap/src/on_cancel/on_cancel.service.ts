@@ -17,7 +17,7 @@ export class OnCancelService {
       };
       const responseData = await lastValueFrom(
         this.httpService
-          .post('http://localhost:5003/', onCancelDto, requestOptions)
+          .post(onCancelDto.context.bpp_uri, onCancelDto, requestOptions)
           .pipe(
             map((response) => {
               return response.data;

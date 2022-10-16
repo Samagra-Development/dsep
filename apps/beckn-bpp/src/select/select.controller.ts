@@ -15,7 +15,7 @@ export class SelectController {
   constructor(private readonly selectService: SelectService) { }
 
   @Post()
-  create(@Body() selectDto: SelectDTO) {
-    return this.selectService.handleSelect(selectDto);
+  create(@Body() body) {
+    return this.selectService.handleSelect(body.message);
   }
 }

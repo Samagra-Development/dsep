@@ -21,7 +21,7 @@ export class SelectService {
     try {
       const responseData = await lastValueFrom(
         this.httpService
-          .post('http://localhost:5003/,', selectDto, requestOptions)
+          .post('http://localhost:5003/', selectDto, requestOptions)
           .pipe(
             map((response) => {
               return response.data;

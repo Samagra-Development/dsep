@@ -18,7 +18,7 @@ export class OnUpdateService {
 
       const responseData = await lastValueFrom(
         this.httpService
-          .post('http://localhost:5003', onUpdateDto, requestOptions)
+          .post(onUpdateDto.context.bpp_uri, onUpdateDto, requestOptions)
           .pipe(
             map((response) => {
               return response.data;

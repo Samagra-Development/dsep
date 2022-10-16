@@ -18,7 +18,7 @@ export class ConfirmService {
 
       const responseData = await lastValueFrom(
         this.httpSerive
-          .post('http://locahost:5003/', confirmDto, requestOptions)
+          .post('http://localhost:5003/', confirmDto, requestOptions)
           .pipe(
             map((response) => {
               return response.data;
