@@ -1,6 +1,7 @@
 import { HttpService } from '@nestjs/axios';
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { lastValueFrom, map } from 'rxjs';
+import { requestForwarder } from 'utils/utils';
 import { OnSearchDTO } from './dto/on_search.dto';
 
 @Injectable()
@@ -9,27 +10,17 @@ export class OnSearchService {
 
   async create(searchDto: OnSearchDTO) {
     //  const { context, message } = searchDto;
+    console.log('in BG on search');
 
-    const requestOptions = {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: searchDto,
-      redirect: 'follow',
-    };
+    searchDto.context.bpp_id = '301';
+    searchDto.context.bpp_uri = process.env.BPP_URI;
 
     try {
-      const responseData = await lastValueFrom(
-        this.httpService
-          .post('http://localhost:5002/search', searchDto, requestOptions)
-          .pipe(
-            map((response) => {
-              return response.data;
-            }),
-          ),
+      requestForwarder(
+        process.env.BAP_URI + '/on-search',
+        searchDto,
+        this.httpService,
       );
-
-      return responseData;
     } catch (e) {
       console.log('error: ', e);
       throw new InternalServerErrorException();

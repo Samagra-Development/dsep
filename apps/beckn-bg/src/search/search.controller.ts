@@ -6,7 +6,10 @@ import {
   Patch,
   Param,
   Delete,
+  Req,
+  Res,
 } from '@nestjs/common';
+import { Request, Response } from 'express';
 import { SearchDTO } from './dto/search.dto';
 import { SearchService } from './search.service';
 
@@ -15,7 +18,19 @@ export class SearchController {
   constructor(private readonly searchService: SearchService) { }
 
   @Post()
-  create(@Body() searchDto: SearchDTO) {
+  create(
+    @Req() req: Request,
+    @Res() res: Response,
+    @Body() searchDto: SearchDTO,
+  ) {
+    res
+      .json({
+        message: {
+          ack: 'ACK',
+        },
+      })
+      .status(200);
+
     return this.searchService.create(searchDto);
   }
 

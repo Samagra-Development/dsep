@@ -1,26 +1,32 @@
-import { Injectable } from '@nestjs/common';
+import { HttpService } from '@nestjs/axios';
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
+import { lastValueFrom } from 'rxjs';
 import { SearchDTO } from './dto/search.dto';
 
 @Injectable()
 export class SearchService {
-  create(searchDto: SearchDTO) {
-    const { context, message } = searchDto;
-    return 'This action adds a new search';
-  }
+  constructor(private readonly httpService: HttpService) { }
 
-  /*findAll() {
-    return `This action returns all search`;
-  }
+  async create(searchDto: SearchDTO) {
+    console.log('in BG');
+    try {
+      const requestOptions = {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      };
 
-  findOne(id: number) {
-    return `This action returns a #${id} search`;
+      // forward the request to BPP for discovery
+      await lastValueFrom(
+        this.httpService.post(
+          process.env.BPP_URI + '/search',
+          searchDto,
+          requestOptions,
+        ),
+      );
+    } catch (err) {
+      console.log('err: ', err);
+      throw new InternalServerErrorException();
+    }
   }
-
-  update(id: number, updateSearchDto: UpdateSearchDto) {
-    return `This action updates a #${id} search`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} search`;
-  }*/
 }
