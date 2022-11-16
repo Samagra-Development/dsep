@@ -1,4 +1,3 @@
-import { InternalServerErrorException } from '@nestjs/common';
 import {
   ConnectedSocket,
   MessageBody,
@@ -7,15 +6,16 @@ import {
   WebSocketServer,
 } from '@nestjs/websockets';
 import { Server, Socket } from 'socket.io';
+import { SearchService } from './search/search.service';
 
 @WebSocketGateway({
   cors: {
     origin: '*',
   },
-  port: process.env.AGRI_DEX_BECKN_PORT,
+  port: process.env.PROXY_PORT,
 })
 export class ClientProxyGateway {
-  constructor() { }
+  constructor(private readonly searchService: SearchService) { }
 
   @WebSocketServer() server: Server;
 
@@ -39,16 +39,10 @@ export class ClientProxyGateway {
     @MessageBody() body: any,
     @ConnectedSocket() client: Socket,
   ) {
-    // console.log('search message received: ', body);
-    // const transactionId = Date.now() + client.id; // generating the transactionID
-    // client.join(transactionId); // creating a new room with this transactionID
-    // const { block, district, bank_name } = body.filters;
-    // return this.searchService.handleSearchEvent(
-    //   transactionId,
-    //   block,
-    //   district,
-    //   bank_name,
-    // );
+    console.log('search message received: ', body);
+    const transactionId = Date.now() + client.id; // generating the transactionID
+    client.join(transactionId); // creating a new room with this transactionID
+    return this.searchService.handleSearchEvent(transactionId, body);
   }
 
   @SubscribeMessage('select')

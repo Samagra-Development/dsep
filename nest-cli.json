@@ -53,6 +53,15 @@
       "compilerOptions": {
         "tsConfigPath": "libs/schemas/tsconfig.lib.json"
       }
+    },
+    "client-proxy": {
+      "type": "application",
+      "root": "apps/client-proxy",
+      "entryFile": "main",
+      "sourceRoot": "apps/client-proxy/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/client-proxy/tsconfig.app.json"
+      }
     }
   }
 }
