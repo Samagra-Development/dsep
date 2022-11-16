@@ -13,6 +13,7 @@ import { InitModule } from './init/init.module';
 import { SelectModule } from './select/select.module';
 import { CancelModule } from './cancel/cancel.module';
 import { HttpModule } from '@nestjs/axios';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
@@ -27,6 +28,9 @@ import { HttpModule } from '@nestjs/axios';
     UpdateModule,
     RatingModule,
     SupportModule,
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
   ],
   controllers: [AppController],
   providers: [AppService, SearchService],

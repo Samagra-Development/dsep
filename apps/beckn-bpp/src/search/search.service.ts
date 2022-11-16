@@ -1,6 +1,7 @@
 import { HttpService } from '@nestjs/axios';
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { lastValueFrom, map } from 'rxjs';
+import { requestForwarder } from 'utils/utils';
 import { SearchDTO } from './dto/search.dto';
 
 @Injectable()
@@ -14,22 +15,37 @@ export class SearchService {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: searchDto,
-      redirect: 'follow',
     };
-
+    console.log('search DTO in bpp: ', searchDto);
     try {
       const responseData = await lastValueFrom(
         this.httpService
-          .post('http://localhost:5003/get-courses', searchDto, requestOptions)
+          .post(
+            process.env.MOCK_API_URI + '/courses',
+            searchDto,
+            requestOptions,
+          )
           .pipe(
             map((response) => {
               return response.data;
             }),
           ),
       );
-
-      return responseData;
+      const resp = {
+        context: {
+          ...searchDto.context,
+        },
+        message: {
+          ...responseData,
+        },
+      };
+      // forwarding the response back to BAP
+      console.log('response data: ', responseData);
+      return await requestForwarder(
+        process.env.BG_URI + '/on-search',
+        resp,
+        this.httpService,
+      );
     } catch (e) {
       console.log('error: ', e);
       throw new InternalServerErrorException();
