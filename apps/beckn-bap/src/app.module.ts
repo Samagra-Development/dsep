@@ -12,6 +12,7 @@ import { OnStatusModule } from './on_status/on_status.module';
 import { OnRatingModule } from './on_rating/on_rating.module';
 import { OnSupportModule } from './on_support/on_support.module';
 import { HttpModule } from '@nestjs/axios';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
@@ -25,6 +26,10 @@ import { HttpModule } from '@nestjs/axios';
     OnStatusModule,
     OnRatingModule,
     OnSupportModule,
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
+    HttpModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -22,7 +22,7 @@ export class OnSearchService {
       // calling the BG
       const responseData = await lastValueFrom(
         this.httpService
-          .post('http://localhost:5001/on-search', onSearchDto, requestOptions)
+          .post(process.env.PROXY_URI, onSearchDto, requestOptions)
           .pipe(
             map((response) => {
               return response.data;

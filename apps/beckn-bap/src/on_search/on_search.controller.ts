@@ -6,7 +6,10 @@ import {
   Patch,
   Param,
   Delete,
+  Res,
+  Req,
 } from '@nestjs/common';
+import { Request, Response } from 'express';
 import { OnSearchDTO } from './dto/on_search.dto';
 import { OnSearchService } from './on_search.service';
 
@@ -15,7 +18,19 @@ export class OnSearchController {
   constructor(private readonly onSearchService: OnSearchService) { }
 
   @Post()
-  create(@Body() onSearchDto: OnSearchDTO) {
+  create(
+    @Req() req: Request,
+    @Res() res: Response,
+    @Body() onSearchDto: OnSearchDTO,
+  ) {
+    console.log('in BAP onsearch');
+    res
+      .json({
+        message: {
+          ack: 'ACK',
+        },
+      })
+      .status(200);
     return this.onSearchService.create(onSearchDto);
   }
 
