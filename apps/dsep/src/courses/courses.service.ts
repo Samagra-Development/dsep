@@ -1,6 +1,6 @@
 import { HttpService } from '@nestjs/axios';
 import { Injectable } from '@nestjs/common';
-import { filter, lastValueFrom, map } from 'rxjs';
+import { lastValueFrom, map } from 'rxjs';
 import { catalogueGenerator } from 'utils/generators';
 import { DSEP_SEARCH_FILTER } from 'utils/types';
 
@@ -8,7 +8,7 @@ import { DSEP_SEARCH_FILTER } from 'utils/types';
 export class CoursesService {
   constructor(private readonly httpService: HttpService) { }
 
-  async getCourses(filters: DSEP_SEARCH_FILTER) {
+  async getCourses(filters: any) {
     const requestOptions = {
       headers: {
         'Content-Type': 'application/json',
@@ -17,9 +17,11 @@ export class CoursesService {
     };
     /**(where: {competency: {_gt: ${filters.competency}}, course_level: {_eq: ${filters.course_level}}, course_type: {_eq: ${filters.course_type}}, exams: {_ilike: %${filters.exams}%}, isCertified: {_eq: ${filters.isCertified}
 }, max_price: { _eq: ${filters.max_price} }, min_price: { _eq: ${filters.min_price} }, name: { _ilike: %${filters.query}% }, provider: { _ilike: %${filters.provider}% }, subjects: { _ilike: %${filters.exams} }, rating: { _gt: ${filters.rating} }}) */
-
+    console.log('filters: ', filters);
     const gql = `query GetCourses {
-      course_products_courses {
+      course_products_courses (where: { 
+        name: { _ilike: "%${filters.message.intent.item.descriptor.name}%" }, 
+      }) {
   competency
   course_level
   course_type
@@ -42,11 +44,13 @@ export class CoursesService {
         .post(process.env.HASURA_URI, { query: gql }, requestOptions)
         .pipe(map((item) => item.data)),
     );
-
+    if (responseData.errors) {
+      console.log('errors: ', responseData.errors);
+    }
     console.log('response data: ', responseData);
 
     const resp = catalogueGenerator(
-      filters.query || ' some string',
+      filters.message.intent.item.descriptor.name || 'some string',
       responseData.data.course_products_courses,
     );
     console.log('response data in mock api: ', resp);

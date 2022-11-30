@@ -12,6 +12,8 @@ export class SearchService {
     transactionId: string,
     searchPayload: DSEP_SEARCH_FILTER,
   ) {
+    const msg = intentGenerator(searchPayload);
+    console.log('generated intent: ', msg);
     const payload = {
       context: contextGenerator(
         transactionId,
@@ -19,9 +21,9 @@ export class SearchService {
         process.env.BAP_URI,
         '101',
       ),
-      message: intentGenerator(searchPayload),
+      message: msg,
     };
-
+    console.log('process.env.BAP_URI: ', process.env.BAP_URI);
     return await requestForwarder(
       process.env.BAP_URI,
       payload,

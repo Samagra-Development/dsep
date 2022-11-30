@@ -53,19 +53,22 @@ export const intentGenerator = (intentFilters: DSEP_SEARCH_FILTER) => {
           maximum_value: intentFilters.max_price,
         },
         rating: {
-          value: `gt ${intentFilters.rating}`,
+          value: intentFilters.rating,
         },
         tags: {
           course_level: intentFilters.course_level,
+          course_mode: intentFilters.course_mode,
           competency: intentFilters.competency,
           exams: intentFilters.exams,
-          subject: intentFilters.subjects,
+          subjects: intentFilters.subjects,
           isCertified: intentFilters.isCertified ? 'Y' : 'N',
+          course_credits: intentFilters.course_credits ? 'Y' : 'N',
+          course_duration: intentFilters.course_duration,
         },
       },
       category: {
         descriptor: {
-          name: 'Is the exam name or the subject name to be adjusted here?',
+          name: intentFilters.course_category,
         },
       },
       fulfillment: {
@@ -153,6 +156,7 @@ export const catalogueGenerator = (
                 exams: item.exams,
                 subjects: item.subjects,
                 isCertified: item.isCertified ? 'Y' : 'N',
+
               },
             };
           }),

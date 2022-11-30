@@ -8,7 +8,7 @@ import { SearchDTO } from './dto/search.dto';
 export class SearchService {
   constructor(private readonly httpService: HttpService) { }
 
-  async handleSearch(searchDto: SearchDTO) {
+  async handleSearch(searchDto: any) {
     // const { context, message } = searchDto;
 
     const requestOptions = {
@@ -16,13 +16,27 @@ export class SearchService {
         'Content-Type': 'application/json',
       },
     };
+    const provider = searchDto.message.intent.provider.descriptor.name;
+    const courseMode = searchDto.message.intent.item.tags.course_mode;
+    const courseDuration = searchDto.message.intent.item.tags.course_duration;
+    const courseCredits = searchDto.message.intent.item.tags.course_credits;
+    const courseCategory = searchDto.message.intent.category.descriptor.name;
+    const query = searchDto.message.intent.item.descriptor.name;
+
     console.log('search DTO in bpp: ', searchDto);
     try {
       const responseData = await lastValueFrom(
         this.httpService
           .post(
             process.env.MOCK_API_URI + '/courses',
-            searchDto,
+            {
+              provider,
+              courseMode,
+              courseDuration,
+              courseCredits,
+              courseCategory,
+              query,
+            },
             requestOptions,
           )
           .pipe(
@@ -31,6 +45,7 @@ export class SearchService {
             }),
           ),
       );
+      console.log('responseData: ', responseData);
       const resp = {
         context: {
           ...searchDto.context,
