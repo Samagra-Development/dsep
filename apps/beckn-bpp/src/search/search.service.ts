@@ -1,6 +1,7 @@
 import { HttpService } from '@nestjs/axios';
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { lastValueFrom, map } from 'rxjs';
+import { altCatalogueGen } from 'utils/generators';
 import { requestForwarder } from 'utils/utils';
 import { SearchDTO } from './dto/search.dto';
 
@@ -46,16 +47,20 @@ export class SearchService {
           ),
       );
       console.log('responseData: ', responseData);
+
+      // forwarding the response back to BAP
+      // console.log('response data: ', responseData);
+      const courses = responseData.data.courseList.edges;
+      // console.log('courses: ', courses);
+
+      const cata = altCatalogueGen(courses);
+      console.log('cata: ', cata);
       const resp = {
         context: {
           ...searchDto.context,
         },
-        message: {
-          ...responseData,
-        },
+        message: cata,
       };
-      // forwarding the response back to BAP
-      console.log('response data: ', responseData);
       return await requestForwarder(
         process.env.BG_URI + '/on-search',
         resp,

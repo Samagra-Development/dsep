@@ -156,7 +156,6 @@ export const catalogueGenerator = (
                 exams: item.exams,
                 subjects: item.subjects,
                 isCertified: item.isCertified ? 'Y' : 'N',
-
               },
             };
           }),
@@ -165,3 +164,50 @@ export const catalogueGenerator = (
     },
   };
 };
+
+export const altCatalogueGen = (courses: ReadonlyArray<any>) => {
+  return {
+    catalogue: {
+      descriptor: {
+        name: `Catalogue for search query`,
+      },
+      providers: {
+        id: 'Swayam',
+        descriptor: {
+          name: 'Swayam',
+        },
+        items: courses.map((item: any) => {
+          const course = item.node;
+          return {
+            id: course.id,
+            descriptor: {
+              name: course.title,
+            },
+            category_id: course.category.join(','),
+            price: {
+              currency: 'INR',
+              value: course.maximum_value ? course.maximum_value : 0,
+              maximum_value: course.maximum_value ? course.maximum_value : 0,
+              minimum_value: course.minimum_value ? course.minimum_value : 0,
+            },
+            provider: {
+              id: `Swayam- ${course.ncCode}`,
+            },
+            fulfilments: {
+              type: course.semester,
+            },
+            tags: {
+              image: course.coursePictureUrl,
+              details: course.url,
+              course_level: course.course_level,
+              competency: course.competency,
+              exams: course.exams,
+              subjects: course.subjects,
+              course_credits: course.credits ? 'Y' : 'N',
+            },
+          };
+        }),
+      }
+    }
+  };
+}
