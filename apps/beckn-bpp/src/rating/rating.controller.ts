@@ -24,6 +24,6 @@ export class RatingController {
     @Body() ratingDto: RatingDTO,
   ) {
     sendAcknowledgement(res, 'ACK');
-    return this.ratingService.create(ratingDto);
+    return this.ratingService.handleRating(ratingDto);
   }
 }
