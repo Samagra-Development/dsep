@@ -6,6 +6,6 @@ import { HttpModule } from '@nestjs/axios';
 @Module({
   imports: [HttpModule],
   controllers: [OnRatingController],
-  providers: [OnRatingService]
+  providers: [OnRatingService],
 })
-export class OnRatingModule { }
+export class OnRatingModule {}

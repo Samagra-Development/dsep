@@ -4,7 +4,7 @@ import { AppService } from './app.service';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) { }
+  constructor(private readonly appService: AppService) {}
 
   @Get()
   getHello(): string {
@@ -17,7 +17,7 @@ export class AppController {
     @Res() res: Response,
     @Body() body: any,
   ) {
-    console.log('in bap controller');
+    console.log('Request Received in BAP Initial Request Controller');
     res
       .json({
         message: {

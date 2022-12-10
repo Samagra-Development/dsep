@@ -1,59 +1,30 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Patch,
-  Param,
-  Delete,
-  Res,
-  Req,
-} from '@nestjs/common';
+import { Controller, Post, Body, Res, Req } from '@nestjs/common';
+import { ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { Request, Response } from 'express';
+import { sendAcknowledgement } from 'utils/utils';
 import { OnSearchDTO } from './dto/on_search.dto';
 import { OnSearchService } from './on_search.service';
 
 @Controller('on-search')
 export class OnSearchController {
-  constructor(private readonly onSearchService: OnSearchService) { }
+  constructor(private readonly onSearchService: OnSearchService) {}
 
   @Post()
+  @ApiOperation({
+    summary:
+      'validate the on-search request from BPP with the catalogue and forward it to the client',
+  })
+  @ApiResponse({
+    status: 200,
+    description: 'Acknowledgement of received request',
+  })
   create(
     @Req() req: Request,
     @Res() res: Response,
     @Body() onSearchDto: OnSearchDTO,
   ) {
     console.log('in BAP onsearch');
-    res
-      .json({
-        message: {
-          ack: 'ACK',
-        },
-      })
-      .status(200);
-    return this.onSearchService.create(onSearchDto);
+    sendAcknowledgement(res, 'ACK');
+    return this.onSearchService.handleOnSearch(onSearchDto);
   }
-
-  /*@Get()
-  findAll() {
-    return this.onSearchService.findAll();
-  }
-
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.onSearchService.findOne(+id);
-  }
-
-  @Patch(':id')
-  update(
-    @Param('id') id: string,
-    @Body() updateOnSearchDto: UpdateOnSearchDto,
-  ) {
-    return this.onSearchService.update(+id, updateOnSearchDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.onSearchService.remove(+id);
-  }*/
 }

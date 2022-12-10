@@ -1,21 +1,29 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Patch,
-  Param,
-  Delete,
-} from '@nestjs/common';
+import { Controller, Post, Body, Req, Res } from '@nestjs/common';
 import { OnInitService } from './on_init.service';
 import { OnInitDTO } from './dto/on_init.dto';
+import { ApiOperation, ApiResponse } from '@nestjs/swagger';
+import { sendAcknowledgement } from 'utils/utils';
+import { Request, Response } from 'express';
 
 @Controller('on-init')
 export class OnInitController {
-  constructor(private readonly onInitService: OnInitService) { }
+  constructor(private readonly onInitService: OnInitService) {}
 
   @Post()
-  create(@Body() onInitDto: OnInitDTO) {
-    return this.onInitService.create(onInitDto);
+  @ApiOperation({
+    summary: 'validate the request from BPP and forward it to the client',
+  })
+  @ApiResponse({
+    status: 200,
+    description: 'Acknowledgement of received request',
+  })
+  create(
+    @Req() req: Request,
+    @Res() res: Response,
+    @Body() onInitDto: OnInitDTO,
+  ) {
+    console.log('in BAP oninit');
+    sendAcknowledgement(res, 'ACK');
+    return this.onInitService.handleOnInit(onInitDto);
   }
 }

@@ -1,34 +1,19 @@
 import { HttpService } from '@nestjs/axios';
-import { Injectable, InternalServerErrorException } from '@nestjs/common';
-import { lastValueFrom, map } from 'rxjs';
+import { Injectable } from '@nestjs/common';
+import { requestForwarder } from 'utils/utils';
 import { OnCancelDTO } from './dto/on_cancel.dto';
 
 @Injectable()
 export class OnCancelService {
-  constructor(private readonly httpService: HttpService) { }
-  async create(onCancelDto: OnCancelDTO) {
-    try {
-      const requestOptions = {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: onCancelDto,
-        redirect: 'follow',
-      };
-      const responseData = await lastValueFrom(
-        this.httpService
-          .post(onCancelDto.context.bpp_uri, onCancelDto, requestOptions)
-          .pipe(
-            map((response) => {
-              return response.data;
-            }),
-          ),
-      );
+  constructor(private readonly httpService: HttpService) {}
 
-      return responseData;
-    } catch (err) {
-      console.log(err);
-      throw new InternalServerErrorException();
-    }
+  async handleOnCancel(onCancelDto: OnCancelDTO) {
+    // TODO: validate the on-cancel request
+
+    return requestForwarder(
+      process.env.PROXY_URI,
+      onCancelDto,
+      this.httpService,
+    );
   }
 }

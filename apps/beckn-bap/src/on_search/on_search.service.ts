@@ -1,39 +1,18 @@
 import { HttpService } from '@nestjs/axios';
-import { Injectable, InternalServerErrorException } from '@nestjs/common';
-import { lastValueFrom, map } from 'rxjs';
-import { OnSearchRespDTO } from '../Resp.dto';
+import { Injectable } from '@nestjs/common';
+import { requestForwarder } from 'utils/utils';
 import { OnSearchDTO } from './dto/on_search.dto';
 
 @Injectable()
 export class OnSearchService {
-  constructor(private readonly httpService: HttpService) { }
-  async create(onSearchDto: OnSearchDTO) {
-    // const { context, message } = onSearchDto;
+  constructor(private readonly httpService: HttpService) {}
+  async handleOnSearch(onSearchDto: OnSearchDTO) {
+    // TODO: validate the request from BPP
 
-    const requestOptions = {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: onSearchDto,
-      redirect: 'follow',
-    };
-
-    try {
-      // calling the BG
-      const responseData = await lastValueFrom(
-        this.httpService
-          .post(process.env.PROXY_URI, onSearchDto, requestOptions)
-          .pipe(
-            map((response) => {
-              return response.data;
-            }),
-          ),
-      );
-
-      return responseData;
-    } catch (e) {
-      console.log('error: ', e);
-      throw new InternalServerErrorException();
-    }
+    return requestForwarder(
+      process.env.PROXY_URI,
+      onSearchDto,
+      this.httpService,
+    );
   }
 }

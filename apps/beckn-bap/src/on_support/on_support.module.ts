@@ -8,4 +8,4 @@ import { HttpModule } from '@nestjs/axios';
   controllers: [OnSupportController],
   providers: [OnSupportService],
 })
-export class OnSupportModule { }
+export class OnSupportModule {}

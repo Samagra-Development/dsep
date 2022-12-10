@@ -1,35 +1,19 @@
 import { HttpService } from '@nestjs/axios';
-import { Injectable, InternalServerErrorException } from '@nestjs/common';
-import { lastValueFrom, map } from 'rxjs';
+import { Injectable } from '@nestjs/common';
+import { requestForwarder } from 'utils/utils';
 import { OnConfirmDTO } from './dto/on_confirm.dto';
 
 @Injectable()
 export class OnConfirmService {
-  constructor(private readonly httpService: HttpService) { }
-  async create(onConfirmDto: OnConfirmDTO) {
-    try {
-      const requestOptions = {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: onConfirmDto,
-        redirect: 'follow',
-      };
+  constructor(private readonly httpService: HttpService) {}
 
-      const responseData = await lastValueFrom(
-        this.httpService
-          .post(onConfirmDto.context.bpp_uri, onConfirmDto, requestOptions)
-          .pipe(
-            map((response) => {
-              return response.data;
-            }),
-          ),
-      );
+  async handleOnConfirm(onConfirmDto: OnConfirmDTO) {
+    // TODO: validate the on-confirm request
 
-      return responseData;
-    } catch (err) {
-      console.log(err);
-      throw new InternalServerErrorException();
-    }
+    return requestForwarder(
+      process.env.PROXY_URI,
+      onConfirmDto,
+      this.httpService,
+    );
   }
 }

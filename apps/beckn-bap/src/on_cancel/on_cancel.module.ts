@@ -6,6 +6,6 @@ import { HttpModule } from '@nestjs/axios';
 @Module({
   imports: [HttpModule],
   controllers: [OnCancelController],
-  providers: [OnCancelService]
+  providers: [OnCancelService],
 })
-export class OnCancelModule { }
+export class OnCancelModule {}

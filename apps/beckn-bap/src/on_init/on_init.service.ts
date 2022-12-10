@@ -1,35 +1,15 @@
 import { HttpService } from '@nestjs/axios';
-import { Injectable, InternalServerErrorException } from '@nestjs/common';
-import { lastValueFrom, map } from 'rxjs';
+import { Injectable } from '@nestjs/common';
+import { requestForwarder } from 'utils/utils';
 import { OnInitDTO } from './dto/on_init.dto';
 
 @Injectable()
 export class OnInitService {
-  constructor(private readonly httpService: HttpService) { }
-  async create(onInitDto: OnInitDTO) {
-    try {
-      const requestOptions = {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: onInitDto,
-        redirect: 'follow',
-      };
+  constructor(private readonly httpService: HttpService) {}
 
-      const responseData = await lastValueFrom(
-        this.httpService
-          .post(onInitDto.context.bpp_uri, onInitDto, requestOptions)
-          .pipe(
-            map((response) => {
-              return response.data;
-            }),
-          ),
-      );
+  async handleOnInit(onInitDto: OnInitDTO) {
+    // TODO: validate the on-init request
 
-      return responseData;
-    } catch (er) {
-      console.log(er);
-      throw new InternalServerErrorException();
-    }
+    return requestForwarder(process.env.PROXY_URL, onInitDto, this.httpService);
   }
 }
