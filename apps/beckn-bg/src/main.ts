@@ -7,7 +7,7 @@ async function bootstrap() {
 
   // setup swagger
   const config = new DocumentBuilder()
-    .setTitle('DSE-BG API')
+    .setTitle('DSEP-BG API')
     .setDescription(
       'APIs for the Beckn Gateway for Decentralized Skilling and Education Protocol',
     )
