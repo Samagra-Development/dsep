@@ -1,26 +1,25 @@
+import { HttpService } from '@nestjs/axios';
 import { Injectable } from '@nestjs/common';
+import { requestForwarder } from 'utils/utils';
 import { StatusDTO } from './dto/status.dto';
 
 @Injectable()
 export class StatusService {
-  create(statusDto: StatusDTO) {
-    const { context, message } = statusDto;
-    return 'This action adds a new status';
-  }
+  constructor(private readonly httpService: HttpService) {}
+  async handleStatus(statusDto: StatusDTO) {
+    // TODO: validate the request from BAP
 
-  /*findAll() {
-    return `This action returns all status`;
-  }
+    const statusResponse = await requestForwarder(
+      'PROVIDER_URL',
+      statusDto,
+      this.httpService,
+    );
 
-  findOne(id: number) {
-    return `This action returns a #${id} status`;
+    // forwarding the response from provider back to BAP /on-status
+    return await requestForwarder(
+      statusDto.context.bap_uri + '/on-status',
+      statusResponse,
+      this.httpService,
+    );
   }
-
-  update(id: number, updateStatusDto: UpdateStatusDto) {
-    return `This action updates a #${id} status`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} status`;
-  }*/
 }

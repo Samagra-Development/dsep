@@ -1,34 +1,28 @@
 import { HttpService } from '@nestjs/axios';
-import { Injectable, InternalServerErrorException } from '@nestjs/common';
-import { lastValueFrom, map } from 'rxjs';
+import { Injectable } from '@nestjs/common';
+import { requestForwarder } from 'utils/utils';
 import { ConfirmDTO } from './dto/confirm.dto';
 
 @Injectable()
 export class ConfirmService {
-  constructor(private readonly httpSerive: HttpService) { }
-  async create(confirmDto: ConfirmDTO) {
-    try {
-      const requestOptions = {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: confirmDto,
-        redirect: 'follow',
-      };
+  constructor(private readonly httpSerive: HttpService) {}
+  async handleConfirm(confirmDto: ConfirmDTO) {
+    // TODO: validate the confirm request
 
-      const responseData = await lastValueFrom(
-        this.httpSerive
-          .post('http://localhost:5003/', confirmDto, requestOptions)
-          .pipe(
-            map((response) => {
-              return response.data;
-            }),
-          ),
-      );
-      return responseData;
-    } catch (err) {
-      console.log(err);
-      throw new InternalServerErrorException();
-    }
+    const providerURLMap = {};
+    const providerURL =
+      providerURLMap[confirmDto.message.order.provider.descriptor.name];
+    const confirmResponse = await requestForwarder(
+      providerURL,
+      confirmDto,
+      this.httpSerive,
+    );
+
+    // forwarding the response back to BAP /on-confirm
+    return await requestForwarder(
+      confirmDto.context.bap_uri + '/on-confirm',
+      confirmResponse,
+      this.httpSerive,
+    );
   }
 }

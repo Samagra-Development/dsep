@@ -1,36 +1,25 @@
 import { HttpService } from '@nestjs/axios';
-import { Injectable, InternalServerErrorException } from '@nestjs/common';
-import { lastValueFrom, map } from 'rxjs';
+import { Injectable } from '@nestjs/common';
+import { requestForwarder } from 'utils/utils';
 import { UpdateDTO } from './dto/update.dto';
 
 @Injectable()
 export class UpdateService {
-  constructor(private readonly httpService: HttpService) { }
+  constructor(private readonly httpService: HttpService) {}
   async handleUpdate(updateDto: UpdateDTO) {
-    // const { context, message } = updateDto;
-    try {
-      const requestOptions = {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: updateDto,
-        redirect: 'follow',
-      };
+    // TODO: validate request
 
-      const responseData = await lastValueFrom(
-        this.httpService
-          .post('http://localhost:5003', updateDto, requestOptions)
-          .pipe(
-            map((response) => {
-              return response.data;
-            }),
-          ),
-      );
+    const updateResponse = await requestForwarder(
+      'PROVIDER_URL',
+      updateDto,
+      this.httpService,
+    );
 
-      return responseData;
-    } catch (err) {
-      console.log(err);
-      throw new InternalServerErrorException();
-    }
+    // forwarding the response back to BAP /on-update
+    return await requestForwarder(
+      updateDto.context.bap_uri + '/on-update',
+      updateResponse,
+      this.httpService,
+    );
   }
 }

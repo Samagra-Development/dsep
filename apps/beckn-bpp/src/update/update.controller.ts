@@ -1,41 +1,29 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Patch,
-  Param,
-  Delete,
-} from '@nestjs/common';
+import { Controller, Post, Body, Req, Res } from '@nestjs/common';
+import { ApiOperation, ApiResponse } from '@nestjs/swagger';
+import { Request, Response } from 'express';
+import { sendAcknowledgement } from 'utils/utils';
 import { UpdateDTO } from './dto/update.dto';
 import { UpdateService } from './update.service';
 
 @Controller('update')
 export class UpdateController {
-  constructor(private readonly updateService: UpdateService) { }
+  constructor(private readonly updateService: UpdateService) {}
 
   @Post()
-  handleUpdate(@Body() updateDto: UpdateDTO) {
+  @ApiOperation({
+    summary:
+      'validate the request from BAP and forward it to the all the relevant onboarded provider',
+  })
+  @ApiResponse({
+    status: 200,
+    description: 'Updated order from the provider',
+  })
+  handleUpdate(
+    @Req() req: Request,
+    @Res() res: Response,
+    @Body() updateDto: UpdateDTO,
+  ) {
+    sendAcknowledgement(res, 'ACK');
     return this.updateService.handleUpdate(updateDto);
   }
-
-  /*@Get()
-  findAll() {
-    return this.updateService.findAll();
-  }
-
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.updateService.findOne(+id);
-  }
-
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateUpdateDto: UpdateUpdateDto) {
-    return this.updateService.update(+id, updateUpdateDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.updateService.remove(+id);
-  }*/
 }

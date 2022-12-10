@@ -1,37 +1,26 @@
 import { HttpService } from '@nestjs/axios';
-import { Injectable, InternalServerErrorException } from '@nestjs/common';
-import { lastValueFrom, map } from 'rxjs';
+import { Injectable } from '@nestjs/common';
+import { requestForwarder } from 'utils/utils';
 import { RatingDTO } from './dto/rating.dto';
 
 @Injectable()
 export class RatingService {
-  constructor(private readonly httpService: HttpService) { }
+  constructor(private readonly httpService: HttpService) {}
 
-  async create(ratingDto: RatingDTO) {
-    // const { context, message } = ratingDto;
-    try {
-      const requestOptions = {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: ratingDto,
-        redirect: 'follow',
-      };
+  async handleRating(ratingDto: RatingDTO) {
+    // TODO: validate request
 
-      const responseData = await lastValueFrom(
-        this.httpService
-          .post('http://localhost:5003/', ratingDto, requestOptions)
-          .pipe(
-            map((response) => {
-              return response.data;
-            }),
-          ),
-      );
+    const ratingResponse = await requestForwarder(
+      'PROVIDER_URL',
+      ratingDto,
+      this.httpService,
+    );
 
-      return responseData;
-    } catch (err) {
-      console.log(err);
-      throw new InternalServerErrorException();
-    }
+    // forwarding the response back to BAP /on-rating
+    return await requestForwarder(
+      ratingDto.context.bap_uri + '/on-rating',
+      ratingResponse,
+      this.httpService,
+    );
   }
 }

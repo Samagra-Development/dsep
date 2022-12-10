@@ -1,26 +1,25 @@
+import { HttpService } from '@nestjs/axios';
 import { Injectable } from '@nestjs/common';
+import { requestForwarder } from 'utils/utils';
 import { TrackDTO } from './dto/track.dto';
 
 @Injectable()
 export class TrackService {
-  handleTrack(trackDto: TrackDTO) {
-    const { context, message } = trackDto;
-    return 'This action adds a new track';
-  }
+  constructor(private readonly httpService: HttpService) {}
+  async handleTrack(trackDto: TrackDTO) {
+    // TODO: validate request
 
-  /*findAll() {
-    return `This action returns all track`;
-  }
+    const trackResponse = await requestForwarder(
+      'PROVIDER_URL',
+      trackDto,
+      this.httpService,
+    );
 
-  findOne(id: number) {
-    return `This action returns a #${id} track`;
+    // forwarding the response back to BAP /on-track
+    return await requestForwarder(
+      trackDto.context.bap_uri + '/on-track',
+      trackResponse,
+      this.httpService,
+    );
   }
-
-  update(id: number, updateTrackDto: UpdateTrackDto) {
-    return `This action updates a #${id} track`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} track`;
-  }*/
 }

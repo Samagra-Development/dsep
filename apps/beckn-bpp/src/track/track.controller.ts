@@ -1,41 +1,29 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Patch,
-  Param,
-  Delete,
-} from '@nestjs/common';
+import { Controller, Post, Body, Req, Res } from '@nestjs/common';
+import { ApiOperation, ApiResponse } from '@nestjs/swagger';
+import { Request, Response } from 'express';
+import { sendAcknowledgement } from 'utils/utils';
 import { TrackDTO } from './dto/track.dto';
 import { TrackService } from './track.service';
 
 @Controller('track')
 export class TrackController {
-  constructor(private readonly trackService: TrackService) { }
+  constructor(private readonly trackService: TrackService) {}
 
   @Post()
-  create(@Body() trackDto: TrackDTO) {
+  @ApiOperation({
+    summary:
+      'validate the request from BAP and forward it to the all the relevant onboarded provider',
+  })
+  @ApiResponse({
+    status: 200,
+    description: 'Updated order from the provider',
+  })
+  create(
+    @Req() req: Request,
+    @Res() res: Response,
+    @Body() trackDto: TrackDTO,
+  ) {
+    sendAcknowledgement(res, 'ACK');
     return this.trackService.handleTrack(trackDto);
   }
-
-  /*@Get()
-  findAll() {
-    return this.trackService.findAll();
-  }
-
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.trackService.findOne(+id);
-  }
-
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateTrackDto: UpdateTrackDto) {
-    return this.trackService.update(+id, updateTrackDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.trackService.remove(+id);
-  }*/
 }

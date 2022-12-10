@@ -1,36 +1,25 @@
 import { HttpService } from '@nestjs/axios';
-import { Injectable, InternalServerErrorException } from '@nestjs/common';
-import { lastValueFrom, map } from 'rxjs';
+import { Injectable } from '@nestjs/common';
+import { requestForwarder } from 'utils/utils';
 import { SupportDTO } from './dto/support.dto';
 
 @Injectable()
 export class SupportService {
-  constructor(private readonly httpService: HttpService) { }
-  async create(supportDto: SupportDTO) {
-    // cons0t { context, message } = supportDto;
-    try {
-      const requestOptions = {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: supportDto,
-        redirect: 'follow',
-      };
+  constructor(private readonly httpService: HttpService) {}
+  async handleSupport(supportDto: SupportDTO) {
+    // TODO: validate request
 
-      const responseData = await lastValueFrom(
-        this.httpService
-          .post('http://localhost:5003', supportDto, requestOptions)
-          .pipe(
-            map((response) => {
-              return response.data;
-            }),
-          ),
-      );
+    const supportResponse = await requestForwarder(
+      'PROVIDER_URL',
+      supportDto,
+      this.httpService,
+    );
 
-      return responseData;
-    } catch (err) {
-      console.log(err);
-      throw new InternalServerErrorException();
-    }
+    // forwarding the response back to BAP /on-support
+    return await requestForwarder(
+      supportDto.context.bap_uri + '/on-support',
+      supportResponse,
+      this.httpService,
+    );
   }
 }
