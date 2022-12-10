@@ -1,5 +1,6 @@
 import { HttpService } from '@nestjs/axios';
 import { InternalServerErrorException } from '@nestjs/common';
+import { Response } from 'express';
 import { lastValueFrom } from 'rxjs';
 
 const requestForwarder = async (
@@ -18,9 +19,17 @@ const requestForwarder = async (
     console.log('calling request forwarder');
     return await lastValueFrom(httpService.post(url, reqData, requestOptions));
   } catch (err) {
-    console.log('err: ', err);
-    return new InternalServerErrorException();
+    console.log('error in request forwarder: ', err);
+    return new InternalServerErrorException(err);
   }
 };
 
-export { requestForwarder };
+const sendAcknowledgement = (res: Response, ack: string) => {
+  res.status(200).json({
+    message: {
+      ack: ack,
+    },
+  });
+};
+
+export { requestForwarder, sendAcknowledgement };
