@@ -78,12 +78,13 @@ export class SearchService {
     // TODO: Validate the search request
     // TODO: Figure out how to get the list of all onboarded providers (env vars or something else?)
 
-    const searchResponse: any = await requestForwarder(
+    let searchResponse: any = await requestForwarder(
       process.env.MOCK_API_URI,
       searchDto,
       this.httpService,
     );
-
+    searchResponse = searchResponse.data;
+    console.log('search response: ', searchResponse);
     // add BPP ID and BPP URI in the context here
     searchResponse.context.bpp_id = process.env.BPP_ID;
     searchResponse.context.bpp_uri = process.env.BPP_URI;

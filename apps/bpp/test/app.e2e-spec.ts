@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
-import { BecknBppModule } from './../src/beckn-bpp.module';
+import { BecknBppModule } from '../src/beckn-bpp.module';
 
 describe('BecknBppController (e2e)', () => {
   let app: INestApplication;
