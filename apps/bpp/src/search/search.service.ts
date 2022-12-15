@@ -86,8 +86,8 @@ export class SearchService {
     searchResponse = searchResponse.data;
     console.log('search response: ', searchResponse);
     // add BPP ID and BPP URI in the context here
-    searchResponse.context.bpp_id = process.env.BPP_ID;
-    searchResponse.context.bpp_uri = process.env.BPP_URI;
+    searchResponse.context.bpp_id = 'bpp.dsep.samagra.io';
+    searchResponse.context.bpp_uri = 'https://bpp.dsep.samagra.io';
 
     // forward this catalogue back to BG /on-search
     return await requestForwarder(
