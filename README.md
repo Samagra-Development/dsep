@@ -35,6 +35,14 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+## Work Around
+```bash
+# In case server doesn't start with the above command than execute the following commands on separate terminal
+$ npx yarn start bap
+$ npx yarn start bg 
+$ npx yarn start bpp
+```
+
 ## Test
 
 ```bash
