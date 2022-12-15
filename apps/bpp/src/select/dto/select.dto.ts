@@ -1,9 +1,6 @@
-import ContextInterface from 'dsep-beckn-schema/schemas/Context.interface';
-import OrderInterface from 'dsep-beckn-schema/schemas/Order.interface';
+import { components } from 'types/schema';
 
 export class SelectDTO {
-  context: ContextInterface;
-  message: {
-    order: OrderInterface;
-  };
+  context: components['schemas']['Context'];
+  message: components['schemas']['Order'];
 }

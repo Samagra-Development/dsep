@@ -1,18 +1,8 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Patch,
-  Param,
-  Delete,
-  Res,
-  Req,
-} from '@nestjs/common';
+import { Controller, Post, Body, Res, Req } from '@nestjs/common';
 import { ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { Request, Response } from 'express';
-import { SearchDTO } from './dto/search.dto';
 import { SearchService } from './search.service';
+import { SearchDTO } from './dto/search.dto';
 
 @Controller('search')
 export default class SearchController {
@@ -27,11 +17,15 @@ export default class SearchController {
     status: 200,
     description: 'Product catalogue for the search request',
   })
-  create(@Req() req: Request, @Res() res: Response, @Body() searchDto: any) {
+  create(
+    @Req() req: Request,
+    @Res() res: Response,
+    @Body() searchDto: SearchDTO,
+  ) {
     searchDto.context.domain = 'dsep:courses';
     searchDto.context.action = 'search';
-    searchDto.context.BPP_ID = '101';
-    searchDto.context.BPP_URI = 'https://bpp.dsep.swayam.samagra.io';
+    searchDto.context.bpp_id = 'bpp.dsep.swayam.samagra.io';
+    searchDto.context.bpp_uri = 'https://bpp.dsep.swayam.samagra.io';
     res
       .json({
         context: searchDto.context,
