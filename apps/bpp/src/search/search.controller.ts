@@ -27,13 +27,14 @@ export default class SearchController {
     status: 200,
     description: 'Product catalogue for the search request',
   })
-  create(
-    @Req() req: Request,
-    @Res() res: Response,
-    @Body() searchDto: SearchDTO,
-  ) {
+  create(@Req() req: Request, @Res() res: Response, @Body() searchDto: any) {
+    searchDto.context.domain = 'dsep:courses';
+    searchDto.context.action = 'search';
+    searchDto.context.BPP_ID = '101';
+    searchDto.context.BPP_URI = 'https://bpp.dsep.swayam.samagra.io';
     res
       .json({
+        context: searchDto.context,
         message: {
           ack: 'ACK',
         },
