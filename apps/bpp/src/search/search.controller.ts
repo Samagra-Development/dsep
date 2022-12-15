@@ -3,6 +3,7 @@ import { ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { Request, Response } from 'express';
 import { SearchService } from './search.service';
 import { SearchDTO } from './dto/search.dto';
+import { sendAcknowledgement } from 'utils/utils';
 
 @Controller('search')
 export default class SearchController {
@@ -26,14 +27,7 @@ export default class SearchController {
     searchDto.context.action = 'search';
     searchDto.context.bpp_id = 'bpp.dsep.samagra.io';
     searchDto.context.bpp_uri = 'https://bpp.dsep.samagra.io';
-    res
-      .json({
-        context: searchDto.context,
-        message: {
-          ack: 'ACK',
-        },
-      })
-      .status(200);
+    sendAcknowledgement(res, 'ACK');
     return this.searchService.handleSearch(searchDto);
   }
 }

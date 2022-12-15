@@ -27,7 +27,9 @@ const requestForwarder = async (
 const sendAcknowledgement = (res: Response, ack: string) => {
   res.status(200).json({
     message: {
-      ack: ack,
+      ack: {
+        status: 'ACK',
+      },
     },
   });
 };
