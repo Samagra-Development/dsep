@@ -11,11 +11,13 @@
     "timestamp": "2022-12-12T09:55:41.161Z"
   },
   "message": {
-    "item": {
-      "descriptor": {
-        "name": "Online Marketig Courses"
-      },
-      "rating": "gt 3.5"
+    "intent": {
+      "item": {
+        "descriptor": {
+          "name": "Online Marketig Courses"
+        },
+        "rating": "gt 3.5"
+      }
     }
   }
 }
