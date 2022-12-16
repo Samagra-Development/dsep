@@ -11,12 +11,12 @@
     "timestamp": "2022-12-12T09:55:41.161Z"
   },
   "message": {
-    "fulfillment": {
-      "agent": {
-        "address": "IIT Delhi"
-      }
-    },
     "intent": {
+      "fulfillment": {
+        "agent": {
+          "address": "IIT Delhi"
+        }
+      },
       "item": {
         "descriptor": {
           "name": "Economics"
