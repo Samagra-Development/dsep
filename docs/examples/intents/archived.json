@@ -11,12 +11,14 @@
     "timestamp": "2022-12-12T09:55:41.161Z"
   },
   "message": {
-    "item": {
-      "descriptor": {
-        "name": "Machine Learning"
-      },
-      "tags": {
-        "status": "archived"
+    "intent": {
+      "item": {
+        "descriptor": {
+          "name": "Machine Learning"
+        },
+        "tags": {
+          "status": "archived"
+        }
       }
     }
   }
