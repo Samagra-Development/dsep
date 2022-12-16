@@ -12,13 +12,18 @@
   },
   "message": {
     "intent": {
+      "fulfillment": {
+        "agent": {
+          "name": "Andrew Ng"
+        }
+      },
       "item": {
         "descriptor": {
-          "name": "Advanced Data Structures"
+          "name": "Machine Learning"
         },
         "tags": {
           "credits": "5",
-          "content_language": "Hindi"
+          "transcript_language": "Hindi"
         }
       }
     }
