@@ -20,21 +20,6 @@ export const contextGenerator = (
   };
 };
 
-// export const messageGenerator = () => { };
-
-export const generateOrder = (action: string) => {
-  switch (action) {
-    case 'select':
-      break;
-    case 'init':
-      break;
-    case 'confirm':
-      break;
-    default:
-      break;
-  }
-};
-
 export const intentGenerator = (intentFilters: DSEP_SEARCH_FILTER) => {
   return {
     intent: {
@@ -207,7 +192,7 @@ export const altCatalogueGen = (courses: ReadonlyArray<any>) => {
             },
           };
         }),
-      }
-    }
+      },
+    },
   };
-}
+};

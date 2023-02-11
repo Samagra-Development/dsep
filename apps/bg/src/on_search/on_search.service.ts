@@ -12,7 +12,7 @@ export class OnSearchService {
 
     // forward the request to BAP
     return requestForwarder(
-      onSearchDto.context.bap_uri + '/on-search',
+      onSearchDto.context.bap_uri + '/on_search',
       onSearchDto,
       this.httpService,
     );

@@ -5,7 +5,7 @@ import { ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { Request, Response } from 'express';
 import { sendAcknowledgement } from 'utils/utils';
 
-@Controller('on-select')
+@Controller('on_select')
 export class OnSelectController {
   constructor(private readonly onSelectService: OnSelectService) {}
 

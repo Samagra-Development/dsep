@@ -5,7 +5,7 @@ import { ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { Request, Response } from 'express';
 import { sendAcknowledgement } from 'utils/utils';
 
-@Controller('on-confirm')
+@Controller('on_confirm')
 export class OnConfirmController {
   constructor(private readonly onConfirmService: OnConfirmService) {}
 

@@ -5,7 +5,7 @@ import { sendAcknowledgement } from 'utils/utils';
 import { OnSearchDTO } from './dto/on_search.dto';
 import { OnSearchService } from './on_search.service';
 
-@Controller('on-search')
+@Controller('on_search')
 export class OnSearchController {
   constructor(private readonly onSearchService: OnSearchService) {}
 

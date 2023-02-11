@@ -20,6 +20,6 @@ export class SelectController {
   })
   create(@Req() req: Request, @Res() res: Response, @Body() body) {
     sendAcknowledgement(res, 'ACK');
-    return this.selectService.handleSelect(body.message);
+    return this.selectService.handleSelect(body);
   }
 }

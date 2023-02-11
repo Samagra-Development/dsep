@@ -1,9 +1,9 @@
 import { HttpService } from '@nestjs/axios';
-import { Injectable } from '@nestjs/common';
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
+import { last, lastValueFrom, map } from 'rxjs';
 import { requestForwarder } from 'utils/utils';
+import { createAuthorizationHeader } from '../utils/authBuilder';
 import { SelectDTO } from './dto/select.dto';
-// import { CreateSelectDto } from './dto/create-select.dto';
-// import { UpdateSelectDto } from './dto/update-select.dto';
 
 @Injectable()
 export class SelectService {
@@ -11,48 +11,58 @@ export class SelectService {
 
   async handleSelect(selectDto: SelectDTO) {
     // TODO: validate the select request
-    // TODO: map out the provider's URL from the selectDto provider.descriptor.name
+    console.log('selectDto in select: ', selectDto);
+    if (!selectDto.context.bap_uri)
+      throw new InternalServerErrorException(
+        'Invalid context: No BAP_URI not found in context',
+      );
 
-    const providerURLMap = {};
+    // forward the request to provider
+    // const selectResponse: any = await requestForwarder(
+    //   process.env.MOCK_API_URI + '/select',
+    //   selectDto,
+    //   this.httpService,
+    // );
 
-    const selectResponse = await requestForwarder(
-      providerURLMap[selectDto.message.order.provider.descriptor.name],
-      selectDto,
-      this.httpService,
+    const selectResponse = await lastValueFrom(
+      this.httpService
+        .post(process.env.MOCK_API_URI + '/select', selectDto)
+        .pipe(map((item) => item.data)),
     );
 
-    // forward the response back to BAP /on-select
-    return await requestForwarder(
-      selectDto.context.bap_uri + '/on-select',
-      selectResponse,
-      this.httpService,
-    );
+    // forward the response back to BAP /on_select
+    try {
+      const authHeader = await createAuthorizationHeader(selectResponse).then(
+        (res) => {
+          console.log(res);
+          return res;
+        },
+      );
+      console.log('auth header: ', authHeader);
+
+      const requestOptions = {
+        headers: {
+          'Content-Type': 'application/json',
+          authorization: authHeader,
+        },
+        withCredentials: true,
+        mode: 'cors',
+      };
+      console.log('calling request forwarder');
+      console.log('select repsonse before forwarding to bap: ', selectResponse);
+
+      selectResponse['context']['action'] = 'on_select';
+
+      return await lastValueFrom(
+        this.httpService.post(
+          selectResponse.context.bap_uri + '/on_select',
+          selectResponse,
+          requestOptions,
+        ),
+      );
+    } catch (err) {
+      console.log('error in request forwarder: ', err);
+      return new InternalServerErrorException(err);
+    }
   }
-
-  // async handleSelect(selectDto: SelectDTO) {
-  //   // const { context, message } = selectDto;
-  //   const requestOptions = {
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: selectDto,
-  //     redirect: 'follow',
-  //   };
-  //   try {
-  //     const responseData = await lastValueFrom(
-  //       this.httpService
-  //         .post('http://localhost:5003/', selectDto, requestOptions)
-  //         .pipe(
-  //           map((response) => {
-  //             return response.data;
-  //           }),
-  //         ),
-  //     );
-
-  //     return responseData;
-  //   } catch (e) {
-  //     console.log(e);
-  //     throw new InternalServerErrorException();
-  //   }
-  // }
 }

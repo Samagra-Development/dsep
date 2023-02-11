@@ -1,5 +1,6 @@
 import { HttpService } from '@nestjs/axios';
 import { InternalServerErrorException } from '@nestjs/common';
+// import { createAuthorizationHeader } from 'apps/bpp/src/utils/authBuilder';
 import { Response } from 'express';
 import { lastValueFrom } from 'rxjs';
 
@@ -12,6 +13,7 @@ const requestForwarder = async (
     const requestOptions = {
       headers: {
         'Content-Type': 'application/json',
+        random_header: 'hey there',
       },
       withCredentials: true,
       mode: 'cors',
