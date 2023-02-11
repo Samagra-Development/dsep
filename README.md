@@ -23,6 +23,7 @@ which is onboarded on the `Beckn Gateway` and `Beckn Gateway Registry` under the
 This reference implementation contains all three network participants, i.e. **Beckn Provider Platform**, **Beckn Gateway**, **Beckn Provider Platform**, organised as a **NestJS Monorepo**. 
 
 ### Directory structure
+```
 .
 ├── apps
 │   ├── bap
@@ -42,7 +43,7 @@ This reference implementation contains all three network participants, i.e. **Be
 ├── package.json
 ├── README.md
 └── yarn.lock
-
+```
 
 The `apps` directory contains the actual apps for each network participant
 `apps/bap` and `apps/bg` contains the code for a sample `Beckn Application Platform` and `Beckn Gateway` respectively for testing the `Beckn Provider Platform`.
