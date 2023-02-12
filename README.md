@@ -1,4 +1,4 @@
-# Decentralised Skilling and Education Protocol: Courses and Training
+# Decentralised Skilling and Education Protocol: Trainings and Courses
 
 
 This doc underlines the architectural implementational details of reference **Beckn Provider Platform (BPP)** implementation for the **Courses and Training** track complaint to **DSEP spec v1.0.0.**
