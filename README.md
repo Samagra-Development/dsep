@@ -72,6 +72,8 @@ The `client` and `client proxy` are connected together via a websocket connectio
 
 **/select**: This method/endpoint is allows for selecting some courses or trainings to be enrolled in/purchased by the user. The context domain for this method should be `dsep:courses`.  In the reference course discovery platform implementation this endpoint is called when expanding a particular course to view its details.
 
+**/init**: This method/endpoint is allows for initiating purchasing a course or training by getting a quote from the provider and entering personal details required for enrollment. The context domain for this method should be `dsep:courses`.
+
 **/confirm**: This method/endpoint indicated the confirmation of an order after successful payment/enrollment. In the reference course discovery platform implementation this endpoint is called when visiting the course on the external website.
 
 ## Local installation
