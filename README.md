@@ -106,8 +106,9 @@ yarn start:all # this will start all the services
 ```
 
 ## Related Repositories
-- [Client Repository for reference implementation](https://github.com/Samagra-Development/dsep-ui)
-
+- [Mock Provider (Swayam)](https://github.com/Samagra-Development/swayam-wrapper)
+- [BAP Client Proxy](https://github.com/Samagra-Development/dsep-ui/tree/master/apps/client-proxy) - Acts as a service connecting Client and Proxy
+- [BAP Client](https://github.com/Samagra-Development/dsep-ui) - A course search page
 
 ## Stay in touch
 
