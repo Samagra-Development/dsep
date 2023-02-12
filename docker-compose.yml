@@ -1,0 +1,20 @@
+version: "3"
+services:
+  db:
+    image: postgres:latest
+    volumes:
+      - ./db-data:/var/lib/postgresql/data
+    container_name: psql
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=dbpassword
+      - POSTGRES_DB=dbname
+
+  redis_db:
+    image: redis:6.2.5-alpine
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./data/redis_DB:/data
+  
