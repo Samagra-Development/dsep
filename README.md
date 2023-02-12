@@ -105,6 +105,9 @@ Or start all of them together using
 yarn start:all # this will start all the services
 ```
 
+## Related Repositories
+- [Client Repository for reference implementation](https://github.com/Samagra-Development/dsep-ui)
+
 
 ## Stay in touch
 
