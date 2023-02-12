@@ -1,0 +1,22 @@
+{
+  "context": {
+    "transaction_id": "transactionId",
+    "message_id": "transactionId",
+    "action": "search",
+    "timestamp": "2022-12-15T05:23:03.443Z",
+    "country": "IND",
+    "city": "",
+    "core_version": "1.0.0",
+    "bap_uri": "https://eoa7pn7bobk6rhf.m.pipedream.net",
+    "bap_id": "eoa7pn7bobk6rhf.m.pipedream.net"
+  },
+  "message": {
+    "intent": {
+      "category": {
+        "descriptor": {
+          "name": "SCHOOL"
+        }
+      }
+    }
+  }
+}

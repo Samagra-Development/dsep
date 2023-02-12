@@ -1,0 +1,22 @@
+{
+  "context": {
+    "domain": "dsep:courses",
+    "country": "IND",
+    "action": "search",
+    "core_version": "1.0.0",
+    "bap_id": "PipedDreamTest.dsep:courses.BAP",
+    "bap_uri": "https://eoa7pn7bobk6rhf.m.pipedream.net",
+    "transaction_id": "a9aaecca-10b7-4d19-b640-b047a7c62196",
+    "message_id": "$bb579fb8-cb82-4824-be12-fcbc405b6608",
+    "timestamp": "2022-12-12T09:55:41.161Z"
+  },
+  "message": {
+    "intent": {
+      "item": {
+        "descriptor": {
+          "name": "python"
+        }
+      }
+    }
+  }
+}
