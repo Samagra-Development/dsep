@@ -96,7 +96,8 @@ Follow the following steps to setup the monorepo locally on your system.
     ```bash
     docker compose up
     ```
-6. Run the services for the required network participant using the following commands
+6. Navigate to your hasura UI which will be started after running the command in `Step 5` and create a table named `dsep_courses`.
+7. Run the services for the required network participant using the following commands
     ```bash
     yarn start <bap | bg | bpp> # replace <bap | bg | bpp> with a single name
     # for example: yarn start bpp will start the BPP
