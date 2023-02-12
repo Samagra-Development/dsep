@@ -95,7 +95,11 @@ OR
 npm install
 ```
 4. Create a `.env` file similar to the `.env,sample` file and populate it with required credentials
-5. Run the services for the required network participant using the following commands
+5. [Install Docker](https://docs.docker.com/engine/install/), [Install Docker Compose](https://docs.docker.com/compose/install/linux/), and run
+```bash
+docker compose up
+```
+6. Run the services for the required network participant using the following commands
 ```bash
 yarn start <bap | bg | bpp> # replace <bap | bg | bpp> with a single name
 # for example: yarn start bpp will start the BPP
