@@ -79,32 +79,36 @@ The `client` and `client proxy` are connected together via a websocket connectio
 Follow the following steps to setup the monorepo locally on your system.
 
 1. Clone the repository
-```bash
-git clone https://github.com/Samagra-Development/dsep
-```
+    ```bash
+    git clone https://github.com/Samagra-Development/dsep
+    ```
 2. Navigate into the directory where you have cloned the repository
-```bash
-cd /path/to/cloned/repository
-```
+    ```bash
+    cd /path/to/cloned/repository
+    ```
 3. Install the required dependencies using the package manager of your choice (yarn preferred).
-```bash
-yarn install
-```
-OR
-```bash
-npm install
-```
+    ```bash
+    yarn install
+    ```
 4. Create a `.env` file similar to the `.env,sample` file and populate it with required credentials
-5. Run the services for the required network participant using the following commands
-```bash
-yarn start <bap | bg | bpp> # replace <bap | bg | bpp> with a single name
-# for example: yarn start bpp will start the BPP
-```
+5. [Install Docker](https://docs.docker.com/engine/install/), [Install Docker Compose](https://docs.docker.com/compose/install/linux/), and run
+    ```bash
+    docker compose up
+    ```
+6. Run the services for the required network participant using the following commands
+    ```bash
+    yarn start <bap | bg | bpp> # replace <bap | bg | bpp> with a single name
+    # for example: yarn start bpp will start the BPP
+    ```
 Or start all of them together using
-```bash
-yarn start:all # this will start all the services
-```
+    ```bash
+    yarn start:all # this will start all the services
+    ```
 
+## Related Repositories
+- [Mock Provider (Swayam)](https://github.com/Samagra-Development/swayam-wrapper)
+- [BAP Client Proxy](https://github.com/Samagra-Development/dsep-ui/tree/master/apps/client-proxy) - Acts as a service connecting Client and Proxy
+- [BAP Client](https://github.com/Samagra-Development/dsep-ui) - A course search page
 
 ## Stay in touch
 
