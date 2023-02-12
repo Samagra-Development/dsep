@@ -10,7 +10,7 @@ which is onboarded on the `Beckn Gateway` and `Beckn Gateway Registry` under the
 - [**BPP Deployed URL**](https://bpp.dsep.samagra.io)
 - [**BAP Deployed URL**](https://bap.dsep.samagra.io)
 - **BPP Network Participant Id**: bpp.dsep.samagra.io
-- [Network Participant Information on Beckn Registry]()
+- [Network Participant Information on Beckn Registry](https://registry.becknprotocol.io/network_participants/index/network_participants/show/430)
 
 
 ## Tech Stack 
