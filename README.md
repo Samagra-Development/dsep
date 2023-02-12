@@ -57,7 +57,7 @@ More details about each network participant and their implementation can be foun
 
 ## Architecture
 
-![Block Diagram](./docs/Reference-Implementation-Architecture.png)
+![Block Diagram](./docs/Arch.png)
 
 The reference app is a **Course Discovery Platform** that talks in **Decentralised Skilling and Education Protocol** and curates courses from various providers like, **Swayam Portal**, **MIT OCW**, **Udemy**, etc., right now only swayam is onboarded as a provider, other platforms can be easily onboarded onto the BPP.
 
