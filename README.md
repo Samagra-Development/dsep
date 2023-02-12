@@ -134,3 +134,4 @@ Follow [this guide](https://github.com/sanjay95/BECKN-Integration-to-Gateway/blo
 
 ## Stay in touch
 - Author: [Yash Mittal](https://github.com/techsavvyash)
+- Mentor on the project: [Chakshu Gautam](https://github.com/ChakshuGautam)
