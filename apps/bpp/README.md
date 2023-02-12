@@ -32,4 +32,5 @@ Where `cancel`, `confirm`, `init`, `rating`, `search`, `select`, `status`, `supp
 
 ## TODO
 - [ ] Fix Swagger Doc for NestJS
-- [ ] Validation for requests using OpenAPI Spec - similar to protocol server. 
+- [ ] Validation for requests using OpenAPI Spec - similar to protocol server.
+- [ ] Unit Tests 
