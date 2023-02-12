@@ -107,6 +107,19 @@ Or start all of them together using
     yarn start:all # this will start all the services
     ```
 
+## Deployment
+1. [Install Docker](https://docs.docker.com/engine/install/), [Install Docker Compose](https://docs.docker.com/compose/install/linux/), and run
+    ```bash
+    docker compose up
+    ```
+2. PM2 Based Deployment
+    ```bash
+    yarn build
+    pm2 start dist/apps/bpp/main.js --name beckn-bpp
+    pm2 start dist/apps/bap/main.js --name beckn-bap
+    pm2 start dist/apps/bg/main.js --name beckn-bg
+    ```
+
 ## Related Repositories
 - [Mock Provider (Swayam)](https://github.com/Samagra-Development/swayam-wrapper)
 - [BAP Client Proxy](https://github.com/Samagra-Development/dsep-ui/tree/master/apps/client-proxy) - Acts as a service connecting Client and Proxy
