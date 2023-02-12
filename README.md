@@ -110,6 +110,8 @@ Or start all of them together using
 - [BAP Client Proxy](https://github.com/Samagra-Development/dsep-ui/tree/master/apps/client-proxy) - Acts as a service connecting Client and Proxy
 - [BAP Client](https://github.com/Samagra-Development/dsep-ui) - A course search page
 
-## Stay in touch
+## Adding Services to Beckn Registry
+Follow [this guide](https://github.com/sanjay95/BECKN-Integration-to-Gateway/blob/main/README.md) to onboard yourself on the Beckn Registry.
 
+## Stay in touch
 - Author: [Yash Mittal](https://github.com/techsavvyash)
