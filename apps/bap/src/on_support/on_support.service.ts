@@ -1,6 +1,5 @@
 import { HttpService } from '@nestjs/axios';
-import { Injectable, InternalServerErrorException } from '@nestjs/common';
-import { lastValueFrom, map } from 'rxjs';
+import { Injectable } from '@nestjs/common';
 import { requestForwarder } from 'utils/utils';
 import { OnSupportDTO } from './dto/on_support.dto';
 

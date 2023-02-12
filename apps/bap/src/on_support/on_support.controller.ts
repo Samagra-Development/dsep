@@ -5,7 +5,7 @@ import { ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { Request, Response } from 'express';
 import { sendAcknowledgement } from 'utils/utils';
 
-@Controller('on-support')
+@Controller('on_support')
 export class OnSupportController {
   constructor(private readonly onSupportService: OnSupportService) {}
 

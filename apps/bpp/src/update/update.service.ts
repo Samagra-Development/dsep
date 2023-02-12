@@ -15,9 +15,10 @@ export class UpdateService {
       this.httpService,
     );
 
+    // TODO: Add auth headers in the response, check select.service.ts
     // forwarding the response back to BAP /on-update
     return await requestForwarder(
-      updateDto.context.bap_uri + '/on-update',
+      updateDto.context.bap_uri + '/on_update',
       updateResponse,
       this.httpService,
     );

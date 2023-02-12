@@ -15,9 +15,10 @@ export class StatusService {
       this.httpService,
     );
 
+    // TODO: Add auth headers in the response, check select.service.ts
     // forwarding the response from provider back to BAP /on-status
     return await requestForwarder(
-      statusDto.context.bap_uri + '/on-status',
+      statusDto.context.bap_uri + '/on_status',
       statusResponse,
       this.httpService,
     );

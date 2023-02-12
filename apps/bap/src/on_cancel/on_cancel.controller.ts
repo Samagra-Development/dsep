@@ -5,7 +5,7 @@ import { ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { Request, Response } from 'express';
 import { sendAcknowledgement } from 'utils/utils';
 
-@Controller('on-cancel')
+@Controller('on_cancel')
 export class OnCancelController {
   constructor(private readonly onCancelService: OnCancelService) {}
 

@@ -5,7 +5,7 @@ import { ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { Request, Response } from 'express';
 import { sendAcknowledgement } from 'utils/utils';
 
-@Controller('on-status')
+@Controller('on_status')
 export class OnStatusController {
   constructor(private readonly onStatusService: OnStatusService) {}
 

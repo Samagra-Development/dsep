@@ -5,7 +5,7 @@ import { ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { sendAcknowledgement } from 'utils/utils';
 import { Request, Response } from 'express';
 
-@Controller('on-rating')
+@Controller('on_rating')
 export class OnRatingController {
   constructor(private readonly onRatingService: OnRatingService) {}
 

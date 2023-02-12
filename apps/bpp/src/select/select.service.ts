@@ -1,7 +1,6 @@
 import { HttpService } from '@nestjs/axios';
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
-import { last, lastValueFrom, map } from 'rxjs';
-import { requestForwarder } from 'utils/utils';
+import { lastValueFrom, map } from 'rxjs';
 import { createAuthorizationHeader } from '../utils/authBuilder';
 import { SelectDTO } from './dto/select.dto';
 
@@ -16,13 +15,6 @@ export class SelectService {
       throw new InternalServerErrorException(
         'Invalid context: No BAP_URI not found in context',
       );
-
-    // forward the request to provider
-    // const selectResponse: any = await requestForwarder(
-    //   process.env.MOCK_API_URI + '/select',
-    //   selectDto,
-    //   this.httpService,
-    // );
 
     const selectResponse = await lastValueFrom(
       this.httpService

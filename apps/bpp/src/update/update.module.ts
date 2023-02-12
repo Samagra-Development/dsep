@@ -8,4 +8,4 @@ import { HttpModule } from '@nestjs/axios';
   controllers: [UpdateController],
   providers: [UpdateService],
 })
-export class UpdateModule { }
+export class UpdateModule {}

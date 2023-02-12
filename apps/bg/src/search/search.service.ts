@@ -1,6 +1,5 @@
 import { HttpService } from '@nestjs/axios';
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
-import { lastValueFrom } from 'rxjs';
 import { requestForwarder } from 'utils/utils';
 import { SearchDTO } from './dto/search.dto';
 
@@ -13,6 +12,7 @@ export class SearchService {
     // TODO: Add request validation
 
     // forward the request to BPP for discovery
+    // TODO: Add registry lookup and forward to each BPP
     return requestForwarder(
       process.env.BPP_URI + '/search',
       searchDto,

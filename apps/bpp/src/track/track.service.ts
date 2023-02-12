@@ -15,9 +15,10 @@ export class TrackService {
       this.httpService,
     );
 
+    // TODO: Add auth headers in the response, check select.service.ts
     // forwarding the response back to BAP /on-track
     return await requestForwarder(
-      trackDto.context.bap_uri + '/on-track',
+      trackDto.context.bap_uri + '/on_track',
       trackResponse,
       this.httpService,
     );

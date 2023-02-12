@@ -9,10 +9,6 @@ export class CancelService {
   async handleCancel(cancelDto: CancelDTO) {
     // TODO: validate the request from BAP
 
-    // const providerURLMap = {};
-    // const providerURL =
-    // providerURLMap[cancelDto.message.order.provider.descriptor.name];
-
     const cancelResponse = await requestForwarder(
       'PROVIDER_URL',
       cancelDto,
@@ -21,7 +17,7 @@ export class CancelService {
 
     // forwarding the response from provider back to BAP /on-cancel
     return await requestForwarder(
-      cancelDto.context.bap_uri + '/on-cancel',
+      cancelDto.context.bap_uri + '/on_cancel',
       cancelResponse,
       this.httpService,
     );

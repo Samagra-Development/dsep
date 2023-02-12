@@ -39,5 +39,3 @@ const signMessage = async (signingString, privateKey) => {
   );
   return sodium.to_base64(signedMessage, base64_variants.ORIGINAL);
 };
-
-// console.log('headers: ', createAuthorizationHeader({ message: 'hello world' }));

@@ -16,9 +16,10 @@ export class RatingService {
       this.httpService,
     );
 
+    // TODO: Add logic to add auth headers in the respinse, check select.service.ts
     // forwarding the response back to BAP /on-rating
     return await requestForwarder(
-      ratingDto.context.bap_uri + '/on-rating',
+      ratingDto.context.bap_uri + '/on_rating',
       ratingResponse,
       this.httpService,
     );
