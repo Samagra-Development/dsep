@@ -51,10 +51,9 @@ The `apps` directory contains the actual apps for each network participant
 `apps/bap` and `apps/bg` contains the code for a sample `Beckn Application Platform` and `Beckn Gateway` respectively for testing the `Beckn Provider Platform`.
 
 More details about each network participant and their implementation can be found their following directories here as:
-- [Beckn Application Platform (BAP)]()
-- [Beckn Gateway(BG)]()
-- [Beckn Provider Platform (BPP)]()
-OR you can read the [Wiki]()
+- [Beckn Application Platform (BAP)](https://github.com/Samagra-Development/dsep/blob/master/apps/bap/README.md)
+- [Beckn Gateway(BG)](https://github.com/Samagra-Development/dsep/blob/master/apps/bg/README.md)
+- [Beckn Provider Platform (BPP)](https://github.com/Samagra-Development/dsep/blob/master/apps/bpp/README.md)
 
 ## Architecture
 
