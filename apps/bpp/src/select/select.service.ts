@@ -47,7 +47,7 @@ export class SelectService {
 
       return await lastValueFrom(
         this.httpService.post(
-          selectResponse.context.bap_uri + '/on_select',
+          selectResponse.context.bap_uri + 'on_select',
           selectResponse,
           requestOptions,
         ),

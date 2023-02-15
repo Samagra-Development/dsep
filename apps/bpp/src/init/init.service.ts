@@ -48,7 +48,7 @@ export class InitService {
 
       return await lastValueFrom(
         this.httpService.post(
-          initResponse.context.bap_uri + '/on_init',
+          initResponse.context.bap_uri + 'on_init',
           initResponse,
           requestOptions,
         ),

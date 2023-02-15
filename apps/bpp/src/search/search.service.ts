@@ -45,7 +45,7 @@ export class SearchService {
       console.log('calling request forwarder');
       await lastValueFrom(
         this.httpService.post(
-          searchDto.context.bap_uri + '/on_search',
+          searchDto.context.bap_uri + 'on_search',
           searchResponse,
           requestOptions,
         ),
