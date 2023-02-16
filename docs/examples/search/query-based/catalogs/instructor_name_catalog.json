@@ -1,2662 +1,1363 @@
 {
   "context": {
-    "domain": "dsep:courses",
-    "country": "IND",
-    "action": "on_search",
-    "core_version": "1.0.0",
-    "bap_id": "PipedDreamTest.dsep:courses.BAP",
-    "bap_uri": "https://eoa7pn7bobk6rhf.m.pipedream.net",
-    "transaction_id": "a9aaecca-10b7-4d19-b640-b047a7c62196",
-    "message_id": "$bb579fb8-cb82-4824-be12-fcbc405b6608",
-    "timestamp": "2022-12-12T09:55:41.161Z",
-    "bpp_id": "bpp.dsep.samagra.io",
-    "bpp_uri": "https://bpp.dsep.samagra.io"
+      "domain": "dsep:courses",
+      "version": "1.0.0",
+      "action": "search",
+      "bap_id": "dsep-protocol.becknprotocol.io",
+      "bap_uri": "https://dsep-protocol-network.becknprotocol.io/",
+      "transaction_id": "a9aaecca-10b7-4d19-b640-b047a7c62196",
+      "message_id": "fb939417-4ed6-4d13-9b52-2e8ab7168f7d",
+      "ttl": "PT10M",
+      "timestamp": "2023-02-15T15:03:49.133Z"
   },
-  "message": {
-    "catalog": {
-      "descriptor": { "name": "Catalog for Prof Kannan Moudgalya" },
-      "providers": [
-        {
-          "id": "AICTE",
-          "descriptor": { "name": "AICTE" },
-          "categories": [
-            {
-              "id": "Multidisciplinary",
-              "parent_category_id": "Multidisciplinary",
-              "descriptor": { "name": "Multidisciplinary" }
-            },
-            {
-              "id": "Multidisciplinary",
-              "parent_category_id": "Multidisciplinary",
-              "descriptor": { "name": "Multidisciplinary" }
-            },
-            {
-              "id": "Mathematics",
-              "parent_category_id": "Mathematics",
-              "descriptor": { "name": "Mathematics" }
-            },
-            {
-              "id": "COMP_SCI_ENGG",
-              "parent_category_id": "COMP_SCI_ENGG",
-              "descriptor": { "name": "COMP_SCI_ENGG" }
-            },
-            {
-              "id": "Multidisciplinary",
-              "parent_category_id": "Multidisciplinary",
-              "descriptor": { "name": "Multidisciplinary" }
-            },
-            {
-              "id": "All",
-              "parent_category_id": "All",
-              "descriptor": { "name": "All" }
-            },
-            {
-              "id": "All",
-              "parent_category_id": "All",
-              "descriptor": { "name": "All" }
-            },
-            {
-              "id": "All",
-              "parent_category_id": "All",
-              "descriptor": { "name": "All" }
-            },
-            {
-              "id": "BIO_TECH",
-              "parent_category_id": "BIO_TECH",
-              "descriptor": { "name": "BIO_TECH" }
-            },
-            {
-              "id": "CHEMICAL_COURSES",
-              "parent_category_id": "CHEMICAL_COURSES",
-              "descriptor": { "name": "CHEMICAL_COURSES" }
-            },
-            {
-              "id": "Multidisciplinary",
-              "parent_category_id": "Multidisciplinary",
-              "descriptor": { "name": "Multidisciplinary" }
-            },
-            {
-              "id": "ELEC_ENGG",
-              "parent_category_id": "ELEC_ENGG",
-              "descriptor": { "name": "ELEC_ENGG" }
-            },
-            {
-              "id": "SCHOOL",
-              "parent_category_id": "SCHOOL",
-              "descriptor": { "name": "SCHOOL" }
-            },
-            {
-              "id": "Commerce",
-              "parent_category_id": "Commerce",
-              "descriptor": { "name": "Commerce" }
-            },
-            {
-              "id": "SCHOOL",
-              "parent_category_id": "SCHOOL",
-              "descriptor": { "name": "SCHOOL" }
-            },
-            {
-              "id": "Multidisciplinary",
-              "parent_category_id": "Multidisciplinary",
-              "descriptor": { "name": "Multidisciplinary" }
-            },
-            {
-              "id": "SCHOOL",
-              "parent_category_id": "SCHOOL",
-              "descriptor": { "name": "SCHOOL" }
-            },
-            {
-              "id": "Multidisciplinary",
-              "parent_category_id": "Multidisciplinary",
-              "descriptor": { "name": "Multidisciplinary" }
-            },
-            {
-              "id": "Multidisciplinary",
-              "parent_category_id": "Multidisciplinary",
-              "descriptor": { "name": "Multidisciplinary" }
-            },
-            {
-              "id": "Multidisciplinary",
-              "parent_category_id": "Multidisciplinary",
-              "descriptor": { "name": "Multidisciplinary" }
-            },
-            {
-              "id": "Multidisciplinary",
-              "parent_category_id": "Multidisciplinary",
-              "descriptor": { "name": "Multidisciplinary" }
-            },
-            {
-              "id": "All",
-              "parent_category_id": "All",
-              "descriptor": { "name": "All" }
-            },
-            {
-              "id": "All",
-              "parent_category_id": "All",
-              "descriptor": { "name": "All" }
-            },
-            {
-              "id": "All",
-              "parent_category_id": "All",
-              "descriptor": { "name": "All" }
-            },
-            {
-              "id": "Multidisciplinary",
-              "parent_category_id": "Multidisciplinary",
-              "descriptor": { "name": "Multidisciplinary" }
-            },
-            {
-              "id": "SCHOOL",
-              "parent_category_id": "SCHOOL",
-              "descriptor": { "name": "SCHOOL" }
-            },
-            {
-              "id": "Multidisciplinary",
-              "parent_category_id": "Multidisciplinary",
-              "descriptor": { "name": "Multidisciplinary" }
-            },
-            {
-              "id": "Library_and_Information_Sciences",
-              "parent_category_id": "Library_and_Information_Sciences",
-              "descriptor": { "name": "Library_and_Information_Sciences" }
-            },
-            {
-              "id": "Multidisciplinary",
-              "parent_category_id": "Multidisciplinary",
-              "descriptor": { "name": "Multidisciplinary" }
-            },
-            {
-              "id": "Multidisciplinary",
-              "parent_category_id": "Multidisciplinary",
-              "descriptor": { "name": "Multidisciplinary" }
-            },
-            {
-              "id": "Multidisciplinary",
-              "parent_category_id": "Multidisciplinary",
-              "descriptor": { "name": "Multidisciplinary" }
-            },
-            {
-              "id": "Multidisciplinary",
-              "parent_category_id": "Multidisciplinary",
-              "descriptor": { "name": "Multidisciplinary" }
-            },
-            {
-              "id": "Multidisciplinary",
-              "parent_category_id": "Multidisciplinary",
-              "descriptor": { "name": "Multidisciplinary" }
-            },
-            {
-              "id": "Multidisciplinary",
-              "parent_category_id": "Multidisciplinary",
-              "descriptor": { "name": "Multidisciplinary" }
-            },
-            {
-              "id": "Multidisciplinary",
-              "parent_category_id": "Multidisciplinary",
-              "descriptor": { "name": "Multidisciplinary" }
-            },
-            {
-              "id": "COMP_SCI_ENGG",
-              "parent_category_id": "COMP_SCI_ENGG",
-              "descriptor": { "name": "COMP_SCI_ENGG" }
-            },
-            {
-              "id": "COMP_SCI_ENGG",
-              "parent_category_id": "COMP_SCI_ENGG",
-              "descriptor": { "name": "COMP_SCI_ENGG" }
-            },
-            {
-              "id": "COMP_SCI_ENGG",
-              "parent_category_id": "COMP_SCI_ENGG",
-              "descriptor": { "name": "COMP_SCI_ENGG" }
-            },
-            {
-              "id": "All",
-              "parent_category_id": "All",
-              "descriptor": { "name": "All" }
-            },
-            {
-              "id": "All",
-              "parent_category_id": "All",
-              "descriptor": { "name": "All" }
-            },
-            {
-              "id": "All",
-              "parent_category_id": "All",
-              "descriptor": { "name": "All" }
-            },
-            {
-              "id": "COMP_SCI_ENGG",
-              "parent_category_id": "COMP_SCI_ENGG",
-              "descriptor": { "name": "COMP_SCI_ENGG" }
-            },
-            {
-              "id": "Multidisciplinary",
-              "parent_category_id": "Multidisciplinary",
-              "descriptor": { "name": "Multidisciplinary" }
-            },
-            {
-              "id": "Multidisciplinary",
-              "parent_category_id": "Multidisciplinary",
-              "descriptor": { "name": "Multidisciplinary" }
-            },
-            {
-              "id": "CHEMICAL_COURSES",
-              "parent_category_id": "CHEMICAL_COURSES",
-              "descriptor": { "name": "CHEMICAL_COURSES" }
-            },
-            {
-              "id": "Multidisciplinary",
-              "parent_category_id": "Multidisciplinary",
-              "descriptor": { "name": "Multidisciplinary" }
-            },
-            {
-              "id": "Multidisciplinary",
-              "parent_category_id": "Multidisciplinary",
-              "descriptor": { "name": "Multidisciplinary" }
-            },
-            {
-              "id": "SCHOOL",
-              "parent_category_id": "SCHOOL",
-              "descriptor": { "name": "SCHOOL" }
-            },
-            {
-              "id": "Multidisciplinary",
-              "parent_category_id": "Multidisciplinary",
-              "descriptor": { "name": "Multidisciplinary" }
-            },
-            {
-              "id": "All",
-              "parent_category_id": "All",
-              "descriptor": { "name": "All" }
-            },
-            {
-              "id": "Multidisciplinary",
-              "parent_category_id": "Multidisciplinary",
-              "descriptor": { "name": "Multidisciplinary" }
-            },
-            {
-              "id": "Multidisciplinary",
-              "parent_category_id": "Multidisciplinary",
-              "descriptor": { "name": "Multidisciplinary" }
-            },
-            {
-              "id": "Multidisciplinary",
-              "parent_category_id": "Multidisciplinary",
-              "descriptor": { "name": "Multidisciplinary" }
-            },
-            {
-              "id": "Multidisciplinary",
-              "parent_category_id": "Multidisciplinary",
-              "descriptor": { "name": "Multidisciplinary" }
-            },
-            {
-              "id": "Multidisciplinary",
-              "parent_category_id": "Multidisciplinary",
-              "descriptor": { "name": "Multidisciplinary" }
-            },
-            {
-              "id": "Chemistry",
-              "parent_category_id": "Chemistry",
-              "descriptor": { "name": "Chemistry" }
-            }
-          ],
-          "items": [
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDE=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDE=",
-              "descriptor": {
-                "name": "Advanced C++",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp01/Advanced-CPP.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "Multidisciplinary",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P4W",
-                "range": {
-                  "start": "2020-04-01T04:30:00.000000Z",
-                  "end": "2020-04-01T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "1" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp01/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDI=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDI=",
-              "descriptor": {
-                "name": "Android app using Kotlin",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp02/Android-app-using-Kotlin.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "Multidisciplinary",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P8W",
-                "range": {
-                  "start": "2020-04-21T04:30:00.000000Z",
-                  "end": "2020-04-21T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "2" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp02/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDM=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDM=",
-              "descriptor": {
-                "name": "Applications of GeoGebra",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp03/Application%20of%20Geogebra.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "Mathematics",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P4W",
-                "range": {
-                  "start": "2020-04-13T04:30:00.000000Z",
-                  "end": "2020-04-13T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "2" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp03/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDQ=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDQ=",
-              "descriptor": {
-                "name": "Arduino",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp04/Arduino%20(1).png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "COMP_SCI_ENGG",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P8W",
-                "range": {
-                  "start": "2020-04-13T04:30:00.000000Z",
-                  "end": "2020-04-13T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "3" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp04/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDY=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDY=",
-              "descriptor": {
-                "name": "C and C++",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp06/CandCPP.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "Multidisciplinary",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P12W",
-                "range": {
-                  "start": "2020-03-11T04:30:00.000000Z",
-                  "end": "2020-03-11T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "2" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp06/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNTM=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNTM=",
-              "descriptor": {
-                "name": "C/C++ - Bengali",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp06/CandCPP.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "All",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P12W",
-                "range": {
-                  "start": "2020-04-29T09:30:00.000000Z",
-                  "end": "2020-04-29T09:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "2" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp53/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNDM=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNDM=",
-              "descriptor": {
-                "name": "C/C++ - Hindi",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp06/CandCPP.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "All",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P12W",
-                "range": {
-                  "start": "2020-04-29T09:30:00.000000Z",
-                  "end": "2020-04-29T09:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "2" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp43/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNDg=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNDg=",
-              "descriptor": {
-                "name": "C/C++ - Tamil",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp06/CandCPP.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "All",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P12W",
-                "range": {
-                  "start": "2020-04-29T09:30:00.000000Z",
-                  "end": "2020-04-29T09:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "2" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp48/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNTg=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNTg=",
-              "descriptor": {
-                "name": "CellDesigner - modeling tool for gene-regulatory and biochemical networks ",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp58/CellDesigner.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "BIO_TECH",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P4W",
-                "range": {
-                  "start": "2020-05-15T04:30:00.000000Z",
-                  "end": "2020-05-15T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "1" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp58/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDg=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDg=",
-              "descriptor": {
-                "name": "DWSIM",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp08/DWSIM.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "CHEMICAL_COURSES",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P12W",
-                "range": {
-                  "start": "2020-04-21T04:30:00.000000Z",
-                  "end": "2020-04-21T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "2" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp08/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDc=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDc=",
-              "descriptor": {
-                "name": "Drupal - Content Management System",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp07/Drupal.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "Multidisciplinary",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P12W",
-                "range": {
-                  "start": "2020-04-21T04:30:00.000000Z",
-                  "end": "2020-04-21T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "3" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp07/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNTk=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNTk=",
-              "descriptor": {
-                "name": "ESim - EDA tool for circuit design, simulation, analysis and PCB design",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp59/eSim.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "ELEC_ENGG",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P4W",
-                "range": {
-                  "start": "2020-05-15T04:30:00.000000Z",
-                  "end": "2020-05-15T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "2" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp59/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNjQ=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNjQ=",
-              "descriptor": {
-                "name": "ExpEYES Junior - Physics and Electronics experiments",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp64/ExpEYES_Junior.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "SCHOOL",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P4W",
-                "range": {
-                  "start": "2020-05-14T04:30:00.000000Z",
-                  "end": "2020-05-14T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "2" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp64/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNjA=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNjA=",
-              "descriptor": {
-                "name": "FrontAccouting - business accounting system",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp60/FrontAccounting.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "Commerce",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P4W",
-                "range": {
-                  "start": "2020-05-14T04:30:00.000000Z",
-                  "end": "2020-05-14T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "2" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp60/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNjI=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNjI=",
-              "descriptor": {
-                "name": "GChemPaint - 2D chemical structure editor",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp62/GChemPaint.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "SCHOOL",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P4W",
-                "range": {
-                  "start": "2020-05-14T04:30:00.000000Z",
-                  "end": "2020-05-14T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "2" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp62/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDk=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDk=",
-              "descriptor": {
-                "name": "Gedit Text Editor",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp09/gedit-Text-Editor.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "Multidisciplinary",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P4W",
-                "range": {
-                  "start": "2020-04-21T04:30:00.000000Z",
-                  "end": "2020-04-21T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "1" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp09/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNjE=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNjE=",
-              "descriptor": {
-                "name": "GeoGebra 5.04",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp61/GeoGebra%205.04.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "SCHOOL",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P4W",
-                "range": {
-                  "start": "2020-05-14T04:30:00.000000Z",
-                  "end": "2020-05-14T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "2" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp61/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMTA=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMTA=",
-              "descriptor": {
-                "name": "Git",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp10/git%20(1).png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "Multidisciplinary",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P6W",
-                "range": {
-                  "start": "2020-04-13T04:30:00.000000Z",
-                  "end": "2020-04-13T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "1" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp10/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMTE=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMTE=",
-              "descriptor": {
-                "name": "HTML",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp11/HTML%20(1).png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "Multidisciplinary",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P8W",
-                "range": {
-                  "start": "2020-03-27T04:30:00.000000Z",
-                  "end": "2020-03-27T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "1" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp11/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMTI=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMTI=",
-              "descriptor": {
-                "name": "Inkscape",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp12/Inkscape%20(1).png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "Multidisciplinary",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P12W",
-                "range": {
-                  "start": "2020-04-13T04:30:00.000000Z",
-                  "end": "2020-04-13T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "2" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp12/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMTM=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMTM=",
-              "descriptor": {
-                "name": "Java",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp13/Java%20(1).png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "Multidisciplinary",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P15W",
-                "range": {
-                  "start": "2020-03-25T04:30:00.000000Z",
-                  "end": "2020-03-25T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "4" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp13/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNTY=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNTY=",
-              "descriptor": {
-                "name": "Java - Bengali",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp13/Java%20(1).png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "All",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P15W",
-                "range": {
-                  "start": "2020-04-30T04:30:00.000000Z",
-                  "end": "2020-04-30T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "4" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp56/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNDY=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNDY=",
-              "descriptor": {
-                "name": "Java - Hindi",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp13/Java%20(1).png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "All",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P15W",
-                "range": {
-                  "start": "2020-04-30T04:30:00.000000Z",
-                  "end": "2020-04-30T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "4" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp46/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNTE=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNTE=",
-              "descriptor": {
-                "name": "Java - Tamil",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp13/Java%20(1).png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "All",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P15W",
-                "range": {
-                  "start": "2020-04-30T04:30:00.000000Z",
-                  "end": "2020-04-30T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "4" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp51/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMTQ=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMTQ=",
-              "descriptor": {
-                "name": "Java Business Application",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp14/Java-Business-Application.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "Multidisciplinary",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P4W",
-                "range": {
-                  "start": "2020-04-21T04:30:00.000000Z",
-                  "end": "2020-04-21T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "1" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp14/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNjM=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNjM=",
-              "descriptor": {
-                "name": "Jmol Application - 3D chemical structure viewer",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp63/Jmol_Application.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "SCHOOL",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P4W",
-                "range": {
-                  "start": "2020-05-14T04:30:00.000000Z",
-                  "end": "2020-05-14T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "2" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp63/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMTU=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMTU=",
-              "descriptor": {
-                "name": "Joomla CMS",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp15/Joomla.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "Multidisciplinary",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P6W",
-                "range": {
-                  "start": "2020-04-21T04:30:00.000000Z",
-                  "end": "2020-04-21T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "1" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp15/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMTY=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMTY=",
-              "descriptor": {
-                "name": "Koha Library Management System",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp16/Koha-Library-Management-System.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "Library_and_Information_Sciences",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P12W",
-                "range": {
-                  "start": "2020-04-27T04:30:00.000000Z",
-                  "end": "2020-04-27T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "2" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp16/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMTc=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMTc=",
-              "descriptor": {
-                "name": "LaTeX & XFig - typesetting software",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp17/LaTeX.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "Multidisciplinary",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P6W",
-                "range": {
-                  "start": "2020-04-21T04:30:00.000000Z",
-                  "end": "2020-04-21T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "2" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp17/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMTg=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMTg=",
-              "descriptor": {
-                "name": "LibreOffice Suite Base",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp18/LibreOffice-Suite-Base.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "Multidisciplinary",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P8W",
-                "range": {
-                  "start": "2020-04-22T04:30:00.000000Z",
-                  "end": "2020-04-22T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "2" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp18/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMTk=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMTk=",
-              "descriptor": {
-                "name": "LibreOffice Suite Calc",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp19/LibreOffice-Suite-Calc_.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "Multidisciplinary",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P6W",
-                "range": {
-                  "start": "2020-04-22T04:30:00.000000Z",
-                  "end": "2020-04-22T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "2" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp19/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMjA=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMjA=",
-              "descriptor": {
-                "name": "LibreOffice Suite Draw",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp20/LibreOffice-Suite-Draw_.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "Multidisciplinary",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P12W",
-                "range": {
-                  "start": "2020-04-22T04:30:00.000000Z",
-                  "end": "2020-04-22T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "2" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp20/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMjE=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMjE=",
-              "descriptor": {
-                "name": "LibreOffice Suite Impress",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp21/LibreOffice-Suite-Impress.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "Multidisciplinary",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P4W",
-                "range": {
-                  "start": "2020-04-22T04:30:00.000000Z",
-                  "end": "2020-04-22T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "1" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp21/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMjI=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMjI=",
-              "descriptor": {
-                "name": "LibreOffice Suite Math",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp22/LibreOffice-Suite-Math.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "Multidisciplinary",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P4W",
-                "range": {
-                  "start": "2020-04-22T04:30:00.000000Z",
-                  "end": "2020-04-22T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "1" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp22/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMjM=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMjM=",
-              "descriptor": {
-                "name": "LibreOffice Suite Writer",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp23/LibreOffice-Suite-Writer.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "Multidisciplinary",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P4W",
-                "range": {
-                  "start": "2020-04-22T04:30:00.000000Z",
-                  "end": "2020-04-22T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "1" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp23/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMjU=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMjU=",
-              "descriptor": {
-                "name": "Linux AWK",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp25/Linux-AWK.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "COMP_SCI_ENGG",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P6W",
-                "range": {
-                  "start": "2020-04-01T04:30:00.000000Z",
-                  "end": "2020-04-01T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "1" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp25/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDU=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDU=",
-              "descriptor": {
-                "name": "Linux BASH (shell scripting)",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp05/BASH%20(1).png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "COMP_SCI_ENGG",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P12W",
-                "range": {
-                  "start": "2020-04-08T04:30:00.000000Z",
-                  "end": "2020-04-08T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "2" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp05/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMjQ=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMjQ=",
-              "descriptor": {
-                "name": "Linux Operating System",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp24/Linux%20(1).png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "COMP_SCI_ENGG",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P12W",
-                "range": {
-                  "start": "2020-03-27T04:30:00.000000Z",
-                  "end": "2020-03-27T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "2" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp24/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNTU=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNTU=",
-              "descriptor": {
-                "name": "Linux Operating System - Bengali",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp24/Linux%20(1).png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "All",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P12W",
-                "range": {
-                  "start": "2020-04-30T04:30:00.000000Z",
-                  "end": "2020-04-30T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "3" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp55/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNDU=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNDU=",
-              "descriptor": {
-                "name": "Linux Operating System- Hindi",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp24/Linux%20(1).png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "All",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P12W",
-                "range": {
-                  "start": "2020-04-30T04:30:00.000000Z",
-                  "end": "2020-04-30T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "3" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp45/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNTA=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNTA=",
-              "descriptor": {
-                "name": "Linux Operating System- Tamil",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp24/Linux%20(1).png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "All",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P12W",
-                "range": {
-                  "start": "2020-04-30T04:30:00.000000Z",
-                  "end": "2020-04-30T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "3" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp50/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMjY=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMjY=",
-              "descriptor": {
-                "name": "Linux for Sys-Ads",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp26/Linux-for-Sys-Ads.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "COMP_SCI_ENGG",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P4W",
-                "range": {
-                  "start": "2020-04-27T04:30:00.000000Z",
-                  "end": "2020-04-27T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "1" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp26/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMjc=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMjc=",
-              "descriptor": {
-                "name": "Moodle Learning Management System",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp27/Moodle-Learning-Management-System.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "Multidisciplinary",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P15W",
-                "range": {
-                  "start": "2020-04-02T04:30:00.000000Z",
-                  "end": "2020-04-02T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "2" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp27/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMjg=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMjg=",
-              "descriptor": {
-                "name": "Netbeans",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp28/NetBeans.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "Multidisciplinary",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P4W",
-                "range": {
-                  "start": "2020-04-22T04:30:00.000000Z",
-                  "end": "2020-04-22T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "1" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp28/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMzA=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMzA=",
-              "descriptor": {
-                "name": "OpenModelica",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp30/OpenModelica%20(1).png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "CHEMICAL_COURSES",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P6W",
-                "range": {
-                  "start": "2020-04-22T04:30:00.000000Z",
-                  "end": "2020-04-22T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "2" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp30/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMzE=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMzE=",
-              "descriptor": {
-                "name": "PERL",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp31/Perl%20(1).png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "Multidisciplinary",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P12W",
-                "range": {
-                  "start": "2020-04-08T04:30:00.000000Z",
-                  "end": "2020-04-08T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "3" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp31/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMzI=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMzI=",
-              "descriptor": {
-                "name": "PHP and MySQL",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp32/PHP-MySQL.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "Multidisciplinary",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P15W",
-                "range": {
-                  "start": "2020-04-08T04:30:00.000000Z",
-                  "end": "2020-04-08T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "4" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp32/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNjU=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNjU=",
-              "descriptor": {
-                "name": "PhETs - Interactive Simulations for Science and Math",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp65/PheT.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "SCHOOL",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P8W",
-                "range": {
-                  "start": "2020-05-14T04:30:00.000000Z",
-                  "end": "2020-05-14T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "2" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp65/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMzM=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMzM=",
-              "descriptor": {
-                "name": "Python 3.4.3",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp33/Python3.4.3%20(1).png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "Multidisciplinary",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P15W",
-                "range": {
-                  "start": "2020-03-28T04:30:00.000000Z",
-                  "end": "2020-03-28T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "4" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp33/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNDQ=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNDQ=",
-              "descriptor": {
-                "name": "Python 3.4.3 - Hindi",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp33/Python3.4.3%20(1).png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "All",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P15W",
-                "range": {
-                  "start": "2020-04-30T04:30:00.000000Z",
-                  "end": "2020-04-30T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "4" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp44/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMzU=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMzU=",
-              "descriptor": {
-                "name": "R    ",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp35/R%20(1).png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "Multidisciplinary",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P12W",
-                "range": {
-                  "start": "2020-03-28T04:30:00.000000Z",
-                  "end": "2020-03-28T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "2" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp35/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMzY=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMzY=",
-              "descriptor": {
-                "name": "RDBMS PostgreSQL",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp36/RDBMS.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "Multidisciplinary",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P6W",
-                "range": {
-                  "start": "2020-04-21T04:30:00.000000Z",
-                  "end": "2020-04-21T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "1" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp36/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMzc=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMzc=",
-              "descriptor": {
-                "name": "Ruby",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp37/Ruby%20(1).png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "Multidisciplinary",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P4W",
-                "range": {
-                  "start": "2020-04-24T04:30:00.000000Z",
-                  "end": "2020-04-24T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "1" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp37/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMzg=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMzg=",
-              "descriptor": {
-                "name": "Scilab",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp38/Scilab%20(1).png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "Multidisciplinary",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P16W",
-                "range": {
-                  "start": "2020-04-20T04:30:00.000000Z",
-                  "end": "2020-04-20T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "3" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp38/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNDA=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNDA=",
-              "descriptor": {
-                "name": "Synfig",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp40/Synfig.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "Multidisciplinary",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P4W",
-                "range": {
-                  "start": "2020-04-27T04:30:00.000000Z",
-                  "end": "2020-04-27T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "1" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp40/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            },
-            {
-              "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNDE=",
-              "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNDE=",
-              "descriptor": {
-                "name": "UCSF Chimera",
-                "long_desc": "",
-                "images": [
-                  {
-                    "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp41/UCSF-Chimera.png"
-                  }
-                ]
-              },
-              "price": { "currency": "INR", "value": "0" },
-              "category_id": "Chemistry",
-              "recommended": false,
-              "time": {
-                "label": "Course Schedule",
-                "duration": "P6W",
-                "range": {
-                  "start": "2020-04-27T04:30:00.000000Z",
-                  "end": "2020-04-27T04:30:00.000000Z"
-                }
-              },
-              "rating": "0",
-              "tags": [
-                { "name": "credits", "value": "1" },
-                {
-                  "name": "instructors",
-                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
-                },
-                {
-                  "name": "offeringInstitue",
-                  "value": "Indian Institute of Technology Bombay"
-                },
-                {
-                  "name": "url",
-                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp41/preview"
-                },
-                { "name": "enrollmentEndDate", "value": "" }
-              ],
-              "rateable": true
-            }
-          ]
-        }
-      ]
-    }
-  }
+  "responses": [
+      {
+          "context": {
+              "domain": "dsep:courses",
+              "version": "1.0.0",
+              "action": "on_search",
+              "bap_id": "dsep-protocol.becknprotocol.io",
+              "bap_uri": "https://dsep-protocol-network.becknprotocol.io/",
+              "transaction_id": "a9aaecca-10b7-4d19-b640-b047a7c62196",
+              "message_id": "fb939417-4ed6-4d13-9b52-2e8ab7168f7d",
+              "ttl": "PT10M",
+              "timestamp": "2023-02-15T15:03:49.133Z",
+              "bpp_id": "bpp.dsep.samagra.io",
+              "bpp_uri": "https://bpp.dsep.samagra.io"
+          },
+          "message": {
+              "catalog": {
+                  "descriptor": {
+                      "name": "Catalog for Prof Kannan Moudgalya"
+                  },
+                  "providers": [
+                      {
+                          "id": "AICTE",
+                          "descriptor": {
+                              "name": "AICTE"
+                          },
+                          "categories": [
+                              {
+                                  "id": "Multidisciplinary",
+                                  "parent_category_id": "Multidisciplinary",
+                                  "descriptor": {
+                                      "name": "Multidisciplinary"
+                                  }
+                              },
+                              {
+                                  "id": "Multidisciplinary",
+                                  "parent_category_id": "Multidisciplinary",
+                                  "descriptor": {
+                                      "name": "Multidisciplinary"
+                                  }
+                              },
+                              {
+                                  "id": "Mathematics",
+                                  "parent_category_id": "Mathematics",
+                                  "descriptor": {
+                                      "name": "Mathematics"
+                                  }
+                              },
+                              {
+                                  "id": "COMP_SCI_ENGG",
+                                  "parent_category_id": "COMP_SCI_ENGG",
+                                  "descriptor": {
+                                      "name": "COMP_SCI_ENGG"
+                                  }
+                              },
+                              {
+                                  "id": "Multidisciplinary",
+                                  "parent_category_id": "Multidisciplinary",
+                                  "descriptor": {
+                                      "name": "Multidisciplinary"
+                                  }
+                              },
+                              {
+                                  "id": "All",
+                                  "parent_category_id": "All",
+                                  "descriptor": {
+                                      "name": "All"
+                                  }
+                              },
+                              {
+                                  "id": "All",
+                                  "parent_category_id": "All",
+                                  "descriptor": {
+                                      "name": "All"
+                                  }
+                              },
+                              {
+                                  "id": "All",
+                                  "parent_category_id": "All",
+                                  "descriptor": {
+                                      "name": "All"
+                                  }
+                              },
+                              {
+                                  "id": "BIO_TECH",
+                                  "parent_category_id": "BIO_TECH",
+                                  "descriptor": {
+                                      "name": "BIO_TECH"
+                                  }
+                              },
+                              {
+                                  "id": "CHEMICAL_COURSES",
+                                  "parent_category_id": "CHEMICAL_COURSES",
+                                  "descriptor": {
+                                      "name": "CHEMICAL_COURSES"
+                                  }
+                              }
+                          ],
+                          "items": [
+                              {
+                                  "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDE=",
+                                  "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDE=",
+                                  "descriptor": {
+                                      "name": "Advanced C++",
+                                      "long_desc": "",
+                                      "images": [
+                                          {
+                                              "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp01/Advanced-CPP.png"
+                                          }
+                                      ]
+                                  },
+                                  "price": {
+                                      "currency": "INR",
+                                      "value": "0"
+                                  },
+                                  "category_id": "Multidisciplinary",
+                                  "recommended": false,
+                                  "time": {
+                                      "label": "Course Schedule",
+                                      "duration": "P4W",
+                                      "range": {
+                                          "start": "2020-04-01T04:30:00.000000Z",
+                                          "end": "2020-04-01T04:30:00.000000Z"
+                                      }
+                                  },
+                                  "rating": "3",
+                                  "tags": [
+                                      {
+                                          "name": "courseInfo",
+                                          "list": [
+                                              {
+                                                  "name": "credits",
+                                                  "value": "1"
+                                              },
+                                              {
+                                                  "name": "instructors",
+                                                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
+                                              },
+                                              {
+                                                  "name": "offeringInstitue",
+                                                  "value": "Indian Institute of Technology Bombay"
+                                              },
+                                              {
+                                                  "name": "url",
+                                                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp01/preview"
+                                              },
+                                              {
+                                                  "name": "enrollmentEndDate",
+                                                  "value": ""
+                                              }
+                                          ],
+                                          "display": true
+                                      }
+                                  ],
+                                  "rateable": false
+                              },
+                              {
+                                  "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDI=",
+                                  "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDI=",
+                                  "descriptor": {
+                                      "name": "Android app using Kotlin",
+                                      "long_desc": "",
+                                      "images": [
+                                          {
+                                              "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp02/Android-app-using-Kotlin.png"
+                                          }
+                                      ]
+                                  },
+                                  "price": {
+                                      "currency": "INR",
+                                      "value": "0"
+                                  },
+                                  "category_id": "Multidisciplinary",
+                                  "recommended": false,
+                                  "time": {
+                                      "label": "Course Schedule",
+                                      "duration": "P8W",
+                                      "range": {
+                                          "start": "2020-04-21T04:30:00.000000Z",
+                                          "end": "2020-04-21T04:30:00.000000Z"
+                                      }
+                                  },
+                                  "rating": "0",
+                                  "tags": [
+                                      {
+                                          "name": "courseInfo",
+                                          "list": [
+                                              {
+                                                  "name": "credits",
+                                                  "value": "2"
+                                              },
+                                              {
+                                                  "name": "instructors",
+                                                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
+                                              },
+                                              {
+                                                  "name": "offeringInstitue",
+                                                  "value": "Indian Institute of Technology Bombay"
+                                              },
+                                              {
+                                                  "name": "url",
+                                                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp02/preview"
+                                              },
+                                              {
+                                                  "name": "enrollmentEndDate",
+                                                  "value": ""
+                                              }
+                                          ],
+                                          "display": true
+                                      }
+                                  ],
+                                  "rateable": false
+                              },
+                              {
+                                  "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDM=",
+                                  "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDM=",
+                                  "descriptor": {
+                                      "name": "Applications of GeoGebra",
+                                      "long_desc": "",
+                                      "images": [
+                                          {
+                                              "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp03/Application%20of%20Geogebra.png"
+                                          }
+                                      ]
+                                  },
+                                  "price": {
+                                      "currency": "INR",
+                                      "value": "0"
+                                  },
+                                  "category_id": "Mathematics",
+                                  "recommended": false,
+                                  "time": {
+                                      "label": "Course Schedule",
+                                      "duration": "P4W",
+                                      "range": {
+                                          "start": "2020-04-13T04:30:00.000000Z",
+                                          "end": "2020-04-13T04:30:00.000000Z"
+                                      }
+                                  },
+                                  "rating": "2",
+                                  "tags": [
+                                      {
+                                          "name": "courseInfo",
+                                          "list": [
+                                              {
+                                                  "name": "credits",
+                                                  "value": "2"
+                                              },
+                                              {
+                                                  "name": "instructors",
+                                                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
+                                              },
+                                              {
+                                                  "name": "offeringInstitue",
+                                                  "value": "Indian Institute of Technology Bombay"
+                                              },
+                                              {
+                                                  "name": "url",
+                                                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp03/preview"
+                                              },
+                                              {
+                                                  "name": "enrollmentEndDate",
+                                                  "value": ""
+                                              }
+                                          ],
+                                          "display": true
+                                      }
+                                  ],
+                                  "rateable": false
+                              },
+                              {
+                                  "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDQ=",
+                                  "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDQ=",
+                                  "descriptor": {
+                                      "name": "Arduino",
+                                      "long_desc": "",
+                                      "images": [
+                                          {
+                                              "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp04/Arduino%20(1).png"
+                                          }
+                                      ]
+                                  },
+                                  "price": {
+                                      "currency": "INR",
+                                      "value": "0"
+                                  },
+                                  "category_id": "COMP_SCI_ENGG",
+                                  "recommended": false,
+                                  "time": {
+                                      "label": "Course Schedule",
+                                      "duration": "P8W",
+                                      "range": {
+                                          "start": "2020-04-13T04:30:00.000000Z",
+                                          "end": "2020-04-13T04:30:00.000000Z"
+                                      }
+                                  },
+                                  "rating": "4",
+                                  "tags": [
+                                      {
+                                          "name": "courseInfo",
+                                          "list": [
+                                              {
+                                                  "name": "credits",
+                                                  "value": "3"
+                                              },
+                                              {
+                                                  "name": "instructors",
+                                                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
+                                              },
+                                              {
+                                                  "name": "offeringInstitue",
+                                                  "value": "Indian Institute of Technology Bombay"
+                                              },
+                                              {
+                                                  "name": "url",
+                                                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp04/preview"
+                                              },
+                                              {
+                                                  "name": "enrollmentEndDate",
+                                                  "value": ""
+                                              }
+                                          ],
+                                          "display": true
+                                      }
+                                  ],
+                                  "rateable": false
+                              },
+                              {
+                                  "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDY=",
+                                  "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDY=",
+                                  "descriptor": {
+                                      "name": "C and C++",
+                                      "long_desc": "",
+                                      "images": [
+                                          {
+                                              "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp06/CandCPP.png"
+                                          }
+                                      ]
+                                  },
+                                  "price": {
+                                      "currency": "INR",
+                                      "value": "0"
+                                  },
+                                  "category_id": "Multidisciplinary",
+                                  "recommended": false,
+                                  "time": {
+                                      "label": "Course Schedule",
+                                      "duration": "P12W",
+                                      "range": {
+                                          "start": "2020-03-11T04:30:00.000000Z",
+                                          "end": "2020-03-11T04:30:00.000000Z"
+                                      }
+                                  },
+                                  "rating": "5",
+                                  "tags": [
+                                      {
+                                          "name": "courseInfo",
+                                          "list": [
+                                              {
+                                                  "name": "credits",
+                                                  "value": "2"
+                                              },
+                                              {
+                                                  "name": "instructors",
+                                                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
+                                              },
+                                              {
+                                                  "name": "offeringInstitue",
+                                                  "value": "Indian Institute of Technology Bombay"
+                                              },
+                                              {
+                                                  "name": "url",
+                                                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp06/preview"
+                                              },
+                                              {
+                                                  "name": "enrollmentEndDate",
+                                                  "value": ""
+                                              }
+                                          ],
+                                          "display": true
+                                      }
+                                  ],
+                                  "rateable": false
+                              },
+                              {
+                                  "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNTM=",
+                                  "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNTM=",
+                                  "descriptor": {
+                                      "name": "C/C++ - Bengali",
+                                      "long_desc": "",
+                                      "images": [
+                                          {
+                                              "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp06/CandCPP.png"
+                                          }
+                                      ]
+                                  },
+                                  "price": {
+                                      "currency": "INR",
+                                      "value": "0"
+                                  },
+                                  "category_id": "All",
+                                  "recommended": false,
+                                  "time": {
+                                      "label": "Course Schedule",
+                                      "duration": "P12W",
+                                      "range": {
+                                          "start": "2020-04-29T09:30:00.000000Z",
+                                          "end": "2020-04-29T09:30:00.000000Z"
+                                      }
+                                  },
+                                  "rating": "3",
+                                  "tags": [
+                                      {
+                                          "name": "courseInfo",
+                                          "list": [
+                                              {
+                                                  "name": "credits",
+                                                  "value": "2"
+                                              },
+                                              {
+                                                  "name": "instructors",
+                                                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
+                                              },
+                                              {
+                                                  "name": "offeringInstitue",
+                                                  "value": "Indian Institute of Technology Bombay"
+                                              },
+                                              {
+                                                  "name": "url",
+                                                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp53/preview"
+                                              },
+                                              {
+                                                  "name": "enrollmentEndDate",
+                                                  "value": ""
+                                              }
+                                          ],
+                                          "display": true
+                                      }
+                                  ],
+                                  "rateable": false
+                              },
+                              {
+                                  "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNDM=",
+                                  "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNDM=",
+                                  "descriptor": {
+                                      "name": "C/C++ - Hindi",
+                                      "long_desc": "",
+                                      "images": [
+                                          {
+                                              "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp06/CandCPP.png"
+                                          }
+                                      ]
+                                  },
+                                  "price": {
+                                      "currency": "INR",
+                                      "value": "0"
+                                  },
+                                  "category_id": "All",
+                                  "recommended": false,
+                                  "time": {
+                                      "label": "Course Schedule",
+                                      "duration": "P12W",
+                                      "range": {
+                                          "start": "2020-04-29T09:30:00.000000Z",
+                                          "end": "2020-04-29T09:30:00.000000Z"
+                                      }
+                                  },
+                                  "rating": "0",
+                                  "tags": [
+                                      {
+                                          "name": "courseInfo",
+                                          "list": [
+                                              {
+                                                  "name": "credits",
+                                                  "value": "2"
+                                              },
+                                              {
+                                                  "name": "instructors",
+                                                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
+                                              },
+                                              {
+                                                  "name": "offeringInstitue",
+                                                  "value": "Indian Institute of Technology Bombay"
+                                              },
+                                              {
+                                                  "name": "url",
+                                                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp43/preview"
+                                              },
+                                              {
+                                                  "name": "enrollmentEndDate",
+                                                  "value": ""
+                                              }
+                                          ],
+                                          "display": true
+                                      }
+                                  ],
+                                  "rateable": false
+                              },
+                              {
+                                  "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNDg=",
+                                  "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNDg=",
+                                  "descriptor": {
+                                      "name": "C/C++ - Tamil",
+                                      "long_desc": "",
+                                      "images": [
+                                          {
+                                              "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp06/CandCPP.png"
+                                          }
+                                      ]
+                                  },
+                                  "price": {
+                                      "currency": "INR",
+                                      "value": "0"
+                                  },
+                                  "category_id": "All",
+                                  "recommended": false,
+                                  "time": {
+                                      "label": "Course Schedule",
+                                      "duration": "P12W",
+                                      "range": {
+                                          "start": "2020-04-29T09:30:00.000000Z",
+                                          "end": "2020-04-29T09:30:00.000000Z"
+                                      }
+                                  },
+                                  "rating": "0",
+                                  "tags": [
+                                      {
+                                          "name": "courseInfo",
+                                          "list": [
+                                              {
+                                                  "name": "credits",
+                                                  "value": "2"
+                                              },
+                                              {
+                                                  "name": "instructors",
+                                                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
+                                              },
+                                              {
+                                                  "name": "offeringInstitue",
+                                                  "value": "Indian Institute of Technology Bombay"
+                                              },
+                                              {
+                                                  "name": "url",
+                                                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp48/preview"
+                                              },
+                                              {
+                                                  "name": "enrollmentEndDate",
+                                                  "value": ""
+                                              }
+                                          ],
+                                          "display": true
+                                      }
+                                  ],
+                                  "rateable": false
+                              },
+                              {
+                                  "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNTg=",
+                                  "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNTg=",
+                                  "descriptor": {
+                                      "name": "CellDesigner - modeling tool for gene-regulatory and biochemical networks ",
+                                      "long_desc": "",
+                                      "images": [
+                                          {
+                                              "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp58/CellDesigner.png"
+                                          }
+                                      ]
+                                  },
+                                  "price": {
+                                      "currency": "INR",
+                                      "value": "0"
+                                  },
+                                  "category_id": "BIO_TECH",
+                                  "recommended": false,
+                                  "time": {
+                                      "label": "Course Schedule",
+                                      "duration": "P4W",
+                                      "range": {
+                                          "start": "2020-05-15T04:30:00.000000Z",
+                                          "end": "2020-05-15T04:30:00.000000Z"
+                                      }
+                                  },
+                                  "rating": "4",
+                                  "tags": [
+                                      {
+                                          "name": "courseInfo",
+                                          "list": [
+                                              {
+                                                  "name": "credits",
+                                                  "value": "1"
+                                              },
+                                              {
+                                                  "name": "instructors",
+                                                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
+                                              },
+                                              {
+                                                  "name": "offeringInstitue",
+                                                  "value": "Indian Institute of Technology Bombay"
+                                              },
+                                              {
+                                                  "name": "url",
+                                                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp58/preview"
+                                              },
+                                              {
+                                                  "name": "enrollmentEndDate",
+                                                  "value": ""
+                                              }
+                                          ],
+                                          "display": true
+                                      }
+                                  ],
+                                  "rateable": false
+                              },
+                              {
+                                  "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDg=",
+                                  "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDg=",
+                                  "descriptor": {
+                                      "name": "DWSIM",
+                                      "long_desc": "",
+                                      "images": [
+                                          {
+                                              "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp08/DWSIM.png"
+                                          }
+                                      ]
+                                  },
+                                  "price": {
+                                      "currency": "INR",
+                                      "value": "0"
+                                  },
+                                  "category_id": "CHEMICAL_COURSES",
+                                  "recommended": false,
+                                  "time": {
+                                      "label": "Course Schedule",
+                                      "duration": "P12W",
+                                      "range": {
+                                          "start": "2020-04-21T04:30:00.000000Z",
+                                          "end": "2020-04-21T04:30:00.000000Z"
+                                      }
+                                  },
+                                  "rating": "4",
+                                  "tags": [
+                                      {
+                                          "name": "courseInfo",
+                                          "list": [
+                                              {
+                                                  "name": "credits",
+                                                  "value": "2"
+                                              },
+                                              {
+                                                  "name": "instructors",
+                                                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
+                                              },
+                                              {
+                                                  "name": "offeringInstitue",
+                                                  "value": "Indian Institute of Technology Bombay"
+                                              },
+                                              {
+                                                  "name": "url",
+                                                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp08/preview"
+                                              },
+                                              {
+                                                  "name": "enrollmentEndDate",
+                                                  "value": ""
+                                              }
+                                          ],
+                                          "display": true
+                                      }
+                                  ],
+                                  "rateable": false
+                              }
+                          ]
+                      }
+                  ]
+              }
+          }
+      },
+      {
+          "context": {
+              "domain": "dsep:courses",
+              "version": "1.0.0",
+              "action": "on_search",
+              "bap_id": "dsep-protocol.becknprotocol.io",
+              "bap_uri": "https://dsep-protocol-network.becknprotocol.io/",
+              "transaction_id": "a9aaecca-10b7-4d19-b640-b047a7c62196",
+              "message_id": "fb939417-4ed6-4d13-9b52-2e8ab7168f7d",
+              "ttl": "PT10M",
+              "timestamp": "2023-02-15T15:03:49.133Z",
+              "bpp_id": "bpp.dsep.samagra.io",
+              "bpp_uri": "https://bpp.dsep.samagra.io"
+          },
+          "message": {
+              "catalog": {
+                  "descriptor": {
+                      "name": "Catalog for Prof Kannan Moudgalya"
+                  },
+                  "providers": [
+                      {
+                          "id": "AICTE",
+                          "descriptor": {
+                              "name": "AICTE"
+                          },
+                          "categories": [
+                              {
+                                  "id": "Multidisciplinary",
+                                  "parent_category_id": "Multidisciplinary",
+                                  "descriptor": {
+                                      "name": "Multidisciplinary"
+                                  }
+                              },
+                              {
+                                  "id": "Multidisciplinary",
+                                  "parent_category_id": "Multidisciplinary",
+                                  "descriptor": {
+                                      "name": "Multidisciplinary"
+                                  }
+                              },
+                              {
+                                  "id": "Mathematics",
+                                  "parent_category_id": "Mathematics",
+                                  "descriptor": {
+                                      "name": "Mathematics"
+                                  }
+                              },
+                              {
+                                  "id": "COMP_SCI_ENGG",
+                                  "parent_category_id": "COMP_SCI_ENGG",
+                                  "descriptor": {
+                                      "name": "COMP_SCI_ENGG"
+                                  }
+                              },
+                              {
+                                  "id": "Multidisciplinary",
+                                  "parent_category_id": "Multidisciplinary",
+                                  "descriptor": {
+                                      "name": "Multidisciplinary"
+                                  }
+                              },
+                              {
+                                  "id": "All",
+                                  "parent_category_id": "All",
+                                  "descriptor": {
+                                      "name": "All"
+                                  }
+                              },
+                              {
+                                  "id": "All",
+                                  "parent_category_id": "All",
+                                  "descriptor": {
+                                      "name": "All"
+                                  }
+                              },
+                              {
+                                  "id": "All",
+                                  "parent_category_id": "All",
+                                  "descriptor": {
+                                      "name": "All"
+                                  }
+                              },
+                              {
+                                  "id": "BIO_TECH",
+                                  "parent_category_id": "BIO_TECH",
+                                  "descriptor": {
+                                      "name": "BIO_TECH"
+                                  }
+                              },
+                              {
+                                  "id": "CHEMICAL_COURSES",
+                                  "parent_category_id": "CHEMICAL_COURSES",
+                                  "descriptor": {
+                                      "name": "CHEMICAL_COURSES"
+                                  }
+                              }
+                          ],
+                          "items": [
+                              {
+                                  "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDE=",
+                                  "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDE=",
+                                  "descriptor": {
+                                      "name": "Advanced C++",
+                                      "long_desc": "",
+                                      "images": [
+                                          {
+                                              "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp01/Advanced-CPP.png"
+                                          }
+                                      ]
+                                  },
+                                  "price": {
+                                      "currency": "INR",
+                                      "value": "0"
+                                  },
+                                  "category_id": "Multidisciplinary",
+                                  "recommended": false,
+                                  "time": {
+                                      "label": "Course Schedule",
+                                      "duration": "P4W",
+                                      "range": {
+                                          "start": "2020-04-01T04:30:00.000000Z",
+                                          "end": "2020-04-01T04:30:00.000000Z"
+                                      }
+                                  },
+                                  "rating": "0",
+                                  "tags": [
+                                      {
+                                          "name": "courseInfo",
+                                          "list": [
+                                              {
+                                                  "name": "credits",
+                                                  "value": "1"
+                                              },
+                                              {
+                                                  "name": "instructors",
+                                                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
+                                              },
+                                              {
+                                                  "name": "offeringInstitue",
+                                                  "value": "Indian Institute of Technology Bombay"
+                                              },
+                                              {
+                                                  "name": "url",
+                                                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp01/preview"
+                                              },
+                                              {
+                                                  "name": "enrollmentEndDate",
+                                                  "value": ""
+                                              }
+                                          ],
+                                          "display": true
+                                      }
+                                  ],
+                                  "rateable": false
+                              },
+                              {
+                                  "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDI=",
+                                  "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDI=",
+                                  "descriptor": {
+                                      "name": "Android app using Kotlin",
+                                      "long_desc": "",
+                                      "images": [
+                                          {
+                                              "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp02/Android-app-using-Kotlin.png"
+                                          }
+                                      ]
+                                  },
+                                  "price": {
+                                      "currency": "INR",
+                                      "value": "0"
+                                  },
+                                  "category_id": "Multidisciplinary",
+                                  "recommended": false,
+                                  "time": {
+                                      "label": "Course Schedule",
+                                      "duration": "P8W",
+                                      "range": {
+                                          "start": "2020-04-21T04:30:00.000000Z",
+                                          "end": "2020-04-21T04:30:00.000000Z"
+                                      }
+                                  },
+                                  "rating": "5",
+                                  "tags": [
+                                      {
+                                          "name": "courseInfo",
+                                          "list": [
+                                              {
+                                                  "name": "credits",
+                                                  "value": "2"
+                                              },
+                                              {
+                                                  "name": "instructors",
+                                                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
+                                              },
+                                              {
+                                                  "name": "offeringInstitue",
+                                                  "value": "Indian Institute of Technology Bombay"
+                                              },
+                                              {
+                                                  "name": "url",
+                                                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp02/preview"
+                                              },
+                                              {
+                                                  "name": "enrollmentEndDate",
+                                                  "value": ""
+                                              }
+                                          ],
+                                          "display": true
+                                      }
+                                  ],
+                                  "rateable": false
+                              },
+                              {
+                                  "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDM=",
+                                  "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDM=",
+                                  "descriptor": {
+                                      "name": "Applications of GeoGebra",
+                                      "long_desc": "",
+                                      "images": [
+                                          {
+                                              "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp03/Application%20of%20Geogebra.png"
+                                          }
+                                      ]
+                                  },
+                                  "price": {
+                                      "currency": "INR",
+                                      "value": "0"
+                                  },
+                                  "category_id": "Mathematics",
+                                  "recommended": false,
+                                  "time": {
+                                      "label": "Course Schedule",
+                                      "duration": "P4W",
+                                      "range": {
+                                          "start": "2020-04-13T04:30:00.000000Z",
+                                          "end": "2020-04-13T04:30:00.000000Z"
+                                      }
+                                  },
+                                  "rating": "4",
+                                  "tags": [
+                                      {
+                                          "name": "courseInfo",
+                                          "list": [
+                                              {
+                                                  "name": "credits",
+                                                  "value": "2"
+                                              },
+                                              {
+                                                  "name": "instructors",
+                                                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
+                                              },
+                                              {
+                                                  "name": "offeringInstitue",
+                                                  "value": "Indian Institute of Technology Bombay"
+                                              },
+                                              {
+                                                  "name": "url",
+                                                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp03/preview"
+                                              },
+                                              {
+                                                  "name": "enrollmentEndDate",
+                                                  "value": ""
+                                              }
+                                          ],
+                                          "display": true
+                                      }
+                                  ],
+                                  "rateable": false
+                              },
+                              {
+                                  "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDQ=",
+                                  "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDQ=",
+                                  "descriptor": {
+                                      "name": "Arduino",
+                                      "long_desc": "",
+                                      "images": [
+                                          {
+                                              "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp04/Arduino%20(1).png"
+                                          }
+                                      ]
+                                  },
+                                  "price": {
+                                      "currency": "INR",
+                                      "value": "0"
+                                  },
+                                  "category_id": "COMP_SCI_ENGG",
+                                  "recommended": false,
+                                  "time": {
+                                      "label": "Course Schedule",
+                                      "duration": "P8W",
+                                      "range": {
+                                          "start": "2020-04-13T04:30:00.000000Z",
+                                          "end": "2020-04-13T04:30:00.000000Z"
+                                      }
+                                  },
+                                  "rating": "1",
+                                  "tags": [
+                                      {
+                                          "name": "courseInfo",
+                                          "list": [
+                                              {
+                                                  "name": "credits",
+                                                  "value": "3"
+                                              },
+                                              {
+                                                  "name": "instructors",
+                                                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
+                                              },
+                                              {
+                                                  "name": "offeringInstitue",
+                                                  "value": "Indian Institute of Technology Bombay"
+                                              },
+                                              {
+                                                  "name": "url",
+                                                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp04/preview"
+                                              },
+                                              {
+                                                  "name": "enrollmentEndDate",
+                                                  "value": ""
+                                              }
+                                          ],
+                                          "display": true
+                                      }
+                                  ],
+                                  "rateable": false
+                              },
+                              {
+                                  "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDY=",
+                                  "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDY=",
+                                  "descriptor": {
+                                      "name": "C and C++",
+                                      "long_desc": "",
+                                      "images": [
+                                          {
+                                              "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp06/CandCPP.png"
+                                          }
+                                      ]
+                                  },
+                                  "price": {
+                                      "currency": "INR",
+                                      "value": "0"
+                                  },
+                                  "category_id": "Multidisciplinary",
+                                  "recommended": false,
+                                  "time": {
+                                      "label": "Course Schedule",
+                                      "duration": "P12W",
+                                      "range": {
+                                          "start": "2020-03-11T04:30:00.000000Z",
+                                          "end": "2020-03-11T04:30:00.000000Z"
+                                      }
+                                  },
+                                  "rating": "5",
+                                  "tags": [
+                                      {
+                                          "name": "courseInfo",
+                                          "list": [
+                                              {
+                                                  "name": "credits",
+                                                  "value": "2"
+                                              },
+                                              {
+                                                  "name": "instructors",
+                                                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
+                                              },
+                                              {
+                                                  "name": "offeringInstitue",
+                                                  "value": "Indian Institute of Technology Bombay"
+                                              },
+                                              {
+                                                  "name": "url",
+                                                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp06/preview"
+                                              },
+                                              {
+                                                  "name": "enrollmentEndDate",
+                                                  "value": ""
+                                              }
+                                          ],
+                                          "display": true
+                                      }
+                                  ],
+                                  "rateable": false
+                              },
+                              {
+                                  "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNTM=",
+                                  "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNTM=",
+                                  "descriptor": {
+                                      "name": "C/C++ - Bengali",
+                                      "long_desc": "",
+                                      "images": [
+                                          {
+                                              "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp06/CandCPP.png"
+                                          }
+                                      ]
+                                  },
+                                  "price": {
+                                      "currency": "INR",
+                                      "value": "0"
+                                  },
+                                  "category_id": "All",
+                                  "recommended": false,
+                                  "time": {
+                                      "label": "Course Schedule",
+                                      "duration": "P12W",
+                                      "range": {
+                                          "start": "2020-04-29T09:30:00.000000Z",
+                                          "end": "2020-04-29T09:30:00.000000Z"
+                                      }
+                                  },
+                                  "rating": "1",
+                                  "tags": [
+                                      {
+                                          "name": "courseInfo",
+                                          "list": [
+                                              {
+                                                  "name": "credits",
+                                                  "value": "2"
+                                              },
+                                              {
+                                                  "name": "instructors",
+                                                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
+                                              },
+                                              {
+                                                  "name": "offeringInstitue",
+                                                  "value": "Indian Institute of Technology Bombay"
+                                              },
+                                              {
+                                                  "name": "url",
+                                                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp53/preview"
+                                              },
+                                              {
+                                                  "name": "enrollmentEndDate",
+                                                  "value": ""
+                                              }
+                                          ],
+                                          "display": true
+                                      }
+                                  ],
+                                  "rateable": false
+                              },
+                              {
+                                  "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNDM=",
+                                  "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNDM=",
+                                  "descriptor": {
+                                      "name": "C/C++ - Hindi",
+                                      "long_desc": "",
+                                      "images": [
+                                          {
+                                              "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp06/CandCPP.png"
+                                          }
+                                      ]
+                                  },
+                                  "price": {
+                                      "currency": "INR",
+                                      "value": "0"
+                                  },
+                                  "category_id": "All",
+                                  "recommended": false,
+                                  "time": {
+                                      "label": "Course Schedule",
+                                      "duration": "P12W",
+                                      "range": {
+                                          "start": "2020-04-29T09:30:00.000000Z",
+                                          "end": "2020-04-29T09:30:00.000000Z"
+                                      }
+                                  },
+                                  "rating": "4",
+                                  "tags": [
+                                      {
+                                          "name": "courseInfo",
+                                          "list": [
+                                              {
+                                                  "name": "credits",
+                                                  "value": "2"
+                                              },
+                                              {
+                                                  "name": "instructors",
+                                                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
+                                              },
+                                              {
+                                                  "name": "offeringInstitue",
+                                                  "value": "Indian Institute of Technology Bombay"
+                                              },
+                                              {
+                                                  "name": "url",
+                                                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp43/preview"
+                                              },
+                                              {
+                                                  "name": "enrollmentEndDate",
+                                                  "value": ""
+                                              }
+                                          ],
+                                          "display": true
+                                      }
+                                  ],
+                                  "rateable": false
+                              },
+                              {
+                                  "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNDg=",
+                                  "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNDg=",
+                                  "descriptor": {
+                                      "name": "C/C++ - Tamil",
+                                      "long_desc": "",
+                                      "images": [
+                                          {
+                                              "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp06/CandCPP.png"
+                                          }
+                                      ]
+                                  },
+                                  "price": {
+                                      "currency": "INR",
+                                      "value": "0"
+                                  },
+                                  "category_id": "All",
+                                  "recommended": false,
+                                  "time": {
+                                      "label": "Course Schedule",
+                                      "duration": "P12W",
+                                      "range": {
+                                          "start": "2020-04-29T09:30:00.000000Z",
+                                          "end": "2020-04-29T09:30:00.000000Z"
+                                      }
+                                  },
+                                  "rating": "1",
+                                  "tags": [
+                                      {
+                                          "name": "courseInfo",
+                                          "list": [
+                                              {
+                                                  "name": "credits",
+                                                  "value": "2"
+                                              },
+                                              {
+                                                  "name": "instructors",
+                                                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
+                                              },
+                                              {
+                                                  "name": "offeringInstitue",
+                                                  "value": "Indian Institute of Technology Bombay"
+                                              },
+                                              {
+                                                  "name": "url",
+                                                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp48/preview"
+                                              },
+                                              {
+                                                  "name": "enrollmentEndDate",
+                                                  "value": ""
+                                              }
+                                          ],
+                                          "display": true
+                                      }
+                                  ],
+                                  "rateable": false
+                              },
+                              {
+                                  "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNTg=",
+                                  "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwNTg=",
+                                  "descriptor": {
+                                      "name": "CellDesigner - modeling tool for gene-regulatory and biochemical networks ",
+                                      "long_desc": "",
+                                      "images": [
+                                          {
+                                              "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp58/CellDesigner.png"
+                                          }
+                                      ]
+                                  },
+                                  "price": {
+                                      "currency": "INR",
+                                      "value": "0"
+                                  },
+                                  "category_id": "BIO_TECH",
+                                  "recommended": false,
+                                  "time": {
+                                      "label": "Course Schedule",
+                                      "duration": "P4W",
+                                      "range": {
+                                          "start": "2020-05-15T04:30:00.000000Z",
+                                          "end": "2020-05-15T04:30:00.000000Z"
+                                      }
+                                  },
+                                  "rating": "3",
+                                  "tags": [
+                                      {
+                                          "name": "courseInfo",
+                                          "list": [
+                                              {
+                                                  "name": "credits",
+                                                  "value": "1"
+                                              },
+                                              {
+                                                  "name": "instructors",
+                                                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
+                                              },
+                                              {
+                                                  "name": "offeringInstitue",
+                                                  "value": "Indian Institute of Technology Bombay"
+                                              },
+                                              {
+                                                  "name": "url",
+                                                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp58/preview"
+                                              },
+                                              {
+                                                  "name": "enrollmentEndDate",
+                                                  "value": ""
+                                              }
+                                          ],
+                                          "display": true
+                                      }
+                                  ],
+                                  "rateable": false
+                              },
+                              {
+                                  "id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDg=",
+                                  "parent_item_id": "Q291cnNlTGlzdDovbmQyX2FpYzIwX3NwMDg=",
+                                  "descriptor": {
+                                      "name": "DWSIM",
+                                      "long_desc": "",
+                                      "images": [
+                                          {
+                                              "url": "https://storage.googleapis.com/swayam-node2-production.appspot.com/assets/img/aic20_sp08/DWSIM.png"
+                                          }
+                                      ]
+                                  },
+                                  "price": {
+                                      "currency": "INR",
+                                      "value": "0"
+                                  },
+                                  "category_id": "CHEMICAL_COURSES",
+                                  "recommended": false,
+                                  "time": {
+                                      "label": "Course Schedule",
+                                      "duration": "P12W",
+                                      "range": {
+                                          "start": "2020-04-21T04:30:00.000000Z",
+                                          "end": "2020-04-21T04:30:00.000000Z"
+                                      }
+                                  },
+                                  "rating": "5",
+                                  "tags": [
+                                      {
+                                          "name": "courseInfo",
+                                          "list": [
+                                              {
+                                                  "name": "credits",
+                                                  "value": "2"
+                                              },
+                                              {
+                                                  "name": "instructors",
+                                                  "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
+                                              },
+                                              {
+                                                  "name": "offeringInstitue",
+                                                  "value": "Indian Institute of Technology Bombay"
+                                              },
+                                              {
+                                                  "name": "url",
+                                                  "value": "https://onlinecourses.swayam2.ac.in/aic20_sp08/preview"
+                                              },
+                                              {
+                                                  "name": "enrollmentEndDate",
+                                                  "value": ""
+                                              }
+                                          ],
+                                          "display": true
+                                      }
+                                  ],
+                                  "rateable": false
+                              }
+                          ]
+                      }
+                  ]
+              }
+          }
+      }
+  ]
 }
