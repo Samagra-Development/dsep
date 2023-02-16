@@ -50,7 +50,7 @@ export class ConfirmService {
         confirmResponse,
       );
 
-      confirmResponse['context']['action'] = 'on_select';
+      confirmResponse['context']['action'] = 'on_confirm';
 
       return await lastValueFrom(
         this.httpService.post(
