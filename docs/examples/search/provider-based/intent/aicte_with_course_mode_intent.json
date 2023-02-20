@@ -1,14 +1,14 @@
 {
   "context": {
-    "transaction_id": "transactionId",
-    "message_id": "transactionId",
+    "domain": "dsep:courses",
+    "version": "1.0.0",
     "action": "search",
-    "timestamp": "2022-12-15T05:23:03.443Z",
-    "country": "IND",
-    "city": "",
-    "core_version": "1.0.0",
-    "bap_uri": "https://eoa7pn7bobk6rhf.m.pipedream.net",
-    "bap_id": "eoa7pn7bobk6rhf.m.pipedream.net"
+    "bap_id": "dsep-protocol.becknprotocol.io",
+    "bap_uri": "https://dsep-protocol-network.becknprotocol.io/",
+    "transaction_id": "a9aaecca-10b7-4d19-b640-b047a7c62196",
+    "message_id": "0d30bfbf-87b8-43d2-8f95-36ebb9a24fd6",
+    "ttl": "PT10M",
+    "timestamp": "2023-02-15T15:14:30.560Z"
   },
   "message": {
     "intent": {
@@ -21,10 +21,14 @@
         "tags": [
           {
             "display": false,
-            "name": "Course Description Meta Data",
+            "descriptor": {
+              "name": "Course Description Meta Data"
+            },
             "list": [
               {
-                "name": "course_mode",
+                "descriptor": {
+                  "name": "course_mode"
+                },
                 "value": "regular"
               }
             ]

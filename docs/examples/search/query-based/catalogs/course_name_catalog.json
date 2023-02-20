@@ -6,9 +6,9 @@
     "bap_id": "dsep-protocol.becknprotocol.io",
     "bap_uri": "https://dsep-protocol-network.becknprotocol.io/",
     "transaction_id": "a9aaecca-10b7-4d19-b640-b047a7c62196",
-    "message_id": "7035b5bf-ebfd-4f14-b41d-5f54910029cf",
+    "message_id": "a2bcdfde-4413-4bf1-926e-b3e9947c61e2",
     "ttl": "PT10M",
-    "timestamp": "2023-02-15T14:56:29.394Z"
+    "timestamp": "2023-02-20T09:22:00.856Z"
   },
   "responses": [
     {
@@ -19,9 +19,9 @@
         "bap_id": "dsep-protocol.becknprotocol.io",
         "bap_uri": "https://dsep-protocol-network.becknprotocol.io/",
         "transaction_id": "a9aaecca-10b7-4d19-b640-b047a7c62196",
-        "message_id": "7035b5bf-ebfd-4f14-b41d-5f54910029cf",
+        "message_id": "a2bcdfde-4413-4bf1-926e-b3e9947c61e2",
         "ttl": "PT10M",
-        "timestamp": "2023-02-15T14:56:29.394Z",
+        "timestamp": "2023-02-20T09:22:00.856Z",
         "bpp_id": "bpp.dsep.samagra.io",
         "bpp_uri": "https://bpp.dsep.samagra.io"
       },
@@ -93,29 +93,41 @@
                       "end": "2023-04-09T18:29:00.000000Z"
                     }
                   },
-                  "rating": "3",
+                  "rating": "4",
                   "tags": [
                     {
-                      "name": "courseInfo",
+                      "descriptor": {
+                        "name": "courseInfo"
+                      },
                       "list": [
                         {
-                          "name": "credits",
+                          "descriptor": {
+                            "name": "credits"
+                          },
                           "value": "4"
                         },
                         {
-                          "name": "instructors",
+                          "descriptor": {
+                            "name": "instructors"
+                          },
                           "value": "Dr.S.Malliga, Dr.R.Thangarajan, Dr.S.V.Kogilavani"
                         },
                         {
-                          "name": "offeringInstitue",
+                          "descriptor": {
+                            "name": "offeringInstitue"
+                          },
                           "value": "Kongu Engineering College"
                         },
                         {
-                          "name": "url",
+                          "descriptor": {
+                            "name": "url"
+                          },
                           "value": "https://onlinecourses.swayam2.ac.in/cec23_cs02/preview"
                         },
                         {
-                          "name": "enrollmentEndDate",
+                          "decsriptor": {
+                            "name": "enrollmentEndDate"
+                          },
                           "value": "2023-02-28T18:29:00.000000Z"
                         }
                       ],
@@ -150,29 +162,41 @@
                       "end": "2023-04-16T18:29:00.000000Z"
                     }
                   },
-                  "rating": "1",
+                  "rating": "0",
                   "tags": [
                     {
-                      "name": "courseInfo",
+                      "descriptor": {
+                        "name": "courseInfo"
+                      },
                       "list": [
                         {
-                          "name": "credits",
+                          "descriptor": {
+                            "name": "credits"
+                          },
                           "value": "4"
                         },
                         {
-                          "name": "instructors",
+                          "descriptor": {
+                            "name": "instructors"
+                          },
                           "value": "Dr. Rizwan Rehman"
                         },
                         {
-                          "name": "offeringInstitue",
+                          "descriptor": {
+                            "name": "offeringInstitue"
+                          },
                           "value": "Dibrugarh University"
                         },
                         {
-                          "name": "url",
+                          "descriptor": {
+                            "name": "url"
+                          },
                           "value": "https://onlinecourses.swayam2.ac.in/cec23_cs06/preview"
                         },
                         {
-                          "name": "enrollmentEndDate",
+                          "decsriptor": {
+                            "name": "enrollmentEndDate"
+                          },
                           "value": "2023-02-28T18:29:00.000000Z"
                         }
                       ],
@@ -245,29 +269,41 @@
                       "end": "2020-03-28T04:30:00.000000Z"
                     }
                   },
-                  "rating": "5",
+                  "rating": "1",
                   "tags": [
                     {
-                      "name": "courseInfo",
+                      "descriptor": {
+                        "name": "courseInfo"
+                      },
                       "list": [
                         {
-                          "name": "credits",
+                          "descriptor": {
+                            "name": "credits"
+                          },
                           "value": "4"
                         },
                         {
-                          "name": "instructors",
+                          "descriptor": {
+                            "name": "instructors"
+                          },
                           "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
                         },
                         {
-                          "name": "offeringInstitue",
+                          "descriptor": {
+                            "name": "offeringInstitue"
+                          },
                           "value": "Indian Institute of Technology Bombay"
                         },
                         {
-                          "name": "url",
+                          "descriptor": {
+                            "name": "url"
+                          },
                           "value": "https://onlinecourses.swayam2.ac.in/aic20_sp33/preview"
                         },
                         {
-                          "name": "enrollmentEndDate",
+                          "decsriptor": {
+                            "name": "enrollmentEndDate"
+                          },
                           "value": ""
                         }
                       ],
@@ -302,29 +338,41 @@
                       "end": "2020-04-30T04:30:00.000000Z"
                     }
                   },
-                  "rating": "5",
+                  "rating": "4",
                   "tags": [
                     {
-                      "name": "courseInfo",
+                      "descriptor": {
+                        "name": "courseInfo"
+                      },
                       "list": [
                         {
-                          "name": "credits",
+                          "descriptor": {
+                            "name": "credits"
+                          },
                           "value": "4"
                         },
                         {
-                          "name": "instructors",
+                          "descriptor": {
+                            "name": "instructors"
+                          },
                           "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
                         },
                         {
-                          "name": "offeringInstitue",
+                          "descriptor": {
+                            "name": "offeringInstitue"
+                          },
                           "value": "Indian Institute of Technology Bombay"
                         },
                         {
-                          "name": "url",
+                          "descriptor": {
+                            "name": "url"
+                          },
                           "value": "https://onlinecourses.swayam2.ac.in/aic20_sp44/preview"
                         },
                         {
-                          "name": "enrollmentEndDate",
+                          "decsriptor": {
+                            "name": "enrollmentEndDate"
+                          },
                           "value": ""
                         }
                       ],
@@ -347,9 +395,9 @@
         "bap_id": "dsep-protocol.becknprotocol.io",
         "bap_uri": "https://dsep-protocol-network.becknprotocol.io/",
         "transaction_id": "a9aaecca-10b7-4d19-b640-b047a7c62196",
-        "message_id": "7035b5bf-ebfd-4f14-b41d-5f54910029cf",
+        "message_id": "a2bcdfde-4413-4bf1-926e-b3e9947c61e2",
         "ttl": "PT10M",
-        "timestamp": "2023-02-15T14:56:29.394Z",
+        "timestamp": "2023-02-20T09:22:00.856Z",
         "bpp_id": "bpp.dsep.samagra.io",
         "bpp_uri": "https://bpp.dsep.samagra.io"
       },
@@ -424,26 +472,38 @@
                   "rating": "4",
                   "tags": [
                     {
-                      "name": "courseInfo",
+                      "descriptor": {
+                        "name": "courseInfo"
+                      },
                       "list": [
                         {
-                          "name": "credits",
+                          "descriptor": {
+                            "name": "credits"
+                          },
                           "value": "4"
                         },
                         {
-                          "name": "instructors",
+                          "descriptor": {
+                            "name": "instructors"
+                          },
                           "value": "Dr.S.Malliga, Dr.R.Thangarajan, Dr.S.V.Kogilavani"
                         },
                         {
-                          "name": "offeringInstitue",
+                          "descriptor": {
+                            "name": "offeringInstitue"
+                          },
                           "value": "Kongu Engineering College"
                         },
                         {
-                          "name": "url",
+                          "descriptor": {
+                            "name": "url"
+                          },
                           "value": "https://onlinecourses.swayam2.ac.in/cec23_cs02/preview"
                         },
                         {
-                          "name": "enrollmentEndDate",
+                          "decsriptor": {
+                            "name": "enrollmentEndDate"
+                          },
                           "value": "2023-02-28T18:29:00.000000Z"
                         }
                       ],
@@ -478,29 +538,41 @@
                       "end": "2023-04-16T18:29:00.000000Z"
                     }
                   },
-                  "rating": "2",
+                  "rating": "3",
                   "tags": [
                     {
-                      "name": "courseInfo",
+                      "descriptor": {
+                        "name": "courseInfo"
+                      },
                       "list": [
                         {
-                          "name": "credits",
+                          "descriptor": {
+                            "name": "credits"
+                          },
                           "value": "4"
                         },
                         {
-                          "name": "instructors",
+                          "descriptor": {
+                            "name": "instructors"
+                          },
                           "value": "Dr. Rizwan Rehman"
                         },
                         {
-                          "name": "offeringInstitue",
+                          "descriptor": {
+                            "name": "offeringInstitue"
+                          },
                           "value": "Dibrugarh University"
                         },
                         {
-                          "name": "url",
+                          "descriptor": {
+                            "name": "url"
+                          },
                           "value": "https://onlinecourses.swayam2.ac.in/cec23_cs06/preview"
                         },
                         {
-                          "name": "enrollmentEndDate",
+                          "decsriptor": {
+                            "name": "enrollmentEndDate"
+                          },
                           "value": "2023-02-28T18:29:00.000000Z"
                         }
                       ],
@@ -573,29 +645,41 @@
                       "end": "2020-03-28T04:30:00.000000Z"
                     }
                   },
-                  "rating": "4",
+                  "rating": "0",
                   "tags": [
                     {
-                      "name": "courseInfo",
+                      "descriptor": {
+                        "name": "courseInfo"
+                      },
                       "list": [
                         {
-                          "name": "credits",
+                          "descriptor": {
+                            "name": "credits"
+                          },
                           "value": "4"
                         },
                         {
-                          "name": "instructors",
+                          "descriptor": {
+                            "name": "instructors"
+                          },
                           "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
                         },
                         {
-                          "name": "offeringInstitue",
+                          "descriptor": {
+                            "name": "offeringInstitue"
+                          },
                           "value": "Indian Institute of Technology Bombay"
                         },
                         {
-                          "name": "url",
+                          "descriptor": {
+                            "name": "url"
+                          },
                           "value": "https://onlinecourses.swayam2.ac.in/aic20_sp33/preview"
                         },
                         {
-                          "name": "enrollmentEndDate",
+                          "decsriptor": {
+                            "name": "enrollmentEndDate"
+                          },
                           "value": ""
                         }
                       ],
@@ -630,29 +714,41 @@
                       "end": "2020-04-30T04:30:00.000000Z"
                     }
                   },
-                  "rating": "1",
+                  "rating": "3",
                   "tags": [
                     {
-                      "name": "courseInfo",
+                      "descriptor": {
+                        "name": "courseInfo"
+                      },
                       "list": [
                         {
-                          "name": "credits",
+                          "descriptor": {
+                            "name": "credits"
+                          },
                           "value": "4"
                         },
                         {
-                          "name": "instructors",
+                          "descriptor": {
+                            "name": "instructors"
+                          },
                           "value": "Prof Kannan Moudgalya - Principal Investigator of Spoken Tutorial Project"
                         },
                         {
-                          "name": "offeringInstitue",
+                          "descriptor": {
+                            "name": "offeringInstitue"
+                          },
                           "value": "Indian Institute of Technology Bombay"
                         },
                         {
-                          "name": "url",
+                          "descriptor": {
+                            "name": "url"
+                          },
                           "value": "https://onlinecourses.swayam2.ac.in/aic20_sp44/preview"
                         },
                         {
-                          "name": "enrollmentEndDate",
+                          "decsriptor": {
+                            "name": "enrollmentEndDate"
+                          },
                           "value": ""
                         }
                       ],
