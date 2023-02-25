@@ -116,7 +116,7 @@ cd /path/to/cloned/repository
 Or start all of them together using
     ```bash
     yarn start:all # this will start all the services
-```
+    ```
 
 ## Deployment
 
