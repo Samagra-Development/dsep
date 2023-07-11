@@ -70,7 +70,7 @@ The `client` and `client proxy` are connected together via a websocket connectio
 
 **/search:** This method/endpoint allows for searching of courses and training via a direct DSEP complaint request to the BPP using the context.domain as `dsep:courses`
 
-**/select**: This method/endpoint is allows for selecting some courses or trainings to be enrolled in/purchased by the user. The context domain for this method should be `dsep:courses`.  In the reference course discovery platform implementation this endpoint is called when expanding a particular course to view its details.
+**/select**: This method/endpoint is allows for selecting some courses or trainings to be enrolled in/purchased by the user. The context domain for this method should be `dsep:courses`. In the reference course discovery platform implementation this endpoint is called when expanding a particular course to view its details.
 
 **/init**: This method/endpoint is allows for initiating purchasing a course or training by getting a quote from the provider and entering personal details required for enrollment. The context domain for this method should be `dsep:courses`.
 
@@ -82,9 +82,9 @@ Follow the following steps to setup the monorepo locally on your system.
 
 1. Clone the repository
 
-    ```bash
-    git clone https://github.com/Samagra-Development/dsep
-    ```
+   ```bash
+   git clone https://github.com/Samagra-Development/dsep
+   ```
 
 2. Navigate into the directory where you have cloned the repository
 
@@ -94,46 +94,84 @@ cd /path/to/cloned/repository
 
 3. Install the required dependencies using the package manager of your choice (yarn preferred).
 
-    ```bash
-    yarn install
-    ```
+   ```bash
+   yarn install
+   ```
 
 4. Create a `.env` file similar to the `.env,sample` file and populate it with required credentials
 5. [Install Docker](https://docs.docker.com/engine/install/), [Install Docker Compose](https://docs.docker.com/compose/install/linux/), and run
 
-    ```bash
-    docker compose up
-    ```
+   ```bash
+   docker compose up
+   ```
 
 6. Navigate to your hasura UI which will be started after running the command in `Step 5` and create a table named `dsep_courses`.
 7. Run the services for the required network participant using the following commands
 
-    ```bash
-    yarn start <bap | bg | bpp> # replace <bap | bg | bpp> with a single name
-    # for example: yarn start bpp will start the BPP
-    ```
+   ```bash
+   yarn start <bap | bg | bpp> # replace <bap | bg | bpp> with a single name
+   # for example: yarn start bpp will start the BPP
+   ```
 
 Or start all of them together using
-    ```bash
-    yarn start:all # this will start all the services
-    ```
+`bash yarn start:all # this will start all the services `
 
 ## Deployment
 
 1. [Install Docker](https://docs.docker.com/engine/install/), [Install Docker Compose](https://docs.docker.com/compose/install/linux/), and run
 
-    ```bash
-    docker compose up
-    ```
+   ```bash
+   docker compose up
+   ```
 
 2. PM2 Based Deployment
 
+   ```bash
+   yarn build
+   pm2 start dist/apps/bpp/main.js --name beckn-bpp
+   pm2 start dist/apps/bap/main.js --name beckn-bap
+   pm2 start dist/apps/bg/main.js --name beckn-bg
+   ```
+
+## Cypress Testing
+
+1. Install the required dependencies using the package manager of your choice (yarn preferred).
+
+   ```bash
+   yarn install
+   ```
+   This command will install all the necessary dependencies defined in the package.json file, including Cypress.
+
+2. Run the Cypress tests in the terminal. This will execute the tests in headless mode and output the results to the console.
+
     ```bash
-    yarn build
-    pm2 start dist/apps/bpp/main.js --name beckn-bpp
-    pm2 start dist/apps/bap/main.js --name beckn-bap
-    pm2 start dist/apps/bg/main.js --name beckn-bg
+    npx cypress run
     ```
+
+   The Cypress Test Runner will start running the tests and display the test results and logs in the terminal.
+
+   Alternatively, you can open the Cypress Test Runner in a separate interface to run and view your tests:
+
+    ```bash
+    npx cypress open
+    ```
+
+    This command will open the Cypress Test Runner, which provides a graphical interface to manage and execute your Cypress tests.
+
+   From the Test Runner, you can select a specific test file or run all tests. It also provides real-time reloading of tests as you make changes, allowing for a faster development workflow.
+
+   Cypress Test Runner also offers additional features like debugging, screenshots, and video recording of test runs.
+
+3. Follow the instructions provided by the Cypress Test Runner to interact with and inspect the tests.
+
+   * To run a specific test or test suite, click on the corresponding file or test case in the Cypress Test Runner.
+   
+   * The Test Runner will automatically open a browser window and execute the selected test(s) within it.
+   
+   * You can view the test execution, logs, and assertions in the Test Runner interface.
+
+   * To debug your tests, set breakpoints in your test code, and use the Cypress DevTools to inspect the application under test.
+
 
 ## Related Repositories
 
@@ -154,3 +192,4 @@ Follow [this guide](https://github.com/sanjay95/BECKN-Integration-to-Gateway/blo
 
 - Author: [Yash Mittal](https://github.com/techsavvyash)
 - Mentor on the project: [Chakshu Gautam](https://github.com/ChakshuGautam)
+````
