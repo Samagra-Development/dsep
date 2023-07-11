@@ -70,7 +70,7 @@ The `client` and `client proxy` are connected together via a websocket connectio
 
 **/search:** This method/endpoint allows for searching of courses and training via a direct DSEP complaint request to the BPP using the context.domain as `dsep:courses`
 
-**/select**: This method/endpoint is allows for selecting some courses or trainings to be enrolled in/purchased by the user. The context domain for this method should be `dsep:courses`. In the reference course discovery platform implementation this endpoint is called when expanding a particular course to view its details.
+**/select**: This method/endpoint is allows for selecting some courses or trainings to be enrolled in/purchased by the user. The context domain for this method should be `dsep:courses`.  In the reference course discovery platform implementation this endpoint is called when expanding a particular course to view its details.
 
 **/init**: This method/endpoint is allows for initiating purchasing a course or training by getting a quote from the provider and entering personal details required for enrollment. The context domain for this method should be `dsep:courses`.
 
@@ -82,9 +82,9 @@ Follow the following steps to setup the monorepo locally on your system.
 
 1. Clone the repository
 
-   ```bash
-   git clone https://github.com/Samagra-Development/dsep
-   ```
+    ```bash
+    git clone https://github.com/Samagra-Development/dsep
+    ```
 
 2. Navigate into the directory where you have cloned the repository
 
@@ -94,44 +94,46 @@ cd /path/to/cloned/repository
 
 3. Install the required dependencies using the package manager of your choice (yarn preferred).
 
-   ```bash
-   yarn install
-   ```
+    ```bash
+    yarn install
+    ```
 
 4. Create a `.env` file similar to the `.env,sample` file and populate it with required credentials
 5. [Install Docker](https://docs.docker.com/engine/install/), [Install Docker Compose](https://docs.docker.com/compose/install/linux/), and run
 
-   ```bash
-   docker compose up
-   ```
+    ```bash
+    docker compose up
+    ```
 
 6. Navigate to your hasura UI which will be started after running the command in `Step 5` and create a table named `dsep_courses`.
 7. Run the services for the required network participant using the following commands
 
-   ```bash
-   yarn start <bap | bg | bpp> # replace <bap | bg | bpp> with a single name
-   # for example: yarn start bpp will start the BPP
-   ```
+    ```bash
+    yarn start <bap | bg | bpp> # replace <bap | bg | bpp> with a single name
+    # for example: yarn start bpp will start the BPP
+    ```
 
 Or start all of them together using
-`bash yarn start:all # this will start all the services `
+    ```bash
+    yarn start:all # this will start all the services
+    ```
 
 ## Deployment
 
 1. [Install Docker](https://docs.docker.com/engine/install/), [Install Docker Compose](https://docs.docker.com/compose/install/linux/), and run
 
-   ```bash
-   docker compose up
-   ```
+    ```bash
+    docker compose up
+    ```
 
 2. PM2 Based Deployment
 
-   ```bash
-   yarn build
-   pm2 start dist/apps/bpp/main.js --name beckn-bpp
-   pm2 start dist/apps/bap/main.js --name beckn-bap
-   pm2 start dist/apps/bg/main.js --name beckn-bg
-   ```
+    ```bash
+    yarn build
+    pm2 start dist/apps/bpp/main.js --name beckn-bpp
+    pm2 start dist/apps/bap/main.js --name beckn-bap
+    pm2 start dist/apps/bg/main.js --name beckn-bg
+    ```
 
 ## Cypress Testing
 
@@ -172,7 +174,6 @@ Or start all of them together using
 
    * To debug your tests, set breakpoints in your test code, and use the Cypress DevTools to inspect the application under test.
 
-
 ## Related Repositories
 
 - [Mock Provider (Swayam)](https://github.com/Samagra-Development/swayam-wrapper)
@@ -192,4 +193,3 @@ Follow [this guide](https://github.com/sanjay95/BECKN-Integration-to-Gateway/blo
 
 - Author: [Yash Mittal](https://github.com/techsavvyash)
 - Mentor on the project: [Chakshu Gautam](https://github.com/ChakshuGautam)
-````
