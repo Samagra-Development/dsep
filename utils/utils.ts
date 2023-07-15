@@ -35,4 +35,11 @@ const sendAcknowledgement = (res: Response, ack: string) => {
   });
 };
 
-export { requestForwarder, sendAcknowledgement };
+const addFooter = () => {
+  // Add your footer code here
+  const footer = document.createElement('footer');
+  footer.innerText = 'This is the footer.';
+  document.body.appendChild(footer);
+};
+
+export { requestForwarder, sendAcknowledgement, addFooter };
