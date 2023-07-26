@@ -149,6 +149,7 @@ Follow [this guide](https://github.com/sanjay95/BECKN-Integration-to-Gateway/blo
 
 - [Beckn Official Website](https://becknprotocol.io)
 - [Core DSEP Specification](https://github.com/beckn/protocol-server/blob/v2/schemas/core.yaml)
+- [DSEP use case tracks discussion](https://github.com/beckn/DSEP-Specification/discussions)
 
 ## Stay in touch
 
