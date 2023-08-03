@@ -135,6 +135,45 @@ Or start all of them together using
     pm2 start dist/apps/bg/main.js --name beckn-bg
     ```
 
+## Cypress Testing
+
+1. Install the required dependencies using the package manager of your choice (yarn preferred).
+
+   ```bash
+   yarn install
+   ```
+   This command will install all the necessary dependencies defined in the package.json file, including Cypress.
+
+2. Run the Cypress tests in the terminal. This will execute the tests in headless mode and output the results to the console.
+
+    ```bash
+    npx cypress run
+    ```
+
+   The Cypress Test Runner will start running the tests and display the test results and logs in the terminal.
+
+   Alternatively, you can open the Cypress Test Runner in a separate interface to run and view your tests:
+
+    ```bash
+    npx cypress open
+    ```
+
+    This command will open the Cypress Test Runner, which provides a graphical interface to manage and execute your Cypress tests.
+
+   From the Test Runner, you can select a specific test file or run all tests. It also provides real-time reloading of tests as you make changes, allowing for a faster development workflow.
+
+   Cypress Test Runner also offers additional features like debugging, screenshots, and video recording of test runs.
+
+3. Follow the instructions provided by the Cypress Test Runner to interact with and inspect the tests.
+
+   * To run a specific test or test suite, click on the corresponding file or test case in the Cypress Test Runner.
+   
+   * The Test Runner will automatically open a browser window and execute the selected test(s) within it.
+   
+   * You can view the test execution, logs, and assertions in the Test Runner interface.
+
+   * To debug your tests, set breakpoints in your test code, and use the Cypress DevTools to inspect the application under test.
+
 ## Related Repositories
 
 - [Mock Provider (Swayam)](https://github.com/Samagra-Development/swayam-wrapper)
