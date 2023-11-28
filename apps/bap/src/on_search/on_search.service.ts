@@ -23,6 +23,7 @@ export class OnSearchService {
 
       let numberOfPurchases: number = 0;
       let languages: string[] = [];
+      let competencies: {[key: string]: any} = {};
 
       for(let i:number = 0;i < course.tags.length; i++) {
         if(course.tags[i].descriptor.name === 'courseInfo') {
@@ -33,6 +34,10 @@ export class OnSearchService {
             if(course.tags[i].list[j].descriptor.name == 'languages') {
               languages = course.tags[i].list[j].value as string[];
             }
+          }
+        } else if(course.tags[i].descriptor.name == 'competencyInfo') {
+          for(let j:number = 0;j < course.tags[i].list.length;j++) {
+            competencies[course.tags[i].list[j].descriptor.name] = course.tags[i].list[j].value;
           }
         }
       }
@@ -47,7 +52,9 @@ export class OnSearchService {
         imgUrl: course.descriptor.images[0],
         languages: languages,
         rating: course.rating,
-        duration: course.time.duration,
+        competency: competencies,
+        startTime: course.time.range.start,
+        endTime: course.time.range.end,
         noOfPurchases: numberOfPurchases
       }
     });

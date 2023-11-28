@@ -18,5 +18,11 @@ export class FilterService {
         return filteredCourses;
     }
 
+    async getCourseManagerSearchResults(queryInput: string) {
+        const url = this.courseManagerService + "/search?searchInput=" + queryInput;
+        const courseManagerSearchResponses = await axios.get(url);
+        return courseManagerSearchResponses;
+    }
+
 
 }

@@ -1,3 +1,4 @@
+
 export class CourseResponseDto {
     readonly id: string;
     readonly title: string;
@@ -6,8 +7,10 @@ export class CourseResponseDto {
     readonly provider_id: string;
     readonly price: string;
     readonly languages: string[];
+    readonly competency: Record<string, any>;
     readonly imgUrl: string;
     readonly rating: string;
-    readonly duration: string;
+    readonly startTime: string;
+    readonly endTime: string;
     readonly noOfPurchases: number;
 }
