@@ -1192,12 +1192,12 @@ export interface components {
 
     CourseMetadata: {
       descriptor: components["schemas"]["Descriptor"];
-      list: [components["schemas"]["MetaData"]];
+      list: (components["schemas"]["MetaData"])[];
     }
 
     MetaData: {
       descriptor: components["schemas"]["Descriptor"];
-      value: [(string | number)];
+      value: string;
     }
 
     /** @description Describes time in its various forms. It can be a single point in time; duration; or a structured timetable of operations */

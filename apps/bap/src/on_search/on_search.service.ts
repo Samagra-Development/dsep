@@ -29,15 +29,16 @@ export class OnSearchService {
         if(course.tags[i].descriptor.name === 'courseInfo') {
           for(let j:number = 0;j < course.tags[i].list.length;j++) {
             if(course.tags[i].list[j].descriptor.name == 'numberOfPurchases') {
-              numberOfPurchases = course.tags[i].list[j].value[0] as number;
+              numberOfPurchases = parseInt(course.tags[i].list[j].value[0]) ;
             } 
             if(course.tags[i].list[j].descriptor.name == 'languages') {
-              languages = course.tags[i].list[j].value as string[];
+              const langString: string = course.tags[i].list[j].value; // "Hindi, English, Telugu"
+              languages = langString.split(', ');
             }
           }
         } else if(course.tags[i].descriptor.name == 'competencyInfo') {
           for(let j:number = 0;j < course.tags[i].list.length;j++) {
-            competencies[course.tags[i].list[j].descriptor.name] = course.tags[i].list[j].value;
+            competencies[course.tags[i].list[j].descriptor.name] = course.tags[i].list[j].value.split(', ');
           }
         }
       }
@@ -62,7 +63,7 @@ export class OnSearchService {
 
 
   async handleOnSearch(onSearchDto: OnSearchDTO) {
-    // TODO: validate the request from BPP
+    // TODO: validate the request from BPP to check if all the required information is available or not
     console.log('onsearchdto in on search: ', JSON.stringify(onSearchDto, null, 2));
 
     // extract course information from the search response sent by BPP
