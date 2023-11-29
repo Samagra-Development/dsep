@@ -1,11 +1,9 @@
-import CatalogInterface from 'dsep-beckn-schema/schemas/Catalog.interface';
-import ContextInterface from 'dsep-beckn-schema/schemas/Context.interface';
-import ErrorInterface from 'dsep-beckn-schema/schemas/Error.interface';
+import { components } from 'types/schema';
 
 export class OnSearchDTO {
-  context: ContextInterface;
-  message?: {
-    catalog: CatalogInterface;
+  context: components['schemas']['Context'];
+  message: {
+    catalog: components['schemas']['Catalog'];
   };
-  error?: ErrorInterface;
+  error?: components['schemas']['Error'];
 }

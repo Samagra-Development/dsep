@@ -623,12 +623,12 @@ export interface components {
     };
     /** @description Describes a BPP catalog */
     Catalog: {
-      "bpp/descriptor"?: components["schemas"]["Descriptor"];
-      "bpp/categories"?: (components["schemas"]["Category"])[];
-      "bpp/fulfillments"?: (components["schemas"]["Fulfillment"])[];
-      "bpp/payments"?: (components["schemas"]["Payment"])[];
-      "bpp/offers"?: (components["schemas"]["Offer"])[];
-      "bpp/providers"?: (components["schemas"]["Provider"])[];
+      "descriptor"?: components["schemas"]["Descriptor"];
+      "categories"?: (components["schemas"]["Category"])[];
+      "fulfillments"?: (components["schemas"]["Fulfillment"])[];
+      "payments"?: (components["schemas"]["Payment"])[];
+      "offers"?: (components["schemas"]["Offer"])[];
+      "providers"?: (components["schemas"]["Provider"])[];
       /**
        * Format: date-time 
        * @description Time after which catalog has to be refreshed
@@ -914,7 +914,7 @@ export interface components {
       matched?: boolean;
       related?: boolean;
       recommended?: boolean;
-      tags?: components["schemas"]["Tags"];
+      tags?: [components["schemas"]["CourseMetadata"]];
     };
     /** @description indicates language code. Beckn supports country codes as per ISO 639.2 standard */
     Language: {
@@ -1189,6 +1189,17 @@ export interface components {
     Tags: {
       [key: string]: string | undefined;
     };
+
+    CourseMetadata: {
+      descriptor: components["schemas"]["Descriptor"];
+      list: (components["schemas"]["MetaData"])[];
+    }
+
+    MetaData: {
+      descriptor: components["schemas"]["Descriptor"];
+      value: string;
+    }
+
     /** @description Describes time in its various forms. It can be a single point in time; duration; or a structured timetable of operations */
     Time: {
       label?: string;

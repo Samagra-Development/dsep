@@ -1,15 +1,15 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { OnInitService } from './on_init.service';
+import { FilterService } from './filter.service';
 
-describe('OnInitService', () => {
-  let service: OnInitService;
+describe('FilterService', () => {
+  let service: FilterService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [OnInitService],
+      providers: [FilterService],
     }).compile();
 
-    service = module.get<OnInitService>(OnInitService);
+    service = module.get<FilterService>(FilterService);
   });
 
   it('should be defined', () => {

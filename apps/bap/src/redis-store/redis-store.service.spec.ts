@@ -1,15 +1,15 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { OnCancelService } from './on_cancel.service';
+import { RedisStoreService } from './redis-store.service';
 
-describe('OnCancelService', () => {
-  let service: OnCancelService;
+describe('RedisStoreService', () => {
+  let service: RedisStoreService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [OnCancelService],
+      providers: [RedisStoreService],
     }).compile();
 
-    service = module.get<OnCancelService>(OnCancelService);
+    service = module.get<RedisStoreService>(RedisStoreService);
   });
 
   it('should be defined', () => {
