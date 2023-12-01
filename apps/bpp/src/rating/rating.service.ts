@@ -1,9 +1,9 @@
 import { HttpService } from '@nestjs/axios';
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
-import { requestForwarder } from 'utils/utils';
-import { RatingDTO } from './dto/rating.dto';
-import { createAuthorizationHeader } from '../utils/authBuilder';
 import { lastValueFrom } from 'rxjs';
+import { requestForwarder } from 'utils/utils';
+import { createAuthorizationHeader } from '../utils/authBuilder';
+import { RatingDTO } from './dto/rating.dto';
 
 @Injectable()
 export class RatingService {
@@ -13,26 +13,26 @@ export class RatingService {
     // TODO: validate request
 
     const ratingResponse = {
-      "context": {
-        "domain": `${ratingDto.context.domain}`,
-        "version": "1.1.0",
-        "action": "on_search",
-        "bap_id": `${ratingDto.context.bap_id}`,
-        "bap_uri": `${ratingDto.context.bap_uri}`,
-        "transaction_id": `${ratingDto.context.transaction_id}`,
-        "message_id": `${ratingDto.context.message_id}`,
-        "ttl": "PT10M",
-        "timestamp": "2023-02-20T09:22:00.856Z",
-        "bpp_id": `${ratingDto.context.bpp_id}`,
-        "bpp_uri": `${ratingDto.context.bpp_uri}`
+      context: {
+        domain: `${ratingDto.context.domain}`,
+        version: '1.1.0',
+        action: 'on_rating',
+        bap_id: `${ratingDto.context.bap_id}`,
+        bap_uri: `${ratingDto.context.bap_uri}`,
+        transaction_id: `${ratingDto.context.transaction_id}`,
+        message_id: `${ratingDto.context.message_id}`,
+        ttl: 'PT10M',
+        timestamp: '2023-02-20T09:22:00.856Z',
+        bpp_id: `${ratingDto.context.bpp_id}`,
+        bpp_uri: `${ratingDto.context.bpp_uri}`,
       },
-      "message": {
-        "ratingAck": {
-          "feedback_ack": true,
-          "rating_ack": true
-        }
-      }
-    }
+      message: {
+        ratingAck: {
+          feedback_ack: true,
+          rating_ack: true,
+        },
+      },
+    };
 
     // TODO: Add logic to add auth headers in the respinse, check select.service.ts
     try {
@@ -66,7 +66,7 @@ export class RatingService {
     }
     // forwarding the response back to BAP /on-rating
     return await requestForwarder(
-      ratingDto.context.bap_uri + '/on_rating',
+      ratingDto.context.bap_uri + 'on_rating',
       ratingResponse,
       this.httpService,
     );

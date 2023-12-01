@@ -1,4 +1,14 @@
-import { Controller, Post, Body, Res, Req, Get, HttpStatus, ParseUUIDPipe, Param } from '@nestjs/common';
+import {
+  Controller,
+  Post,
+  Body,
+  Res,
+  Req,
+  Get,
+  HttpStatus,
+  ParseUUIDPipe,
+  Param,
+} from '@nestjs/common';
 import { ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { Request, Response } from 'express';
 import { sendAcknowledgement } from 'utils/utils';
@@ -9,7 +19,10 @@ import { CourseResponseDto } from '../filter/dto/course-response.dto';
 
 @Controller('on_search')
 export class OnSearchController {
-  constructor(private readonly onSearchService: OnSearchService, private readonly redisStoreService: RedisStoreService) {}
+  constructor(
+    private readonly onSearchService: OnSearchService,
+    private readonly redisStoreService: RedisStoreService,
+  ) {}
 
   @Post()
   @ApiOperation({
@@ -33,14 +46,22 @@ export class OnSearchController {
 
   @Get('/poll/:messageId')
   @ApiOperation({
-    summary: 'Api to poll search results for a specific search query(a particular messageId)'
+    summary:
+      'Api to poll search results for a specific search query(a particular messageId)',
   })
-  @ApiResponse({ status: HttpStatus.OK, type: CourseResponseDto, isArray: true})
-  pollSearchResults(@Param("messageId", ParseUUIDPipe) messageId: string, @Res() res) {
+  @ApiResponse({
+    status: HttpStatus.OK,
+    type: CourseResponseDto,
+    isArray: true,
+  })
+  pollSearchResults(
+    @Param('messageId', ParseUUIDPipe) messageId: string,
+    @Res() res,
+  ) {
     const results = this.redisStoreService.pollValue(messageId);
     res.status(HttpStatus.OK).json({
-      message: "New Search responses fetched",
-      data: results
+      message: 'New Search responses fetched',
+      data: results,
     });
   }
 }

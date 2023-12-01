@@ -26,7 +26,7 @@ export class CoursesController {
     @Body() searchRequestDto: SearchRequestDto,
   ): Promise<any> {
     const response = await this.coursesService.search(searchRequestDto);
-    console.log('response:', JSON.stringify(response, null, 2));
+    console.log('response-search---------:', JSON.stringify(response, null, 2));
     return res.json({ response });
   }
 
@@ -43,7 +43,7 @@ export class CoursesController {
     @Body() confirmDto: ConfirmRequestDto,
   ): Promise<any> {
     const response = await this.coursesService.confirmOrder(confirmDto);
-    console.log('response:', JSON.stringify(response, null, 2));
+    console.log('response:-confirm-------', JSON.stringify(response, null, 2));
     return res.json({ response });
   }
 
@@ -60,7 +60,7 @@ export class CoursesController {
     @Body() updateRequestDto: UpdateRequestDto,
   ): Promise<any> {
     const response = await this.coursesService.updateOrder(updateRequestDto);
-    console.log('response:', JSON.stringify(response, null, 2));
+    console.log('response-update--------:', JSON.stringify(response, null, 2));
     return res.json({ response });
   }
 
@@ -79,7 +79,7 @@ export class CoursesController {
     const response = await this.coursesService.courseRating(
       courseRatingRequestDto,
     );
-    console.log('response:', JSON.stringify(response, null, 2));
+    console.log('response-rating-------:', JSON.stringify(response, null, 2));
     return res.json({ response });
   }
 }

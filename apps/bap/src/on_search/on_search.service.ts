@@ -1,9 +1,9 @@
 import { HttpService } from '@nestjs/axios';
 import { Injectable } from '@nestjs/common';
 // import { requestForwarder } from 'utils/utils';
-import { OnSearchDTO } from './dto/on_search.dto';
-import { RedisStoreService } from '../redis-store/redis-store.service';
 import { CourseResponseDto } from '../filter/dto/course-response.dto';
+import { RedisStoreService } from '../redis-store/redis-store.service';
+import { OnSearchDTO } from './dto/on_search.dto';
 // import { SearchDTO } from 'apps/bg/src/search/dto/search.dto';
 import { FilterService } from '../filter/filter.service';
 
@@ -28,15 +28,17 @@ export class OnSearchService {
       for (let i = 0; i < course.tags.length; i++) {
         if (course.tags[i].descriptor.name === 'courseInfo') {
           for (let j = 0; j < course.tags[i].list.length; j++) {
-            if (course.tags[i].list[j].descriptor.name == 'numberOfPurchases') {
+            if (
+              course.tags[i].list[j]?.descriptor?.name == 'numberOfPurchases'
+            ) {
               numberOfPurchases = parseInt(course.tags[i].list[j].value[0]);
             }
-            if (course.tags[i].list[j].descriptor.name == 'languages') {
+            if (course.tags[i].list[j]?.descriptor?.name == 'languages') {
               const langString: string = course.tags[i].list[j].value; // "Hindi, English, Telugu"
               languages = langString.split(', ');
             }
           }
-        } else if (course.tags[i].descriptor.name == 'competencyInfo') {
+        } else if (course.tags[i]?.descriptor?.name == 'competencyInfo') {
           for (let j = 0; j < course.tags[i].list.length; j++) {
             competencies[course.tags[i].list[j].descriptor.name] =
               course.tags[i].list[j].value.split(', ');
@@ -86,7 +88,7 @@ export class OnSearchService {
     for (let i = 0; i < numberOfCourses; i++) {
       const _: number = await this.redisService.appendResults(
         messageId,
-        filteredCourses[i],
+        filteredCourses?.data[i],
       );
       // Need to add concurrency control (lock the rows). else, possibility of search response data loss.
     }
