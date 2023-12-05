@@ -1,19 +1,33 @@
-import { Body, Controller, HttpStatus, Post, Res } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  HttpStatus,
+  Param,
+  ParseUUIDPipe,
+  Post,
+  Query,
+  Res,
+} from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { CourseResponseDto } from '../filter/dto/course-response.dto';
+import { RedisStoreService } from '../redis-store/redis-store.service';
 import { CoursesService } from './courses.service';
 import {
   ConfirmRequestDto,
   CourseRatingRequestDto,
-  SearchRequestDto,
   UpdateRequestDto,
 } from './dto';
 
 @Controller('courses')
 @ApiTags('courses')
 export class CoursesController {
-  constructor(private readonly coursesService: CoursesService) {}
+  constructor(
+    private readonly coursesService: CoursesService,
+    private readonly redisStoreService: RedisStoreService,
+  ) {}
 
-  @Post('/search')
+  @Get('/search')
   @ApiOperation({
     summary: 'search request from consumer and forward it to the onest network',
   })
@@ -23,11 +37,33 @@ export class CoursesController {
   })
   async search(
     @Res() res,
-    @Body() searchRequestDto: SearchRequestDto,
+    @Query('searchText') searchText: string,
   ): Promise<any> {
-    const response = await this.coursesService.search(searchRequestDto);
+    const response = await this.coursesService.search(searchText);
     console.log('response-search---------:', JSON.stringify(response, null, 2));
     return res.json({ response });
+  }
+
+  @Get('/poll/:messageId')
+  @ApiOperation({
+    summary:
+      'Api to poll search results for a specific search query(a particular messageId)',
+  })
+  @ApiResponse({
+    status: HttpStatus.OK,
+    type: CourseResponseDto,
+    isArray: true,
+  })
+  async pollSearchResults(
+    @Param('messageId', ParseUUIDPipe) messageId: string,
+    @Res() res,
+  ) {
+    const results = await this.redisStoreService.pollValue(messageId);
+    console.log('\n\n---results:', results);
+    res.status(HttpStatus.OK).json({
+      message: 'New Search responses fetched',
+      data: results,
+    });
   }
 
   @Post('/confirm')

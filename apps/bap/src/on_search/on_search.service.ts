@@ -53,7 +53,7 @@ export class OnSearchService {
         provider_name: provider_name,
         provider_id: provider_id,
         price: course.price.value,
-        imgUrl: course.descriptor.images[0],
+        imgUrl: course.descriptor.images[0]?.url,
         languages: languages,
         rating: course.rating,
         competency: competencies,
@@ -85,13 +85,7 @@ export class OnSearchService {
     const messageId: string = onSearchDto.context.message_id;
     const numberOfCourses = filteredCourses.data.length;
 
-    for (let i = 0; i < numberOfCourses; i++) {
-      const _: number = await this.redisService.appendResults(
-        messageId,
-        filteredCourses?.data[i],
-      );
-      // Need to add concurrency control (lock the rows). else, possibility of search response data loss.
-    }
+    await this.redisService.appendResults(messageId, filteredCourses?.data);
 
     return;
   }

@@ -12,7 +12,6 @@ import {
 import {
   ConfirmRequestDto,
   CourseRatingRequestDto,
-  SearchRequestDto,
   UpdateRequestDto,
 } from './dto';
 
@@ -23,8 +22,8 @@ export class CoursesService {
     private configService: ConfigService,
   ) {}
 
-  public async search(searchRequestDto: SearchRequestDto) {
-    const searchRequestSchema = buildSearchRequest(searchRequestDto);
+  public async search(searchText: string) {
+    const searchRequestSchema = buildSearchRequest({ searchText });
 
     const BG_URI = this.configService.get('BG_URI');
 
@@ -35,7 +34,7 @@ export class CoursesService {
     const { data } = await axios.post(BG_SearchURL, payload);
 
     const courses = await this.filterService.getCourseManagerSearchResults(
-      searchRequestDto.searchText,
+      searchText,
     );
 
     return {
@@ -48,13 +47,14 @@ export class CoursesService {
   public async confirmOrder(confirmRequestDto: ConfirmRequestDto) {
     if (confirmRequestDto.bppId && confirmRequestDto.bppUri) {
       const confirmRequestSchema = buildConfirmRequest(confirmRequestDto);
+
       const bppConfirmUrl = `${confirmRequestDto.bppUri}` + 'confirm';
 
       const { data } = await axios.post(
         bppConfirmUrl,
         confirmRequestSchema.payload,
       );
-      // TODO: send the request to bpp, update to course manager portal and return needed data
+      // TODO: update to course manager portal and return needed data
       return data;
     }
     //TODO: If there is no BPP then send request to course manager portal and return needed data
@@ -71,7 +71,7 @@ export class CoursesService {
         updateRequestSchema.payload,
       );
 
-      // TODO: send the request to bpp, update to course manager portal and return needed data
+      // TODO: update to course manager portal and return needed data
       return data;
     }
     //TODO: If there is no BPP then send request to course manager portal and return needed data
@@ -83,13 +83,13 @@ export class CoursesService {
       const courseRatingRequestSchema = buildRatingRequest(
         courseRatingRequestDto,
       );
-      // TODO: send the request to bpp, update to course manager portal and return needed data
       const bppUpdateUrl = `${courseRatingRequestDto.bppUri}` + 'rating';
 
       const { data } = await axios.post(
         bppUpdateUrl,
         courseRatingRequestSchema.payload,
       );
+      // TODO: update to course manager portal and return needed data
 
       return data;
     }
