@@ -17,32 +17,45 @@ export class OnSearchService {
 
   private extractCoursesInfo(onSearchDTO: OnSearchDTO): CourseResponseDto[] {
     const provider_id = onSearchDTO.message.catalog.providers[0].id;
+
     const provider_name =
       onSearchDTO.message.catalog.providers[0].descriptor.name;
+
     const courses = onSearchDTO.message.catalog.providers[0].items;
+
     return courses.map((course) => {
       let numberOfPurchases = 0;
       let languages: string[] = [];
       const competencies: { [key: string]: any } = {};
+      let author: string, coursePreviewUrl: string;
 
-      for (let i = 0; i < course.tags.length; i++) {
-        if (course.tags[i].descriptor.name === 'courseInfo') {
-          for (let j = 0; j < course.tags[i].list.length; j++) {
-            if (
-              course.tags[i].list[j]?.descriptor?.name == 'numberOfPurchases'
-            ) {
-              numberOfPurchases = parseInt(course.tags[i].list[j].value[0]);
-            }
-            if (course.tags[i].list[j]?.descriptor?.name == 'languages') {
-              const langString: string = course.tags[i].list[j].value; // "Hindi, English, Telugu"
-              languages = langString.split(', ');
-            }
-          }
-        } else if (course.tags[i]?.descriptor?.name == 'competencyInfo') {
-          for (let j = 0; j < course.tags[i].list.length; j++) {
-            competencies[course.tags[i].list[j].descriptor.name] =
-              course.tags[i].list[j].value.split(', ');
-          }
+      for (const tag of course.tags) {
+        switch (tag?.descriptor?.name) {
+          case 'courseInfo':
+            tag.list.forEach((data) => {
+              switch (data?.descriptor?.name) {
+                case 'numberOfPurchases':
+                  numberOfPurchases = parseInt(data.value[0]) || 0;
+                  break;
+                case 'languages':
+                  languages = data.value.split(', ').map((lang) => lang.trim());
+                  break;
+                case 'course-instructor':
+                  author = data?.value;
+                  break;
+                case 'course-preview':
+                  coursePreviewUrl = data?.value;
+                  break;
+              }
+            });
+            break;
+          case 'competencyInfo':
+            tag.list.forEach((competency) => {
+              competencies[competency.descriptor.name] = competency.value
+                .split(', ')
+                .map((comp) => comp.trim());
+            });
+            break;
         }
       }
 
@@ -50,11 +63,13 @@ export class OnSearchService {
         id: course.id,
         title: course.descriptor.name,
         long_desc: course.descriptor.long_desc,
-        provider_name: provider_name,
-        provider_id: provider_id,
+        provider_name,
+        provider_id,
         price: course.price.value,
         imgUrl: course.descriptor.images[0]?.url,
-        languages: languages,
+        author,
+        coursePreviewUrl,
+        languages,
         rating: course.rating,
         competency: competencies,
         startTime: course.time.range.start,
