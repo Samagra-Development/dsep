@@ -3,13 +3,13 @@ import { v4 as uuid } from 'uuid';
 
 export const buildContext = (input: any = {}) => {
   const context: any = {
-    transaction_id: uuid(),
+    transaction_id: input?.transactionId ?? uuid(),
     domain: `onest:learning-experiences`,
     action: input.action ?? '',
     version: `${process.env.CORE_VERSION}`,
     bap_id: process.env.BAP_ID || (input?.bapId ?? ''),
     bap_uri: process.env.BAP_URI || (input?.bapUri ?? ''),
-    message_id: uuid(),
+    message_id: input?.messageId ?? uuid(),
     timestamp: moment().toISOString(),
     ttl: 'PT10M',
   };

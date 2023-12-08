@@ -5,29 +5,27 @@ import { CourseResponseDto } from '../filter/dto/course-response.dto';
 import { RedisStoreService } from '../redis-store/redis-store.service';
 import { OnSearchDTO } from './dto/on_search.dto';
 // import { SearchDTO } from 'apps/bg/src/search/dto/search.dto';
-import { FilterService } from '../filter/filter.service';
 
 @Injectable()
 export class OnSearchService {
   constructor(
     private readonly httpService: HttpService,
     private readonly redisService: RedisStoreService,
-    private readonly filterService: FilterService,
   ) {}
 
   private extractCoursesInfo(onSearchDTO: OnSearchDTO): CourseResponseDto[] {
-    const provider_id = onSearchDTO.message.catalog.providers[0].id;
+    const providerId = onSearchDTO.message.catalog.providers[0].id;
 
-    const provider_name =
+    const providerName =
       onSearchDTO.message.catalog.providers[0].descriptor.name;
 
-    const courses = onSearchDTO.message.catalog.providers[0].items;
+    const courses: any = onSearchDTO.message.catalog.providers[0].items;
 
     return courses.map((course) => {
       let numberOfPurchases = 0;
-      let languages: string[] = [];
+      let language: string[] = [];
       const competencies: { [key: string]: any } = {};
-      let author: string, coursePreviewUrl: string;
+      let author: string;
 
       for (const tag of course.tags) {
         switch (tag?.descriptor?.name) {
@@ -38,13 +36,12 @@ export class OnSearchService {
                   numberOfPurchases = parseInt(data.value[0]) || 0;
                   break;
                 case 'languages':
-                  languages = data.value.split(', ').map((lang) => lang.trim());
+                  language = data.value
+                    .split(',')
+                    .map((lang: string) => lang.trim());
                   break;
-                case 'course-instructor':
+                case 'Course Instructor':
                   author = data?.value;
-                  break;
-                case 'course-preview':
-                  coursePreviewUrl = data?.value;
                   break;
               }
             });
@@ -52,33 +49,40 @@ export class OnSearchService {
           case 'competencyInfo':
             tag.list.forEach((competency) => {
               competencies[competency.descriptor.name] = competency.value
-                .split(', ')
-                .map((comp) => comp.trim());
+                .split(',')
+                .map((comp: string) => comp.trim());
             });
             break;
         }
       }
 
-      return {
-        id: course.id,
+      if (!competencies || Object.keys(competencies).length === 0) return; // not including the courses without any competency
+
+      const result: CourseResponseDto = {
+        courseId: course.id,
         title: course.descriptor.name,
-        long_desc: course.descriptor.long_desc,
-        provider_name,
-        provider_id,
-        price: course.price.value,
-        imgUrl: course.descriptor.images[0]?.url,
+        description: course.descriptor.long_desc,
+        providerId,
+        providerName,
+        credits: +course.price.value,
+        imgLink: course.descriptor.images[0]?.url,
         author,
-        coursePreviewUrl,
-        languages,
-        rating: course.rating,
+        language,
+        avgRating: +course.rating,
         competency: competencies,
-        startTime: course.time.range.start,
-        endTime: course.time.range.end,
-        noOfPurchases: numberOfPurchases,
-        bppId: onSearchDTO?.context?.bap_id,
-        bppUri: onSearchDTO?.context?.bap_uri,
+        numOfUsers: numberOfPurchases,
+        bppId: onSearchDTO?.context?.bpp_id,
+        bppUri: onSearchDTO?.context?.bpp_uri,
       };
+
+      return result;
     });
+  }
+
+  private filterNullishValues(
+    courses: CourseResponseDto[],
+  ): CourseResponseDto[] {
+    return courses.filter(Boolean);
   }
 
   async handleOnSearch(onSearchDto: OnSearchDTO) {
@@ -92,15 +96,15 @@ export class OnSearchService {
     const courses = this.extractCoursesInfo(onSearchDto);
 
     // filter to get only those courses added on marketplace and verified by admin
-    const filteredCourses = await this.filterService.verifiedFilter(courses);
+    const filteredCourses = await this.filterNullishValues(courses);
 
     // any further filtering
 
     // messageId to store the responses
     const messageId: string = onSearchDto.context.message_id;
-    const numberOfCourses = filteredCourses.data.length;
+    // const numberOfCourses = filteredCourses.data.length;
 
-    await this.redisService.appendResults(messageId, filteredCourses?.data);
+    await this.redisService.appendResults(messageId, filteredCourses);
 
     return;
   }

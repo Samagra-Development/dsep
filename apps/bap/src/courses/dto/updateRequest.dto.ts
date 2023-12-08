@@ -3,7 +3,13 @@ import { ApplicantProfileDto } from './applicantProfile';
 
 export class UpdateRequestDto {
   @ApiProperty()
-  providerOrderId: string;
+  providerOrderId?: string;
+
+  @ApiProperty()
+  messageId: string;
+
+  @ApiProperty()
+  transactionId: string;
 
   @ApiProperty()
   status: string;

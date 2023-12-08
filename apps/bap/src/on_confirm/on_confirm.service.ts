@@ -15,6 +15,9 @@ export class OnConfirmService {
     const response = generateResponse(onConfirmDto);
 
     console.log('response----------on_confirm service------:', response);
+
+    //TODO: add endpoints for marketplace-portal-service/course-manager-service to update the data.
+
     return response;
   }
 }

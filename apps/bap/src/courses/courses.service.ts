@@ -2,7 +2,6 @@ import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { SearchDTO } from 'apps/bg/src/search/dto/search.dto';
 import axios from 'axios';
-import { FilterService } from '../filter/filter.service';
 import {
   buildConfirmRequest,
   buildRatingRequest,
@@ -11,89 +10,102 @@ import {
 } from '../utils/schemaBuilder';
 import {
   ConfirmRequestDto,
+  CourseDefaultResponseDto,
   CourseRatingRequestDto,
   UpdateRequestDto,
 } from './dto';
 
 @Injectable()
 export class CoursesService {
-  constructor(
-    private readonly filterService: FilterService,
-    private configService: ConfigService,
-  ) {}
+  constructor(private configService: ConfigService) {}
 
   public async search(searchText: string) {
     const searchRequestSchema = buildSearchRequest({ searchText });
 
     const BG_URI = this.configService.get('BG_URI');
 
-    const BG_SearchURL = `${BG_URI}search`;
+    let url: string;
+
+    // Check if BG_URI ends with a forward slash or not
+    if (BG_URI.endsWith('/')) {
+      url = `${BG_URI}search`;
+    } else {
+      url = `${BG_URI}/search`;
+    }
 
     const payload: SearchDTO = searchRequestSchema.payload;
 
-    const { data } = await axios.post(BG_SearchURL, payload);
+    const { data } = await axios.post(url, payload);
 
-    const courses = await this.filterService.getCourseManagerSearchResults(
-      searchText,
-    );
-
-    return {
-      status: data?.message?.ack?.status,
-      messageId: searchRequestSchema?.payload?.context?.message_id,
-      data: courses?.data,
-    };
+    return this.generateDefaultResponse(data, searchRequestSchema);
   }
 
   public async confirmOrder(confirmRequestDto: ConfirmRequestDto) {
-    if (confirmRequestDto.bppId && confirmRequestDto.bppUri) {
-      const confirmRequestSchema = buildConfirmRequest(confirmRequestDto);
+    const confirmRequestSchema = buildConfirmRequest(confirmRequestDto);
 
-      const bppConfirmUrl = `${confirmRequestDto.bppUri}` + 'confirm';
+    const bppUri = confirmRequestDto.bppUri;
+    let url: string;
 
-      const { data } = await axios.post(
-        bppConfirmUrl,
-        confirmRequestSchema.payload,
-      );
-      // TODO: update to course manager portal and return needed data
-      return data;
+    // Check if bppUri ends with a forward slash
+    if (bppUri.endsWith('/')) {
+      url = `${bppUri}confirm`;
+    } else {
+      url = `${bppUri}/confirm`;
     }
-    //TODO: If there is no BPP then send request to course manager portal and return needed data
-    return confirmRequestDto;
+
+    const { data } = await axios.post(url, confirmRequestSchema.payload);
+
+    return this.generateDefaultResponse(data, confirmRequestSchema);
   }
 
   public async updateOrder(updateRequestDto: UpdateRequestDto) {
-    if (updateRequestDto.bppId && updateRequestDto.bppUri) {
-      const updateRequestSchema = buildUpdateRequest(updateRequestDto);
-      const bppUpdateUrl = `${updateRequestDto.bppUri}` + 'update';
+    const updateRequestSchema = buildUpdateRequest(updateRequestDto);
+    console.log('updateRequestSchema:', updateRequestSchema);
 
-      const { data } = await axios.post(
-        bppUpdateUrl,
-        updateRequestSchema.payload,
-      );
+    const bppUri = updateRequestDto.bppUri;
 
-      // TODO: update to course manager portal and return needed data
-      return data;
+    let url: string;
+
+    // Check if bppUri ends with a forward slash or not
+    if (bppUri.endsWith('/')) {
+      url = `${bppUri}update`;
+    } else {
+      url = `${bppUri}/update`;
     }
-    //TODO: If there is no BPP then send request to course manager portal and return needed data
-    return updateRequestDto;
+
+    const { data } = await axios.post(url, updateRequestSchema.payload);
+
+    return this.generateDefaultResponse(data, updateRequestSchema);
   }
 
   public async courseRating(courseRatingRequestDto: CourseRatingRequestDto) {
-    if (courseRatingRequestDto.bppId && courseRatingRequestDto.bppUri) {
-      const courseRatingRequestSchema = buildRatingRequest(
-        courseRatingRequestDto,
-      );
-      const bppUpdateUrl = `${courseRatingRequestDto.bppUri}` + 'rating';
+    const courseRatingRequestSchema = buildRatingRequest(
+      courseRatingRequestDto,
+    );
 
-      const { data } = await axios.post(
-        bppUpdateUrl,
-        courseRatingRequestSchema.payload,
-      );
-      // TODO: update to course manager portal and return needed data
+    const bppUri = courseRatingRequestDto.bppUri;
+    let url: string;
 
-      return data;
+    // Check if bppUri ends with a forward slash or not
+    if (bppUri.endsWith('/')) {
+      url = `${bppUri}rating`;
+    } else {
+      url = `${bppUri}/rating`;
     }
-    //TODO: If there is no BPP then send request to course manager portal and return needed data
-    return courseRatingRequestDto;
+
+    const { data } = await axios.post(url, courseRatingRequestSchema.payload);
+
+    return this.generateDefaultResponse(data, courseRatingRequestSchema);
+  }
+
+  private generateDefaultResponse(
+    response: any,
+    context: any,
+  ): CourseDefaultResponseDto {
+    return {
+      status: response?.message?.ack?.status,
+      messageId: context?.payload?.context?.message_id,
+      transactionId: context?.payload?.context?.transaction_id,
+    };
   }
 }

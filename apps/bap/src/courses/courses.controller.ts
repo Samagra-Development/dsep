@@ -3,6 +3,7 @@ import {
   Controller,
   Get,
   HttpStatus,
+  Logger,
   Param,
   ParseUUIDPipe,
   Post,
@@ -15,6 +16,7 @@ import { RedisStoreService } from '../redis-store/redis-store.service';
 import { CoursesService } from './courses.service';
 import {
   ConfirmRequestDto,
+  CourseDefaultResponseDto,
   CourseRatingRequestDto,
   UpdateRequestDto,
 } from './dto';
@@ -22,6 +24,7 @@ import {
 @Controller('courses')
 @ApiTags('courses')
 export class CoursesController {
+  private readonly logger = new Logger(CoursesController.name);
   constructor(
     private readonly coursesService: CoursesService,
     private readonly redisStoreService: RedisStoreService,
@@ -34,14 +37,34 @@ export class CoursesController {
   @ApiResponse({
     status: HttpStatus.OK,
     description: 'Acknowledgement of confirm request',
+    type: CourseDefaultResponseDto,
   })
   async search(
     @Res() res,
     @Query('searchText') searchText: string,
-  ): Promise<any> {
-    const response = await this.coursesService.search(searchText);
-    console.log('response-search---------:', JSON.stringify(response, null, 2));
-    return res.json({ response });
+  ): Promise<CourseDefaultResponseDto> {
+    try {
+      this.logger.log(
+        `Initiated triggering backen gateway for searching courses on onest network for:- ${searchText}`,
+      );
+
+      const response = await this.coursesService.search(searchText);
+
+      this.logger.log(
+        `Successfully triggered backen gateway to search courses on onest network for:- ${searchText}`,
+      );
+
+      return res.status(HttpStatus.OK).json(response);
+    } catch (error) {
+      this.logger.error(
+        `Failed to trigger backen gateway to  search courses on onest network for:- ${searchText}`,
+        error,
+      );
+
+      return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
+        message: error.message,
+      });
+    }
   }
 
   @Get('/poll/:messageId')
@@ -57,13 +80,31 @@ export class CoursesController {
   async pollSearchResults(
     @Param('messageId', ParseUUIDPipe) messageId: string,
     @Res() res,
-  ) {
-    const results = await this.redisStoreService.pollValue(messageId);
-    console.log('\n\n---results:', results);
-    res.status(HttpStatus.OK).json({
-      message: 'New Search responses fetched',
-      data: results,
-    });
+  ): Promise<CourseResponseDto[]> {
+    try {
+      this.logger.log(
+        `Initiated polling search result for message id #${messageId} on redis`,
+      );
+      const results = await this.redisStoreService.pollValue(messageId);
+
+      this.logger.log(
+        `Successfully polled search result for message id #${messageId} on redis`,
+      );
+
+      return res.status(HttpStatus.OK).json({
+        message: 'New Search responses fetched',
+        data: results,
+      });
+    } catch (error) {
+      this.logger.error(
+        `Failed to poll search result for message id #${messageId} on redis`,
+        error,
+      );
+
+      return res
+        .status(HttpStatus.INTERNAL_SERVER_ERROR)
+        .json({ message: error.message });
+    }
   }
 
   @Post('/confirm')
@@ -73,14 +114,33 @@ export class CoursesController {
   @ApiResponse({
     status: HttpStatus.OK,
     description: 'Acknowledgement of confirm request',
+    type: CourseDefaultResponseDto,
   })
   async confirmOrder(
     @Res() res,
     @Body() confirmDto: ConfirmRequestDto,
-  ): Promise<any> {
-    const response = await this.coursesService.confirmOrder(confirmDto);
-    console.log('response:-confirm-------', JSON.stringify(response, null, 2));
-    return res.json({ response });
+  ): Promise<CourseDefaultResponseDto> {
+    try {
+      this.logger.log(
+        `Initiated triggering bpp uri for confirmation of course with id #${confirmDto.courseId} and provider id #${confirmDto.providerId}`,
+      );
+      const response = await this.coursesService.confirmOrder(confirmDto);
+
+      this.logger.log(
+        `Successfully triggered bpp uri for confirmation course with id #${confirmDto.courseId} and provider id #${confirmDto.providerId}`,
+      );
+
+      return res.status(HttpStatus.OK).json(response);
+    } catch (error) {
+      this.logger.error(
+        `Failed to trigger bpp uri for confirmation of course with id #${confirmDto.courseId} and provider id #${confirmDto.providerId}`,
+        error,
+      );
+
+      return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
+        message: error.message,
+      });
+    }
   }
 
   @Post('/update')
@@ -90,14 +150,31 @@ export class CoursesController {
   @ApiResponse({
     status: HttpStatus.OK,
     description: 'Acknowledgement of confirm request',
+    type: CourseDefaultResponseDto,
   })
   async updateOrder(
     @Res() res,
     @Body() updateRequestDto: UpdateRequestDto,
-  ): Promise<any> {
-    const response = await this.coursesService.updateOrder(updateRequestDto);
-    console.log('response-update--------:', JSON.stringify(response, null, 2));
-    return res.json({ response });
+  ): Promise<CourseDefaultResponseDto> {
+    try {
+      this.logger.log(
+        `Initiated triggering bpp uri for status updating of purchased course with message id #${updateRequestDto.messageId} and transactionId id #${updateRequestDto.transactionId}`,
+      );
+      const response = await this.coursesService.updateOrder(updateRequestDto);
+      this.logger.log(
+        `Successfully triggered bpp uri for status updating of purchased course with message id #${updateRequestDto.messageId} and transactionId id #${updateRequestDto.transactionId}`,
+      );
+
+      return res.status(HttpStatus.OK).json(response);
+    } catch (error) {
+      this.logger.error(
+        `Failed to trigger bpp uri for status updating of purchased course with message id #${updateRequestDto.messageId} and transactionId id #${updateRequestDto.transactionId}`,
+        error,
+      );
+      return res
+        .status(HttpStatus.INTERNAL_SERVER_ERROR)
+        .json({ message: error.message });
+    }
   }
 
   @Post('/rating')
@@ -107,15 +184,35 @@ export class CoursesController {
   @ApiResponse({
     status: HttpStatus.OK,
     description: 'Acknowledgement of confirm request',
+    type: CourseDefaultResponseDto,
   })
   async courseRating(
     @Res() res,
     @Body() courseRatingRequestDto: CourseRatingRequestDto,
-  ): Promise<any> {
-    const response = await this.coursesService.courseRating(
-      courseRatingRequestDto,
-    );
-    console.log('response-rating-------:', JSON.stringify(response, null, 2));
-    return res.json({ response });
+  ): Promise<CourseDefaultResponseDto> {
+    try {
+      this.logger.log(
+        `Initiated triggering bpp uri for rating of course with id #${courseRatingRequestDto.courseId}`,
+      );
+
+      const response = await this.coursesService.courseRating(
+        courseRatingRequestDto,
+      );
+
+      this.logger.log(
+        `Successfully to trigger bpp uri for rating of course with id #${courseRatingRequestDto.courseId}`,
+      );
+
+      return res.status(HttpStatus.OK).json(response);
+    } catch (error) {
+      this.logger.error(
+        `Failed to trigger bpp uri for rating of course with id #${courseRatingRequestDto.courseId}`,
+        error,
+      );
+
+      return res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({
+        message: error.message,
+      });
+    }
   }
 }

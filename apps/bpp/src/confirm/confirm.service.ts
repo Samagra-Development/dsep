@@ -30,10 +30,10 @@ export class ConfirmService {
         domain: 'onest:learning-experiences',
         action: 'confirm',
         version: '1.1.0',
-        bap_id: 'Ajay.esmagico.bap.test_1',
-        bap_uri: 'https://ajay-bap-compass.loca.lt/',
-        bpp_id: 'Ajay.esmagico.bpp.test_1',
-        bpp_uri: 'https://ajay-bpp-compass.loca.lt/',
+        bap_uri: process.env.bap_uri,
+        bap_id: process.env.bap_id,
+        bpp_uri: confirmDto.context.bpp_uri,
+        bpp_id: confirmDto.context.bpp_id,
         location: {
           city: {
             name: 'Bangalore',
@@ -52,12 +52,172 @@ export class ConfirmService {
       },
       message: {
         order: {
+          id: 'd4975df5',
           provider: {
             id: 'INFOSYS',
+            descriptor: {
+              name: 'Infosys Springboard',
+              short_desc: 'Infosys Springboard Digital literacy program',
+              images: [
+                {
+                  url: 'https://infyspringboard.onwingspan.com/web/assets/images/infosysheadstart/app_logos/landing-new.png',
+                  size_type: 'sm',
+                },
+              ],
+            },
           },
           items: [
             {
               id: 'd4975df5-b18c-4772-80ad-368669856d52',
+              quantity: {
+                maximum: 1,
+              },
+              descriptor: {
+                name: 'Everyday Conversational English',
+                long_desc: 'Everyday Conversational English',
+                images: [
+                  {
+                    url: 'https://infyspringboard.onwingspan.com/web/assets/images/infosysheadstart/everyday-conversational-english.png',
+                  },
+                ],
+              },
+              price: {
+                currency: 'INR',
+                value: '0',
+              },
+              category_ids: ['LANGUAGE-COURSES'],
+              rating: '4.5',
+              tags: [
+                {
+                  descriptor: {
+                    code: 'course-info',
+                    name: 'courseInfo',
+                  },
+                  list: [
+                    {
+                      descriptor: {
+                        code: 'course-instructor',
+                        name: 'Course Instructor',
+                      },
+                      value: 'Prof. Shipra Vaidya',
+                    },
+                    {
+                      descriptor: {
+                        code: 'course-provider',
+                        name: 'Course Provider',
+                      },
+                      value: 'Infosys Springboard',
+                    },
+                    {
+                      descriptor: {
+                        code: 'course-link',
+                        name: 'Course Link',
+                      },
+                      value:
+                        'https://infyspringboard.onwingspan.com/web/courses/infosysheadstart/everyday-conversational-english/',
+                    },
+                  ],
+                  display: true,
+                },
+                {
+                  descriptor: {
+                    code: 'course-highlights',
+                    name: 'Course Highlights',
+                  },
+                  list: [
+                    {
+                      descriptor: {
+                        code: 'highlight',
+                        name: 'highlight-1',
+                      },
+                      value:
+                        'Focusing on clear pronunciation and reducing any strong accents that may impede communication.',
+                    },
+                    {
+                      descriptor: {
+                        code: 'highlight',
+                        name: 'highlight-2',
+                      },
+                      value:
+                        'Expanding everyday vocabulary to facilitate common conversations.',
+                    },
+                  ],
+                  display: true,
+                },
+                {
+                  descriptor: {
+                    code: 'course-prerequisites',
+                    name: 'Course Prerequisites',
+                  },
+                  list: [
+                    {
+                      descriptor: {
+                        code: 'prerequisite',
+                        name: 'prerequisite-1',
+                      },
+                      value: 'Should have a basic understanding of English',
+                    },
+                    {
+                      descriptor: {
+                        code: 'prerequisite',
+                        name: 'prerequisite-2',
+                      },
+                      value:
+                        'Access to a computer or internet to access the course online',
+                    },
+                  ],
+                  display: true,
+                },
+              ],
+              rateable: true,
+            },
+            {
+              id: 'c9461edd-628d-46f3-820e-bab42b57d143',
+              parent_item_id: 'd4975df5-b18c-4772-80ad-368669856d52',
+              descriptor: {
+                name: 'Everyday Conversational English - Chapter 1',
+                long_desc: 'Everyday Conversational English - Chapter 1',
+                images: [
+                  {
+                    url: 'https://infyspringboard.onwingspan.com/web/assets/images/infosysheadstart/everyday-conversational-english-ch1.png',
+                  },
+                ],
+                media: {
+                  url: 'https://infyspringboard.onwingspan.com/web/courses/infosysheadstart/everyday-conversational-english-ch1/',
+                },
+              },
+            },
+            {
+              id: '77223dc6-f6e4-48dd-bf0e-1e43841e651c',
+              parent_item_id: 'd4975df5-b18c-4772-80ad-368669856d52',
+              descriptor: {
+                name: 'Everyday Conversational English - Chapter 2',
+                long_desc: 'Everyday Conversational English - Chapter 2',
+                images: [
+                  {
+                    url: 'https://infyspringboard.onwingspan.com/web/assets/images/infosysheadstart/everyday-conversational-english-ch2.png',
+                  },
+                ],
+                media: {
+                  url: 'https://infyspringboard.onwingspan.com/web/courses/infosysheadstart/everyday-conversational-english-ch2/',
+                },
+              },
+            },
+            {
+              id: 'eae312ed-5a2a-4b95-bed8-407a832b11b8',
+              parent_item_id: 'd4975df5-b18c-4772-80ad-368669856d52',
+              descriptor: {
+                name: 'Everyday Conversational English - Chapter 3',
+                long_desc: 'Everyday Conversational English - Chapter 3',
+                images: [
+                  {
+                    url: 'https://infyspringboard.onwingspan.com/web/assets/images/infosysheadstart/everyday-conversational-english-ch3.png',
+                  },
+                ],
+                media: {
+                  url: 'https://infyspringboard.onwingspan.com/web/courses/infosysheadstart/everyday-conversational-english-ch3/',
+                },
+              },
             },
           ],
           billing: {
@@ -67,9 +227,15 @@ export class ConfirmService {
               city: 'Bengaluru',
               state: 'Karnataka',
               contact: {
-                email: 'example@gmail.in',
+                email: 'example@email.in',
                 phone: '+91 1234567890',
               },
+            },
+          },
+          quote: {
+            price: {
+              currency: 'INR',
+              value: '0',
             },
           },
           fulfillments: [
@@ -83,6 +249,18 @@ export class ConfirmService {
                   email: 'johndoe@gmail.com',
                 },
               },
+              agent: {
+                person: {
+                  id: 'eng-01-prof',
+                  name: 'Prof. Shipra Vaidya',
+                },
+              },
+              state: {
+                descriptor: {
+                  code: 'order-confirmed',
+                  name: 'Order Confirmed',
+                },
+              },
             },
           ],
           payments: [
@@ -94,6 +272,7 @@ export class ConfirmService {
               status: 'PAID',
             },
           ],
+          type: 'DEFAULT',
         },
       },
     };
