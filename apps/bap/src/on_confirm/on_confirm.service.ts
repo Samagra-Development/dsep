@@ -1,6 +1,6 @@
 import { HttpService } from '@nestjs/axios';
 import { Injectable } from '@nestjs/common';
-import { generateResponse } from '../utils/utils';
+import { OrderConfirmationPayload, generateResponse } from '../utils/utils';
 import { OnConfirmDTO } from './dto/on_confirm.dto';
 import { ConfigService } from '@nestjs/config';
 import axios from 'axios';
@@ -17,7 +17,7 @@ export class OnConfirmService {
       'onConfirmDto-------on_confirm service---------:',
       JSON.stringify(onConfirmDto, null, 1),
     );
-    const response = generateResponse(onConfirmDto);
+    const response: OrderConfirmationPayload = generateResponse(onConfirmDto);
 
     console.log('response----------on_confirm service------:', response);
 
@@ -34,16 +34,8 @@ export class OnConfirmService {
       url = `${marketPlaceServiceUrl}/api/consumer/course/update-purchase/confirm`;
     }
 
-    console.log(
-      '\n\n marketplace portal service url on_confirm line- 38 ------------:',
-      url,
-      '\n\n',
-    );
-
     const { data } = await axios.patch(url, response);
-    console.log('update data response from marketplace portal--------:', data);
-    //TODO: add endpoints for marketplace-portal-service/course-manager-service to update the data.
 
-    return response;
+    return data;
   }
 }

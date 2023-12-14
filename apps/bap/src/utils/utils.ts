@@ -1,4 +1,31 @@
-export function generateResponse(payload: any): any {
+interface CustomerPayload {
+  name: string;
+  phone: string;
+  email: string;
+}
+
+interface PricePayload {
+  currency: string;
+  value: string;
+}
+
+export interface OrderConfirmationPayload {
+  messageId: string;
+  transactionId: string;
+  bppId: string;
+  bppUri: string;
+  providerId: string;
+  providerName: string;
+  providerCourseId: string;
+  providerOrderId: string;
+  courseName: string;
+  courseLink: string;
+  price: PricePayload;
+  status: string;
+  customer: CustomerPayload;
+}
+
+export function generateResponse(payload: any): OrderConfirmationPayload {
   const order = payload?.message?.order;
   const customer = order?.fulfillments?.[0]?.customer;
   const courseTagLists: any[] = order?.items?.[0]?.tags?.[0]?.list || [];
