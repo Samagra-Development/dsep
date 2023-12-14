@@ -6,8 +6,8 @@ import { RedisStoreService } from './redis-store.service';
   imports: [
       RedisModule.forRoot({
           config: {
-              host: 'localhost',
-              port: 8888, // redis server running on port 8888 
+              host: `${process.env.REDIS_HOST}`,
+              port: parseInt(process.env.REDIS_PORT), // redis server running on port 6379
           }
       }),
   ],

@@ -1,33 +1,27 @@
-version: "3"
+version: '3'
+
 services:
-  db:
-    image: postgres:latest
-    volumes:
-      - ./db-data:/var/lib/postgresql/data
-    container_name: psql
-    environment:
-      - POSTGRES_USER=user
-      - POSTGRES_PASSWORD=dbpassword
-      - POSTGRES_DB=dbname
-
-  graphql-engine:
-    image: hasura/graphql-engine:latest
+  bap_service:
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - "5001:8080"
-    depends_on:
-      - db
-    restart: always
-    environment:
-      HASURA_GRAPHQL_DATABASE_URL: postgres://user:dbpassword@db:5432/dbname
-      HASURA_GRAPHQL_ENABLE_CONSOLE: "true" # set to "false" to disable console
-      HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
-      HASURA_GRAPHQL_ADMIN_SECRET: 2OWslm5aAjlTARUTE$T
+      - 4021:4021
+    networks:
+      - samagra_compass
 
-  redis_db:
-    image: redis:6.2.5-alpine
-    restart: unless-stopped
-    ports:
-      - "6379:6379"
-    volumes:
-      - ./data/redis_DB:/data
-  
+networks:
+  samagra_compass:
+    external: true
+
+#  postgres:
+#    image: postgres:15.3-alpine
+#    ports:
+#      - ${DATABASE_PORT}:5432
+#    volumes:
+#      - ./.data/db:/var/lib/postgresql/data
+#    environment:
+#      POSTGRES_USER: ${DATABASE_USERNAME}
+#      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+#      POSTGRES_DB: ${DATABASE_NAME}
+

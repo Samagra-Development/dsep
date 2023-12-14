@@ -1,32 +1,14 @@
 {
   "$schema": "https://json.schemastore.org/nest-cli",
   "collection": "@nestjs/schematics",
-  "sourceRoot": "apps/dsep/src",
+  "sourceRoot": "apps/bap/src",
   "monorepo": true,
-  "root": "apps/dsep",
+  "root": "apps/bap",
   "compilerOptions": {
     "webpack": true,
-    "tsConfigPath": "apps/dsep/tsconfig.app.json"
+    "tsConfigPath": "apps/bap/tsconfig.app.json"
   },
   "projects": {
-    "dsep": {
-      "type": "application",
-      "root": "apps/dsep",
-      "entryFile": "main",
-      "sourceRoot": "apps/dsep/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/dsep/tsconfig.app.json"
-      }
-    },
-    "bg": {
-      "type": "application",
-      "root": "apps/bg",
-      "entryFile": "main",
-      "sourceRoot": "apps/bg/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/bg/tsconfig.app.json"
-      }
-    },
     "bap": {
       "type": "application",
       "root": "apps/bap",
@@ -34,15 +16,6 @@
       "sourceRoot": "apps/bap/src",
       "compilerOptions": {
         "tsConfigPath": "apps/bap/tsconfig.app.json"
-      }
-    },
-    "bpp": {
-      "type": "application",
-      "root": "apps/bpp",
-      "entryFile": "main",
-      "sourceRoot": "apps/bpp/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/bpp/tsconfig.app.json"
       }
     }
   }
