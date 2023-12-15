@@ -4,25 +4,25 @@ import axios from 'axios';
 
 @Injectable()
 export class FilterService {
-    private readonly courseManagerService: string;
-    constructor() {
-        this.courseManagerService = process.env.COURSE_MANAGER_SERVICE_URL;
-    }
+  private readonly courseManagerService: string;
+  constructor() {
+    this.courseManagerService = process.env.COURSE_MANAGER_SERVICE_URL;
+  }
 
-    async verifiedFilter(courses: CourseResponseDto[]) {
-        const url = this.courseManagerService + "/filterCourses";
-        const reqBody = {
-            data: courses
-        }
-        const filteredCourses = await axios.post(url, reqBody);
-        return filteredCourses;
-    }
+  async verifiedFilter(courses: CourseResponseDto[]) {
+    const url = this.courseManagerService + '/api/course/verifyFilter';
+    const { data } = await axios.post(url, courses);
+    return { data: data?.data };
+  }
 
-    async getCourseManagerSearchResults(queryInput: string) {
-        const url = this.courseManagerService + "/search?searchInput=" + queryInput;
-        const courseManagerSearchResponses = await axios.get(url);
-        return courseManagerSearchResponses;
-    }
+  async getCourseManagerSearchResults(queryInput: string) {
+    const url =
+      this.courseManagerService +
+      '/api/course/search?searchInput=' +
+      queryInput;
 
+    const { data } = await axios.get(url);
 
+    return data;
+  }
 }

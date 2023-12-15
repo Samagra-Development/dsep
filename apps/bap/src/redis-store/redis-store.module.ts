@@ -12,6 +12,6 @@ import { RedisStoreService } from './redis-store.service';
       }),
   ],
   providers: [RedisStoreService],
-  exports: [RedisStoreService]
+  exports: [RedisStoreService],
 })
 export class RedisStoreModule {}
