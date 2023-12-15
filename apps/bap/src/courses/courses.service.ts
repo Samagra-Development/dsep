@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { SearchDTO } from 'apps/bg/src/search/dto/search.dto';
+import { SearchDTO } from './dto/search.dto';
 import axios from 'axios';
 import {
   buildConfirmRequest,
